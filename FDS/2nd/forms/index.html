@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign up Form Page</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="signup">
+			<h2 class="subject">Sign up</h2>
+			<button type="button" class="btn-close">이젠페이지로 이동</button>
+			<form action="javascript:alert('회원가입이 되었습니다.');">
+				<fieldset>
+					<legend class="readable-hidden">회원가입 양식, Login 아이디, 이메일, 비밀번호, 비밀번화 확인 편집창으로 구성.</legend>
+					<div class="user-login">
+						<label for="user-login">Login</label>
+						<input type="text" id="user-login" required>
+					</div>
+					<div class="user-email">
+						<label for="user-email">E-mail</label>
+						<input type="email" id="user-email" required placeholder="example@exam.com">
+					</div>
+					<div class="user-pw">
+						<label for="user-pw">Password</label>
+						<input type="password" id="user-pw" required>
+					</div>
+					<div class="user-pw-confirm">
+						<label for="user-pw-confirm">Confirm password</label>
+						<input type="password" id="user-pw-confirm" required>
+					</div>
+					<button class="btn_create_account" type="submit">Create account</button>
+				</fieldset>
+			</form>	
+		</div>	
+		<div class="social-connect">
+			<p class="social-connect-describe">or connect with</p>
+			<div class="social-connect-btn">
+				<button type="button" class="btn-facebook-connect">facebook으로 연동하기</button>
+				<button type="button" class="btn-twitter-connect">twitter로 연동하기</button>
+			</div>
+		</div>
+		<div class="back-area">
+			<a href="/" title="로그인 화면으로 돌아가기">Log in</a>
+		</div>
+	</div>
+</body>
+</html> 

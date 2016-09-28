@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/* agent style 초기화 */
+html,body,div,header,nav,section,aside,article,footer,figure,figcaption,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,fieldset{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+  font-size: 0.625em;
+}
+body{
+  background: #fff;
+  font-size: 1.4rem;
+}
+
+.wrapper{
+  background: silver;
+  width: 960px;
+  margin:0 auto;
+}
+
+/* 헤드 영역 */
+.header{
+  background: yellow;
+  height: 80px;
+}
+.header .logo{
+  float: left;
+  font-size: 1.3rem;
+}
+.header .date{
+  float: left;
+}
+.header .author{
+  float: right;
+}
