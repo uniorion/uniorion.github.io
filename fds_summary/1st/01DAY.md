@@ -1,35 +1,36 @@
 ## HTML 요소
 
+
 1. `<html lang="ko">`
-- 사이트의 대표 언어를 설정한다.
-- 리더기는 해당 언어로 읽어줌으로 접근성 향상에 중요하다.
-- __다중 언어로 된 문서__ 의 경우, html 의 lang 값은 주언어로 값을 주고, 다른 언어는 각 단락 요소에서 lang 속성 값을 변경한다.
+	- 사이트의 대표 언어를 설정한다.
+	- 리더기는 해당 언어로 읽어줌으로 접근성 향상에 중요하다.
+	- __다중 언어로 된 문서__ 의 경우, html 의 lang 값은 주언어로 값을 주고,<br>다른 언어는 각 단락 요소에서 lang 속성 값을 변경한다.
 
 1. `<title>`
-- SEO 를 고려하여 사이트의 title 설정 역시 중요하다. 문서의 중심 키워드로 구성.
+	- SEO 를 고려하여 사이트의 title 설정 역시 중요하다. 문서의 중심 키워드로 구성.
 
 1. html5는 5버전과 4.01 규칙을 모두 허용한다. 따라서 자신만의 코드 규칙성을 갖는것이 중요하다.
 
 1. `<meta>`
-- 사이트의 정보(`메타데이터`)를 정의한다.
-- 아래 구문은 ` 페이지에서 사용되는 문자 인코딩을 선언`하는 동일한 의미.
-```html
-<!-- HTML4에서 charset을 선언하기 -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- HTML5에서 -->
-<meta charset="utf-8">
-```
+	- 사이트의 정보(`메타데이터`)를 정의한다.
+	- 아래 구문은 ` 페이지에서 사용되는 문자 인코딩을 선언`하는 동일한 의미.
+	```html
+	<!-- HTML4에서 charset을 선언하기 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- HTML5에서 -->
+	<meta charset="utf-8">
+	```
 
 1. `<link>`
-- 현재 문서와 외부 리소스와의 관계를 명시.
-- 페이지에 스타일 시트를 포함하려면, 밑의 문법을 사용.
-```html
-<link href="style.css" rel="stylesheet">
-```
-- `ref = shortcut icon` : 파비콘  / 확장자 .ico
-- `ref = apple-touch-icon` : 모바일 환경 런처 아이콘  /  확장자  .png
+	- 현재 문서와 외부 리소스와의 관계를 명시.
+	- 페이지에 스타일 시트를 포함하려면, 밑의 문법을 사용.
+	```html
+	<link href="style.css" rel="stylesheet">
+	```
+	- `ref = shortcut icon` : 파비콘  / 확장자 .ico
+	- `ref = apple-touch-icon` : 모바일 환경 런처 아이콘  /  확장자  .png
 
--
+
 
 ## HTML 작성 ( webcafe )
 
