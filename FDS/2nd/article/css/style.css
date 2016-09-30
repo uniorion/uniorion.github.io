@@ -141,6 +141,7 @@ body{
   overflow: hidden;
 }
 .wide-image-list-control a{   
+  box-sizing: border-box;
   display: block;
   float: left;
   width: 60px;
@@ -173,7 +174,6 @@ a.btn-next{
 }
 .main-contents02{
   margin-top: 5rem;
-  overflow: hidden;
 }
 .main-contents02-title{
   color: #222;
@@ -186,7 +186,13 @@ a.btn-next{
 }
 .main-contents02-qoute{
   margin: 5rem 0 0 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
+}
+.main-contents02-qoute:after,
+.main-contents02-qoute::after{
+  content: "";
+  display: block;
+  clear: both;
 }
 .main-contents02 blockquote{
   position: relative;
@@ -209,9 +215,8 @@ a.btn-next{
 .main-contents02 figure span{
   font-size: 1.2rem;
   color: #b8b8b8;
-}
-/*---------------  수정 필요 --------------------------*/
-.side-qoute{
+} 
+span.side-qoute{
   display: block;
   position: absolute;
   top: 0;
@@ -221,7 +226,6 @@ a.btn-next{
   background: url("../images/icon/icon-qoute.png") no-repeat;
   text-indent: -9999px;
 }
-/*---------------  수정 필요 --------------------------*/
 
   /*-----------------------------*/
  /*       메인콘텐츠 3 영역          */ 
