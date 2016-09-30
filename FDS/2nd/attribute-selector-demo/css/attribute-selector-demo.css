@@ -18,7 +18,9 @@ nav ol,
   list-style-type: none;
 }
 nav a,
-.reset-list a {
+.reset-list a,
+.sns-list a,
+.file-format-list a {
   text-decoration: none;
 }
 
@@ -30,26 +32,26 @@ nav a:visited,
 nav a:hover,
 .reset-list a:hover { color: #1aa375; }
 nav a:active,
-.reset-list a:active { background: #affbdf; }
+.reset-list a:active { background: #3bf8f3; }
 nav a:focus,
-.reset-list a:focus { background: #affbdf; outline: none; }
+.reset-list a:focus { background: #3bf8f3; outline: none; }
 
 /* DEMO Attr List --------------------------------------------------------------------------- */
 .demo-attr-list {
-  width: 800px;
   margin: 30px auto;
+  padding: 30px 0;
   border-top: 1px solid #2bffd4;
   border-bottom: 1px solid #2bffd4;
-  padding: 30px 0;
+  width: 800px;
+  background: linear-gradient(0deg, hsla(168, 100%, 58%, 0.1) 5%, transparent, hsla(168, 100%, 58%, 0.1) 95%);
 }
-
 .demo-attr-list * {
   margin: 0;
 }
-
 .demo-attr-list h1 {
   margin-bottom: 10px;
 }
+
 
 /* External Link List ----------------------------------------------------------------------- */
 .external-list {}
@@ -58,6 +60,9 @@ nav a:focus,
   padding-right: 1em;
   background: url("../images/icons/external-link/External Link.svg") no-repeat right 0px;
   background-size: 13px 13px;
+}
+.external-list a[target="_blank"]:focus {
+  background-color: #3bf8f3;
 }
 
 /* File Format List ------------------------------------------------------------------------- */
@@ -74,6 +79,9 @@ nav a:focus,
 .file-format-list a[href$=".js"]   { background: url("../images/icons/file-type-collection/svg/javascript.svg") no-repeat; }
 .file-format-list a[href$=".json"] { background: url("../images/icons/file-type-collection/svg/json-file.svg") no-repeat; }
 
+.file-format-list a:focus {
+  background-color: #3bf8f3;
+}
 /* SNS List --------------------------------------------------------------------------------- */
 .sns-list {}
 .sns-list:after,
@@ -99,3 +107,8 @@ nav a:focus,
 .sns-list a[href*="deviantart"] { background-image: url("../images/icons/SNS/DeviantArt.png"); }
 .sns-list a[href*="dropbox"]    { background-image: url("../images/icons/SNS/Dropbox.png");    }
 .sns-list a[href*="evernote"]   { background-image: url("../images/icons/SNS/Evernote.png");   }
+
+.sns-list a:focus,
+.sns-list a:hover {
+  outline: 3px solid #3bf8f3;
+}

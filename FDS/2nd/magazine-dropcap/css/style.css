@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/* 브라우저 스타일 초기화 */
+html{
+	font-size: 100%;	/* 16px */
+}
+body{
+	margin: 0;
+	font: 1rem/1.5 "Spoqa Han Sans", Sans-Serif;
+}
+.courgette{
+	font-family: "Courgette";
+}
+
+/**
+ *  width, height 중 하나의 값에
+ *  다른 하나를 자동으로 비율 적용하는 방법
+ */
+.photo-area img {
+  width: auto;
+  height: 100vh;
+  vertical-align: top;	/* img 요소 밑에 생기는 작은 공간을 제거 */
+  margin-left: 100px;
+}
+/*.magazine-view img {
+  width: 50vw;
+  height: auto;
+}*/
+
+.photo-area{
+	float: left;
+  width: 50vw;
+  margin-right: 40px;
+}
+.magazine-headline {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 0.6em 0.6em 0.6em 1.2em;
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: 0 0;
+}
+.magazine-headline * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.magazine-contents {
+	float: left;
+	width: 40vw;
+} 
+.magazine-contents p {
+	padding: 1em;
+	background: #fff;
+}
+.dropcap::first-letter {
+	float: left;
+	margin-right: 15px;
+	font-size: 6em;
+	font-weight: 700;
+	line-height: 0.9;
+} 
+.dropcap.offset-15::first-letter{
+	margin-top: -15px;
+	margin-bottom: 10px;
+}
+.magazine-contents img{
+	float: left;
+	margin-right: -
+	3rem;
+}
+.magazine-contents p:first-of-type{
+	margin-top: 4rem;
+} 
+.magazine-contents p{
+	margin-top: 1rem 0 0 0;
+}
+.magazine-column{
+	column-count: 2;
+	column-gap: 10px;
+	font-size: .8rem;
+
+}
