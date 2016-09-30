@@ -1,9 +1,10 @@
 ## HTML 요소
 
 1. `<html lang="ko">`
-- 사이트의 대표 언어를 설정한다.
+
+* 사이트의 대표 언어를 설정한다.
 - 리더기는 해당 언어로 읽어줌으로 접근성 향상에 중요하다.
-- __다중 언어로 된 문서__ 의 경우, html 의 lang 값은 주언어로 값을 주고, 다른 언어는 각 단락 요소에서 lang 속성 값을 변경한다.
+- __다중 언어로 된 문서__ 의 경우, html 의 lang 값은 주언어로 값을 주고,<br>다른 언어는 각 단락 요소에서 lang 속성 값을 변경한다.
 
 1. `<title>`
 - SEO 를 고려하여 사이트의 title 설정 역시 중요하다. 문서의 중심 키워드로 구성.
@@ -16,6 +17,7 @@
 ```html
 <!-- HTML4에서 charset을 선언하기 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <!-- HTML5에서 -->
 <meta charset="utf-8">
 ```
