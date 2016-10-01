@@ -53,5 +53,5 @@
   - animation-timing-function 가속 설정
   - animation-play-state
 
-__ * position 으로 이동하는 방법이 transform 보다 자원을 많이 씀.__<br>
+__* position 으로 이동하는 방법이 transform 보다 자원을 많이 씀.__<br>
   : 크로스 브라우징 위해선 position 사용할 수 밖에..
