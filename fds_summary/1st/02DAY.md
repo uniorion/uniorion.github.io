@@ -3,9 +3,13 @@
 ### table layout
 - 접근성을 떨어뜨림
 ```
-Layout에 Table을 사용하는 경우는 마크업이 표현요소를 포함하고 있기 때문에 콘텐트를 논리적으로 배치하려고 시도하면 표현문제와 충돌하게 되고 결국 논리보다는 표현을 위한 용도로 마크업을 사용하게 되어 논리적인 배치와는 거리가 멀어지게 됩니다.
-[웹 표준 코딩의 장점. Table for Layout과 CSS Layout의 비교 실험.](http://naradesign.net/wp/2007/02/03/113/)
+Layout에 Table을 사용하는 경우는 마크업이 표현요소를 포함하고 있기 때문에 콘텐트를 논리적으로
+
+배치하려고 시도하면 표현문제와 충돌하게 되고 결국 논리보다는 표현을 위한 용도로 마크업을
+
+사용하게 되어 논리적인 배치와는 거리가 멀어지게 됩니다.
 ```
+##### 출처 : [웹 표준 코딩의 장점. Table for Layout과 CSS Layout의 비교 실험.](http://naradesign.net/wp/2007/02/03/113/)
 
 #### 선택자 {속성:값 ; 속성:값}
 
@@ -44,21 +48,20 @@ Layout에 Table을 사용하는 경우는 마크업이 표현요소를 포함하
 https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css
 
 #### position: absolute;
->> block 요소가 됨. 레이어이기 때문에 width, height가 auto.
->> 기준이 필요함.(상위) 상위position이 static이 아니여야 함.
->> absolute, fixed, relative
+> block 요소가 됨. 레이어이기 때문에 width, height가 auto.
+> 기준이 필요함.(상위) 상위position이 static이 아니여야 함.
+> absolute, fixed, relative
 
 #### 요소가 inline 이 되면 공백문자가 발생.
 > inline 은 width, height가 적용안됨 > inline-block 으로 해결할수 있다.
 
 #### 부모의 box model은 자식보다 커야된다. block > inline-block > inline
 
-### 상속, 겹침, 구체성
-> 속성이 상속될 때, 하위 요소에 같은 속성이 선언되어 있으면 상속 값은 무시된다.
-> inherit 값은 상속 값이 우선할 수 있게 한다.
-> 속성의 값을 재정의 할 경우, 선택자의 구체성이 높은것이 적용된다. 같을경우 나중에 적용한 것
+#### 상속, 겹침, 구체성
+> 속성이 상속될 때, 하위 요소에 같은 속성이 선언되어 있으면 상속 값은 무시된다.<br>
+> inherit 값은 상속 값이 우선할 수 있게 한다.<br>
+> 속성의 값을 재정의 할 경우, 선택자의 구체성이 높은것이 적용된다. 같을경우 나중에 적용한것 <br>
 > !important 값을 주어 debugging
 
-
 ###  __접근성 이슈 > 명도대비__
->> 4.5 : 1 이상 > 확대축소가 안될때, CCA
+> 4.5 : 1 이상 > 확대축소가 안될때, CCA

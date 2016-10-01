@@ -12,5 +12,7 @@
 
 
 * repainting reflow        
-    left: qngk wwjgk
+    https://lists.w3.org/Archives/Public/public-html-ig-ko/2011Sep/att-0031/Reflow_____________________________Tip.pdf
+
+    
     
