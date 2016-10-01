@@ -45,7 +45,7 @@
   - 글자크기 변화 (font-size : px 만 설정됨 )
   - 투명도 조절 (opacity)
 3. 요소에 애니메이션 호출.
-- animation-name, animation-duration 필수 요소
+  - animation-name, animation-duration 필수 요소
   - animation-fill-mode 끝난 후 요소 위치
   - animation-delay 실행전 대기 시간
   - animation-iteration-count 반복 횟수
@@ -53,5 +53,5 @@
   - animation-timing-function 가속 설정
   - animation-play-state
 
-__position 으로 이동하는 방법이 transform 보다 자원을 많이 씀.__
+__ * position 으로 이동하는 방법이 transform 보다 자원을 많이 씀.__<br>
   : 크로스 브라우징 위해선 position 사용할 수 밖에..
