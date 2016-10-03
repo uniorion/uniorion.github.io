@@ -1,10 +1,9 @@
-## 특강 : Git basic   - 허진한 강사님 hjh5488@gmail.com
+## 특강 : Git basic   - 허진한 강사님 ~~hjh5488@gmail.com~~
 
 #### Git이 뭔데? 왜 써야하는데?    
-: 수정할때마다 수정기록이 남았으면 좋겠고 수정하기전과 비교했을때 뭐가 바뀌었는지 알수 있으면 참 좋을텐데?
-
-Version Control System(VCS)
-Distributed Version Control System(DVCS) : 분산형 버젼관리 시스템
+: 수정할때마다 수정기록이 남았으면 좋겠고 수정하기전과 비교했을때 뭐가 바뀌었는지 알수 있으면 참 좋을텐데?<br>
+: Version Control System(VCS)<br>
+: Distributed Version Control System(DVCS) : 분산형 버젼관리 시스템
  
 #### Git
 
@@ -15,7 +14,7 @@ Distributed Version Control System(DVCS) : 분산형 버젼관리 시스템
 : 임시적으로 머무는 공간.
 
 ###### local repository
-: 자신의 PC에서 버전 콘트롤을 할 수 있는 곳, 위치, 폴더?  
+: 자신의 PC에서 버전 콘트롤을 할 수 있는 곳. 
 
 ###### remote repository
 : git을 호스팅하는 공간.
@@ -50,11 +49,12 @@ q!
 ```
 
 Git 명령어
-*  origin => 나의 레포 (통상적)
+* origin => 나의 레포 (통상적)
 * upstream => 내가 포크떠온 원본 레포 (통상적)
+* stage에 commit 되지 않은 수정이 있으면 pull 되지 않음.
 
 ###### git init
-: (.git) 폴더가 생김 
+: (.git) 폴더가 생김
 
 ###### git-ignore 옵션
 : 로컬에만 가지고 있어야하는, 제외할 파일을 정의
@@ -63,19 +63,19 @@ Git 명령어
 : 현재폴더에 git 저장소를 동기화한다.
 
 ###### git log
-:
+: 
 
 ###### git status
 : stage 상태를 보여줌.
 
 ###### git add file_name
-: stage햣 에 file_name을 올림
+: stage 에 file_name을 올림
 
 ###### git rm --cached file_name
 : stage에서 file_name을 내림
 
 ###### git push
-: remote에 commit 내용을 올림
+: remote repo에 commit 내용을 올림
 
 ###### git config --list
 : 설정 내용을 표시 
@@ -84,20 +84,25 @@ Git 명령어
 : git에 설정된 원격주소를 표시
 
 ###### git push origin master
-: "원격 push 주소로 내 레포중에서 master 브랜치의 내용을 올린다."
+: 원격 push 주소로 내 레포중에서 master 브랜치의 내용을 올린다.
 
 ###### git pull origin master
-: "push origin 에서 master 브랜치의 내용을 내려 받음."
+: push origin 에서 master 브랜치의 내용을 내려 받음.
 
 ###### pull = merge + fetch  >  그냥 받으면 충돌이 발생 할 수 있다.
+: 
+
 ###### git pull --rebase origin master
 : 지우고 다시 받아.
 
-###### stage에 commit 되지 않은 수정이 있으면 pull 되지 않음.
 ###### git rebase --continue
+:
+
 ###### git checkout -b signup
 : signup 브랜치를 생성.
+
 ###### git remote add upstream http://github.com/LeoHeo/pr-test.git
 : 내 레포에 'upstream' 이름으로 url 저장소를 fork 한다.
+
 ###### git config --global core.autocrlf input
 : window에서 add 할때 개행문자 오류가 나면 해당 명령어 입력.
