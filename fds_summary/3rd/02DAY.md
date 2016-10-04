@@ -2,16 +2,16 @@
 
 #### 데이터 값(복사, 참조)
 #### 원시데이터 값 ( 복사가 되는 값 )
-    + undefined
-    + null
-    + 2016
-    + 'Front-End Develop School'
-    + true
+* undefined
+* null
+* 2016
+* 'Front-End Develop School'
+* true
 
 #### 참조(Reverence) 가 되는 데이터는 모두 객체(Object)
-    + Plain Object '{}'
-    + Function Object 'function(){}'
-    + Array Object '[]'
+* Plain Object '{}'
+* Function Object 'function(){}'
+* Array Object '[]'
 
 #### DOM(Document Object Model) API
 * 선택(Selection)
@@ -47,17 +47,16 @@ var links = document.getElementsByTagName('a');
 
 * 논리형(Boolean) : 0 이외의 값은 모두 true.
     - 형변환 Boolean()
-    - 정의안됨 : undefined > 값이 할당(대입)되지 않았다.
-    - 비어있음 : null
-* undefined
-* null
+
+* undefined : undefined > 값이 할당(대입)되지 않았다. 정의안됨
+* null : 비어있음
 
 ```js
 // 이벤트 바인딩 Event Binding
 // 이벤트 속성 Event Property <-> 함수 Function(이벤트 핸들러)
 // 문서객체.이벤트속성 = 이벤트핸들러;
 document.onclick; // null
-document.coclick = function() {
+document.onclick = function() {
     console.log('문서객체 클릭');
     document.onclock = null;
 };
@@ -67,32 +66,32 @@ document.coclick = function() {
 
 ## 테스트 리뷰
 1. 더이상 사용하면 안되는, 권장되지 않는 요소.
-    - <i>, <b>, <small> : html5에서 부활
-    - <u>, <center> : css로 구현가능. 
+    - `<i>`, `<b>`, `<small>` : html5에서 부활
+    - `<u>`, `<center>` : 제외됨. css로 구현가능.
 
-2. <img> 요소에 <map>요소를 연결하려면 어떤 속성? usemap
+2. <img> 요소에 <map>요소를 연결하려면 어떤 속성? *usemap*
 ```html
 <img src="" alt="" usemap="#olleh-service-map">
 <map name="#olleh-service-map">
     <area shape="" coords="x1,y1,x2,y2" href="" logndesc="" title="" alt="">
 </map>
 ```
-* longdesc 속성 : 긴 설명이 있을경우 url값을 주어 내용을 읽어줌. 접근성
-* alt 속성에는 text제한이 없으나, 리더기에서 제한이 있을 수 있으므로 logndesc 사용을 권장.
+    - longdesc 속성 : 긴 설명이 있을경우 url값을 주어 내용을 읽어줌. 접근성
+    - alt 속성에는 text제한이 없으나, 리더기에서 제한이 있을 수 있으므로 logndesc 사용을 권장.
 
-3. <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-* 브라우저 해석 : title 보다 먼저
-* 익스플로어가 최신버전으로 문서를 렌더링 하도록. 없으면 ie7로 렌더링
+3. `<meta http-equiv="X-UA-Compatible" content="IE=Edge">`
+    - 브라우저 해석 : title 보다 먼저
+    - 익스플로어가 최신버전으로 문서를 렌더링 하도록. 없으면 ie7로 렌더링
 
-4. <area> 요소에 사용가능한 도형
-* rectangle, circle, polygon
+4. `<area>` 요소에 사용가능한 도형
+    - rectangle, circle, polygon
 
-5. <li>요소는 부모 요소인 <ul>혹은 <ol> 요소로부터 모든 스타일을 상속받지 않는다.
-> 주로 공간에 관한 스타일은 상속되지 않는다.
+5. `<li>`요소는 부모 요소인 `<ul>`혹은 `<ol>` 요소로부터 모든 스타일을 상속받지 않는다.
+    - 주로 공간에 관한 스타일은 상속되지 않는다.
 
 6. HTML 표 작성시 사용되는 속성이 아닌것
-* headers : 표를 읽는 방향을 id를 사용해 지정할 수 있음. 표를 읽기 어려운경우에 사용.
-* <col> : column에 일괄적으로 스타일을 줄 때 사용. 
+    - headers : 표를 읽는 방향을 id를 사용해 지정할 수 있음. 표를 읽기 어려운경우에 사용.
+    - `<col>` : column에 일괄적으로 스타일을 줄 때 사용. 
 ```html
 <table id="currency-table">
     <caption>currency summary</caption>
@@ -124,8 +123,8 @@ document.coclick = function() {
     - 늘 같은자리, 같은 이미지일 경우 > 배경이미지, 스프라이트 배경이미지
 
 #### #color
-- keyword, hex-code, RGB, RGBA, hsla
-- transparent
+* keyword, hex-code, RGB, RGBA, hsla
+* transparent
 ```css
 .some {
     border: 2px solid currentColor;  
@@ -135,15 +134,29 @@ document.coclick = function() {
     color: #30120f;
 }
 ```
-- repeat, repeat-x, repeat-y, no-repeat
+* repeat, repeat-x, repeat-y, no-repeat
 
-#### 배경이미지를 고정하는 방법 중
-- position:fixed 보다 attachment:fixed 를 사용하는것이<br>
+#### #배경이미지를 고정하는 방법 중
+* position:fixed 보다 attachment:fixed 를 사용하는것이<br>
   성능에 많은 향상을 가져올 수 있다.
 
-#### 속기형 
+#### #속기형 
+> 기본값:#000 none repeat left top scroll border-box padding-box
+
 
 #### #background-clip
-* 백그라운드가 적용될 박스 범위를 지정 : padding-box, content-box
+* 백그라운드 색이 적용될 박스 범위를 지정 : padding-box, content-box
 
 #### #background-origin 
+* 백그라운드 이미지가 적용될 박스 범위
+
+#### #background-size
+* cover, contain, px, %, em, rem
+* 큰 배경을 작게 줄이는것은 성능상 좋지 않다. > 각 사이즈에 맞는 이미지를 제공하는것이 좋다.
+* %, px, 등으로 사이즈를 적용하는것은 이미지 왜곡이 생길 수 있어 조심해야 한다.
+
+---
+
+#### Transition : 장면전환
+- A, B 두개의 장면이 필요한다.
+- 세부적인 제어가 안된다. (애니매이션과의 차이점)
