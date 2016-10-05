@@ -95,6 +95,7 @@ a:hover {
 	font-size: 1.2rem;
 	line-height: 3rem;
 	text-indent: 1em;
+	z-index: 0;
 }
 .content-skill-graph li::after {
 	content: "";
@@ -104,6 +105,7 @@ a:hover {
 	bottom: 0;
 	left: 0;
 	transition: all 0.4s;
+	z-index: -1;
 }
 .skill-html:hover::after {
 	background: #1b4381;
