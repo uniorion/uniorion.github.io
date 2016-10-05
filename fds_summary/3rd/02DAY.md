@@ -1,6 +1,5 @@
 ## JavaScript
 
-#### 데이터 값(복사, 참조)
 #### 원시데이터 값 ( 복사가 되는 값 )
 * undefined
 * null
@@ -51,6 +50,27 @@ var links = document.getElementsByTagName('a');
 * undefined : undefined > 값이 할당(대입)되지 않았다. 정의안됨
 * null : 비어있음
 
+#### typeof : 자바스크립트 데이터 유형을 체크
+```js
+var k = 90;
+var m = -101;
+var j = 0;
+var b = 2.190356246345;
+var y = (k + m - j) * b / m;
+
+console.log('typeof k:', typeof k);
+console.log('typeof m:', typeof m);
+console.log('typeof j:', typeof j);
+console.log('typeof b:', typeof b);
+console.log('typeof y:', typeof y);
+```
+
+#### %c- : 콘솔창에 css 스타일로 표현이 가능하다.
+```js
+console.log('%c------------------------------------------------', 'color: #55c4e1');
+```
+
+#### 이벤트 바인딩
 ```js
 // 이벤트 바인딩 Event Binding
 // 이벤트 속성 Event Property <-> 함수 Function(이벤트 핸들러)
@@ -117,10 +137,17 @@ document.onclick = function() {
 ---
 
 ### Background
-* 속성 값을 설정할 때 공백을 포함한다면 반드시 ""을 넣어야 한다.
-* 색상, 이미지, 위치, 반복,
+* `selector {background: (color) (url) (repeat) (attachment) (position)}`
+* 속성 값을 설정할 때 공백을 포함한다면 반드시 ""로 감싸야 한다.
 * 콘텐츠이미지 vs 배경이미지 
-    - 늘 같은자리, 같은 이미지일 경우 > 배경이미지, 스프라이트 배경이미지
+    - 의미가 있고 변경이 자주되는 이미지는 컨텐츠 이미지로 사용
+    - UI요소 같이 추가 변경이 많이 없는 이미지들은 배경이미지로 스프라이트 처리해서 사용하는것이 좋다.
+
+> ※ 스프라이트 이미지를 사용하는 이유 : 이미지파일이 하나씩 늘어날수록 서버로의 요청횟수와 
+> 파일용량이 증가하게 되어 렌더링 성능저하로 이어지기 때문에 하나의 이미지 파일로 묶어 성능저하를 
+> 최소한으로 하기 위해서.
+
+* 배경이미지는 최하단에 위치하므로 z-index에 영향을 받지 않는다.
 
 #### #color
 * keyword, hex-code, RGB, RGBA, hsla
@@ -145,18 +172,56 @@ document.onclick = function() {
 
 
 #### #background-clip
-* 백그라운드 색이 적용될 박스 범위를 지정 : padding-box, content-box
+* 백그라운드 `색`이 적용될 박스 범위를 지정 : padding-box, content-box
 
 #### #background-origin 
-* 백그라운드 이미지가 적용될 박스 범위
+* 백그라운드 `이미지`가 적용될 박스 범위
 
 #### #background-size
 * cover, contain, px, %, em, rem
+* cover 이미지 크기 비율을 그대로 유지한 상태에서 이미지가 들어 있는 영역의 가로 또는 세로에 이미지를 맞춘다.(가로와 세로 중 큰 값에 맞춘다)
+* contain 이미지 크기 비율을 그대로 유지한 상태에서 원하는 영역에 전체 이미지가 들어가도록 가장 작은 크기로 이미지 스케일을 조정한다.(가로와 세로 중 큰 값에 맞춘다)
 * 큰 배경을 작게 줄이는것은 성능상 좋지 않다. > 각 사이즈에 맞는 이미지를 제공하는것이 좋다.
 * %, px, 등으로 사이즈를 적용하는것은 이미지 왜곡이 생길 수 있어 조심해야 한다.
 
 ---
 
+#### flex-box를 이용한 가로세로 중앙정렬 모듈
+```css
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
 #### Transition : 장면전환
-- A, B 두개의 장면이 필요한다.
+- A, B 두개의 장면이 필요하다.
 - 세부적인 제어가 안된다. (애니매이션과의 차이점)
+
+#### 가상 요소를 이용한 Transition 구현
+```css
+.box {
+    position: relative;
+    width: 300px;
+    height: 70px;
+    margin: 1em;
+    background: #ff0;
+    text-transform: uppercase;
+}
+
+.box::after {
+  content: '';
+  position: absolute; /* 가상요소는 자식으로 들어오기 때문에 box 클래스에 position: relative;를 적용하면 된다. */
+  top: 90%;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  background: #f00;
+  transition: all 0.4s; /* 처음 장면에 Transition적용: 모든(all) 속성에 0.4초간 transition을 적용한다. */
+}
+
+.box:hover::after {
+  right: 0;
+}
+```
