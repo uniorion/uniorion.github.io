@@ -1,13 +1,12 @@
 ## JavaScript
 
-### 데이터 형 변환
+### ※ 데이터 형 변환
 * 자바스크립트 언어는 자동으로 데이터 유형이 변경 > 이점이 자바스크립트의 약점.
 
-1. 문자(숫자 같은) -> 숫자
+### 1. 문자(숫자 같은) -> 숫자
 
-* 방법 a. 숫자를 '' 로 감싼다.
-
-* 방법 b. 숫자 뒤에 빈 문자를 접합
+#### 방법 a. 숫자를 '' 로 감싼다.
+#### 방법 b. 숫자 뒤에 빈 문자를 접합
 ```js
 9 + ''; // "9" , 숫자 상수일 경우 예
 
@@ -16,7 +15,7 @@ var n = 102;
 console.log('n+""', n+''); // "102"
 ```
 
-* 방법 c. String() 함수를 사용.
+#### 방법 c. String() 함수를 사용.
 
 > 첫글자가 대문자인 함수는 관례적으로 생성자(Constructor) 함수를 지칭한다.
 > 비록 생성자 함수이나, 여기서는 일반 함수 방식으로 사용하여 숫자 데이터 값을
@@ -29,7 +28,7 @@ var k = 90120;
 k = String(k); // "90120"
 ```
 
-* 방법 d. toString() 
+#### 방법 d. toString() 
 
 > {객체}.toString() 객체가 소유한 함수 유형의 속성을 특별히 "메소드(Method)"라고 부른다.
 > 자바스크립트의 모든 객체는 .toString() 메소드를 사용할 수 있다.
@@ -54,9 +53,9 @@ null.toString();      // Uncaught TypeError: Cannot read property 'toString' of 
 undefined.toString(); // Uncaught TypeError: Cannot read property 'toString' of undefined
 ```
 
-2. 숫자 형 문자(숫자만 포함된) -> 숫자
+### 2. 숫자 형 문자(숫자만 포함된) -> 숫자
 
-* 방법 a. -0 , *1 , /1 연산을 한다.
+#### 방법 a. -0 , *1 , /1 연산을 한다.
 ```js
 var u = '90231'; // 숫자 형 문자
 console.log('u - 0:', u - 0); // 90231
@@ -70,23 +69,23 @@ console.log('uu - 0:', uu - 0); // NaN: Not a Number '숫자가 아니다', 부�
 console.log('typeof NaN:', typeof NaN);
 ```
 
-* 방법 b. 숫자형 문자 앞에 + 기호를 붙인다.
+#### 방법 b. 숫자형 문자 앞에 + 기호를 붙인다.
 ```js 
 var h = '34';
 h = +h; // 은근~~~~ 많이 사용된다.
 ```
 
-* 방법 c. 숫자형 문자를 Number() 함수에 전달하여 처리한 결과는 숫자가 된다.
+#### 방법 c. 숫자형 문자를 Number() 함수에 전달하여 처리한 결과는 숫자가 된다.
 ```js
 var r = '3.141592';
 r = Number(r);
 ```
 
-3. 숫자와 단위(문자)를 포함한 문자(단위 유형) -> 숫자
+### 3. 숫자와 단위(문자)를 포함한 문자(단위 유형) -> 숫자
 
-> 단위를 제거하는 함수
-> window 전역 객체(Global Object)의 빌트인(내장, 네이티브) 메소드
-> window.parseInt('단위유형의문자', '반환진수')   // 정수 반환
+> 단위를 제거하는 함수<br>
+> window 전역 객체(Global Object)의 빌트인(내장, 네이티브) 메소드<br>
+> window.parseInt('단위유형의문자', '반환진수')   // 정수 반환<br>
 > window.parseFloat('단위유형의문자', '반환진수') // 실수 반환
 
 ```js
@@ -123,18 +122,8 @@ var nst_font_size = target_el.currentStyle.fontSize;
 console.log('nst_font_size:', nst_font_size);
 ```
 
-
-### HTML & CSS
-
-line-height : 브라우저 1.2  = 기본값 포토샵 120%
-
-1366 width 현재 세계 통계 - 가장 많이 쓰이는 넓이
-
-- 인식의 용이성
-check contrast ratio - 포토샵 명도대비 체킹 plugin
-
-자간 < 어간 < 행간 순으로 넓어야 가독성이 좋다. 판독하기 좋다.
-
+===
+  
 ### HTML & CSS - Typography System
 > 모듈러스케일(Modular Scale)을 이용하여 일정한 배율을 반영한 타이포 그래픽 시스템 설계
 
@@ -149,7 +138,7 @@ check contrast ratio - 포토샵 명도대비 체킹 plugin
 * 4.5:1 (AA), 7:1 (AAA)을 감안하여 타이포 그래픽 시스템을 설계하는것이 좋다.
 
 #### 포토샵의 텍스트 자간 CSS적용
-: Character 패널의 VA 값 나누기 1000 (ex. -50이면 -50/1000 = -0.05em)
+* Character 패널의 VA 값 나누기 1000 (ex. -50이면 -50/1000 = -0.05em)
 
 #### 글자 크기 단위
 * px : 고정값으로 사용이 쉬우나 Cross Brwosing 환경에서는 사용이 제한된다.
@@ -169,11 +158,11 @@ document.onclick = assignGuideClass;
 
 #### placehold.it : 더미 이미지 사용
 ```html
-<img src="http://placehold.it/210x210/000/fff/?text=don't breath" alt="숨 쉬지마!">
+<img src="http://placehold.it/210x210/000/fff/?text=don't+breath" alt="숨 쉬지마!">
 ```
 
 #### 이미지 아래 빈 공간 제거
-: img 삽입 시 상단 또는 하단에 공백이 생긴다면 아래와 같이 처리.
+* img 삽입 시 상단 또는 하단에 공백이 생긴다면 아래와 같이 처리.
 ```css
 img {
   vertical-align: top;
