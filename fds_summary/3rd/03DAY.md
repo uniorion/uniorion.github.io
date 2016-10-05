@@ -4,6 +4,7 @@
 * 자바스크립트 언어는 자동으로 데이터 유형이 변경 > 이점이 자바스크립트의 약점.
 
 1. 문자(숫자 같은) -> 숫자
+
 * 방법 a. 숫자를 '' 로 감싼다.
 
 * 방법 b. 숫자 뒤에 빈 문자를 접합
@@ -54,6 +55,7 @@ undefined.toString(); // Uncaught TypeError: Cannot read property 'toString' of 
 ```
 
 2. 숫자 형 문자(숫자만 포함된) -> 숫자
+
 * 방법 a. -0 , *1 , /1 연산을 한다.
 ```js
 var u = '90231'; // 숫자 형 문자
@@ -93,7 +95,7 @@ var font_size = '21.9px';
 var parse_int   = window.parseInt(font_size, 10);   // 21
 var parse_float = window.parseFloat(font_size, 10); // 21.9
 ```
-e.g)
+*e.g)*
 ```js
 // 문서에서 id 속성 값이 'target'인 요소를 가져와 변수에 참조한다.
 var target_el = document.getElementById('target');
@@ -119,4 +121,61 @@ var convert_font_size = window.parseInt(st_font_size, 10);  // 'px' 제거
 // {문서객체}.currentStyle.fontSize
 var nst_font_size = target_el.currentStyle.fontSize;
 console.log('nst_font_size:', nst_font_size);
+```
+
+
+### HTML & CSS
+
+line-height : 브라우저 1.2  = 기본값 포토샵 120%
+
+1366 width 현재 세계 통계 - 가장 많이 쓰이는 넓이
+
+- 인식의 용이성
+check contrast ratio - 포토샵 명도대비 체킹 plugin
+
+자간 < 어간 < 행간 순으로 넓어야 가독성이 좋다. 판독하기 좋다.
+
+### HTML & CSS - Typography System
+> 모듈러스케일(Modular Scale)을 이용하여 일정한 배율을 반영한 타이포 그래픽 시스템 설계
+
+#### 가독성, 판독성
+> 가독성 : 글을 수월하게 읽어 나갈 수 있는 정도.
+> 판독성 : 글자를 잘 파악할 수 있는 정도.
+
+* 행간 > 어간 > 자간 순으로 간격이 커야 가독성이 좋다.
+* 한글 12px 영문 9px 이하는 판독성이 떨어진다.
+* 포토샵과 웹브라우져 기본 행간크기는 1.2(120%) 이지만 너무 좁아 가독성이 떨어지기 때문에 
+  대부분 1.4 ~ * 1.8을 적용한다.
+* 4.5:1 (AA), 7:1 (AAA)을 감안하여 타이포 그래픽 시스템을 설계하는것이 좋다.
+
+#### 포토샵의 텍스트 자간 CSS적용
+: Character 패널의 VA 값 나누기 1000 (ex. -50이면 -50/1000 = -0.05em)
+
+#### 글자 크기 단위
+* px : 고정값으로 사용이 쉬우나 Cross Brwosing 환경에서는 사용이 제한된다.
+* em : 요소에 지정하는 글자 크기 단위로 부모 요소에서 지정한 글자 크기를 기준으로 배율을 조정한다. 계층이 복잡해지면 요소들(크기,행간,마진등등)을 계산하기가 까다로워 지며 관리도 어렵다.
+* rem : HTML 문서의 root 요소인 에 지정된 크기를 기준으로 상대적인 값으로 사용자가 설정한 폰트 크기에 따라 사이트에 배치된 모든 구성 요소를 적절하게 설계 가능하다.
+
+#### JavaScript를 이용한 동적 guide class 부여
+```js
+function assignGuideClass() {
+  var body = document.body;
+  var body_current_class = body.getAttribute('class');
+  body.setAttribute('class', body_current_class + ' guide');
+}
+// 문서 클릭 시.
+document.onclick = assignGuideClass;
+```
+
+#### placehold.it : 더미 이미지 사용
+```html
+<img src="http://placehold.it/210x210/000/fff/?text=don't breath" alt="숨 쉬지마!">
+```
+
+#### 이미지 아래 빈 공간 제거
+: img 삽입 시 상단 또는 하단에 공백이 생긴다면 아래와 같이 처리.
+```css
+img {
+  vertical-align: top;
+}
 ```
