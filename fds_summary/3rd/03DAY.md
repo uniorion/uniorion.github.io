@@ -30,7 +30,7 @@ k = String(k); // "90120"
 
 #### 방법 d. toString() 
 
-> {객체}.toString() 객체가 소유한 함수 유형의 속성을 특별히 "메소드(Method)"라고 부른다.
+> {객체}.toString() 객체가 소유한 함수 유형의 속성을 특별히 "메소드(Method)"라고 부른다.<br>
 > 자바스크립트의 모든 객체는 .toString() 메소드를 사용할 수 있다.
 
 ```js
@@ -122,13 +122,13 @@ var nst_font_size = target_el.currentStyle.fontSize;
 console.log('nst_font_size:', nst_font_size);
 ```
 
-===
+---
   
 ### HTML & CSS - Typography System
 > 모듈러스케일(Modular Scale)을 이용하여 일정한 배율을 반영한 타이포 그래픽 시스템 설계
 
 #### 가독성, 판독성
-> 가독성 : 글을 수월하게 읽어 나갈 수 있는 정도.
+> 가독성 : 글을 수월하게 읽어 나갈 수 있는 정도.<br>
 > 판독성 : 글자를 잘 파악할 수 있는 정도.
 
 * 행간 > 어간 > 자간 순으로 간격이 커야 가독성이 좋다.
