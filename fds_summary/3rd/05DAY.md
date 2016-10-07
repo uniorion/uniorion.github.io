@@ -24,19 +24,20 @@ var txt_area = document.querySelector(".demo-text-area");
 
 * div 요소는 의미가 없는 요소이나 Aria 기법으로 역할을 명시할 수 있다.
 ```html
-<div class="button-group" role="group">
+<div class="button-group" role="group">       <!-- role 값으로 div의 역할 명시 --> 
 <button aria-label="글자 크기 키움">+</button>    <!-- aria-label=리더기가 읽어줌 -->
 ```
 
 #### # DOCTYPE
 * html 문서의 표준을 정의한다. (렌더링 방식을 결정)
 * 선언이 없으면 비표준모드로 렌더링 한다.
-* DOCTYPE 선언 이전에 기타 text가 있으면 IE는 비표준모드로 동작한다.
+* IE는 DOCTYPE 선언 이전에 기타 text가 있으면 비표준모드로 동작한다.
 
 #### # `<meta>` 
 * `<title>` 기준으로 먼저 선언된 것은 서버 설정값과 동등한 효력을 가짐. 
 : 서버 값이 우선, IE만 meta값 우선
 
+* 모바일 환경 최적화를 위한 meta
 ```html
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 ```
@@ -58,14 +59,14 @@ var txt_area = document.querySelector(".demo-text-area");
 <!--[if lt IE 9]> <link rel="stylesheet" href="css/ie/v9.css"> <![endif]-->
 <!--[if lte IE 8]> <link rel="stylesheet" href="css/ie/v8.css"> <![endif]-->
 
-<!-- IE9 이하 브라우저에서는 해석하지 않는(부정) 조건부 주석문 -->
+<!-- IE9 이하 브라우저에서는 해석하지 않는(부정) 조건부 주석문 (모던브라우저 용)-->
 <!--[if !IE]><!--> <link rel="stylesheet" href="css/modern.css"> <!--<![endif]-->
 ```
 
 * 핵 : 좋지 않은 방법.
 * 필터링 : 권장
 ```html
-<!--[if !IE]> <!--> <!-- 6789는 해석하지 않음 -->
+<!--[if !IE]> <!--> <!-- ie6789는 해석하지 않음 -->
 <html lang="en">
 <!-- <![endif]-->
 <!--[if IE 6]> <html lang="en" class="lt-ie10 lt-ie9 lt-ie8 ie6"> <![endif]-->
@@ -81,3 +82,7 @@ var txt_area = document.querySelector(".demo-text-area");
 }
 ```
 
+#### # Grid-system
+* 그리드 시스템에서 컨텐츠를 가리지 않고 보이게 하려면 가상요소(:before)을 사용하여 position:absolute를 시키면 된다.
+* background-blend-mode: overlay;을 사용하면 투명하게 보일 수 있다.
+* 재사용 가능한 모듈을 만들면 빠르게 그리드 시스템이 적용된 wire-frame을 만들 수 있다.
