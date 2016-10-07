@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="tumblr-squared" unicode="&#xf174;" d="M634 35l-35 102q-24-12-57-12-20-1-35 5t-21 18-10 23-3 24v222h144v108h-143v182h-105q-5 0-5-5-3-25-10-49t-22-53-43-53-66-38v-92h73v-233q0-32 12-64t36-62 68-48 98-17q39 0 76 14t48 28z m223 583v-536q0-66-47-113t-114-48h-535q-67 0-114 48t-47 113v536q0 66 47 113t114 48h535q67 0 114-48t47-113z" horiz-adv-x="857.1" />
+
+<glyph glyph-name="vimeo" unicode="&#xf27d;" d="M954 561q-6-132-186-363-185-241-313-241-79 0-134 147-25 89-74 269-40 146-87 146-10 0-71-42l-43 54q13 12 60 54t73 65q87 77 134 81 53 5 85-31t46-113q24-160 37-208 30-139 66-139 29 0 86 89 57 90 61 138 8 77-61 77-31 0-67-14 67 219 256 213 140-5 132-182z" horiz-adv-x="1000" />
+
+<glyph glyph-name="facebook-squared" unicode="&#xf308;" d="M696 779q67 0 114-48t47-113v-536q0-66-47-113t-114-48h-104v333h111l16 129h-127v83q0 31 13 46t51 16l68 1v115q-35 5-100 5-75 0-121-44t-45-127v-95h-112v-129h112v-333h-297q-67 0-114 48t-47 113v536q0 66 47 113t114 48h535z" horiz-adv-x="857.1" />
+</font>
+</defs>
+</svg>

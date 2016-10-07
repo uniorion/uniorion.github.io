@@ -1,0 +1,340 @@
+@charset "utf-8";
+@import url(fonts.css);
+
+/* agent style reset (필요한 요소만 재정의) */
+html,body,div,section,article,header,footer,h1,h2,h3,h4,h5,h6,ul,li,ol,dd,dt,dl,fieldset{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style-type: none;
+}
+img{
+  border: 0;
+}
+/* 본문 바로가기, 숨김 콘텐츠 */
+.go-main{
+  display: none;
+}
+.hidden, legend{
+  position: absolute;
+  left: -9999px;
+}
+html{
+  font-size: 0.625em;
+}
+body{
+  color: #181818;
+  font-family: "Noto Sans Regular";
+  font-size: 1.4em;
+}
+a:link{
+  text-decoration: none;
+  color: inherit;
+}
+a:visited{
+  text-decoration: none;
+  color: #666;
+}
+a:hover, a:focus{
+  color: #f00;
+}
+a:focus{
+  outline: 1px dotted #333;
+}
+/* =========== 레이아웃 =============== */
+.wrapper{
+  background-color: silver;
+}
+.header, .visual, .main, .slogan, .footer{
+  width: 940px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.main{
+  background-color: pink;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  padding: 0 15px;
+  height: 60vh;
+}
+.column1{
+  width: 250px;
+  height: 20vh;
+}
+.column2{
+  background-color: lime;
+  width: 380px;
+  height: 20vh;
+}
+.column3{
+  background-color: purple;
+  width: 190px;
+  height: 20vh;
+}
+/* ----------------------------------------
+    헤더
+---------------------------------------- */
+.header{
+  background-color: #fff;
+  position: relative;
+	padding: 0 30px 42px;
+	border-radius: 0 0 15px 15px;
+}
+/* 로고 */
+.logo{
+  position: absolute;
+  top: 45px;
+  left: 60px;
+}
+/* 안내 메뉴 */
+.info-menu{
+  text-align: right;
+}
+.info-menu li::before{
+  content: ":";
+}
+.info-menu li:first-child::before{
+  content: "";
+}
+.info-menu *{
+  display:inline-block;
+}
+.info-menu a{
+  padding: 8px 10px;
+  text-transform: uppercase;
+}
+/* 메인메뉴 */
+.main-menu{
+  background: linear-gradient(to bottom, #ffb032 0%,#d37134 30%,#d37134 70%,#ffb032 100%,#ffb032 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  padding-left: 217px;
+  height: 45px;
+  border-top: 2px solid #181818;
+	border-radius: 0 0 5px 5px;
+}
+.main-menu a{
+	outline: 0;
+}
+.main-menu > li{
+  float: left;
+  font-family: "Noto Sans Bold";
+  border-left: 1px solid #fff;
+	position: relative; /* 서브메뉴의 기준 */
+}
+.main-menu > li > a{
+  display: block;
+  color: #fff;
+  padding: 0 20px;
+	font-size: 1.6rem;
+  line-height: 45px;
+	text-shadow: 1px 0 0 rgba(0,0,0,0.5)
+	 						,0 1px 0 rgba(0,0,0,0.5)
+							,-1px 0 0 rgba(0,0,0,0.5)
+							,0 -1px 0 rgba(0,0,0,0.5);
+}
+.main-menu > li > a:hover,
+.main-menu > li > a:focus{
+	color: #ff0;
+}
+.main-menu > li > a:hover::after,
+.main-menu > li > a:focus::after{
+  content: "";
+  display: block;
+  border-top: 2px solid #000;
+}
+.main-menu ul{
+  position: absolute;
+  top: 47px;
+	white-space: nowrap;
+}
+.main-menu ul li{
+  display:inline-block;
+}
+.about-html{
+	left: 0;
+	display: none;
+}
+.about-css{
+	left: 0;
+	display: none;
+}
+.web-standard{
+	left: 0;
+	display: none;
+}
+.web-accessibility{
+	left: -155px;
+	display: none;
+}
+.qna{
+	left: -198px;
+	display: none;
+}
+.archive{
+	right: -25px;
+	display: none;
+}
+.main-menu ul a{
+	padding: 10px;
+}
+.main-menu ul a::before{
+	content: "r";
+	font-family: "webcafeIcon";
+	position: relative;
+	top: 2px;
+}
+.main-menu ul a:hover::before,
+.main-menu ul a:focus::before{
+	content: "c";
+}
+/*  비주얼 영역 */
+@keyframes visual-text-ani {
+  0%{
+    opacity: 0;
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+  }
+  100%{
+    opacity: 1;
+    top: 60px;
+    left: 450px;
+    font-size: 2.4rem;
+  }
+}
+@keyframes flower_ani{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.visual{
+  position:relative;
+  height: 120px;
+  background: url(images/bg_flower.png) no-repeat center top;
+}
+.visual-text{
+  position:absolute;
+  font-family: Georgia, serif;
+  animation: visual-text-ani 1s forwards;
+}
+.visual::before, .visual::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  animation: flower_ani 2s forwards infinite alternate;
+}
+.visual::before{
+	background: url(images/ani_flower_01.png) no-repeat 0 -15px, url(images/ani_flower_02.png) no-repeat 670px 0;
+}
+.visual::after{
+	background: url(images/ani_flower_03.png) no-repeat 300px 0, url(images/ani_flower_04.png) no-repeat 800px 15px;
+  animation-delay: 1s;
+}
+
+/* ======================================== */
+/*  로그인, 외부링크, 웹 관련용어 영역      */
+/* ======================================== */
+/* 로그인 영역 */
+.login{
+  background: linear-gradient(to top right, #ff8208 0%, #ffc848 100%);
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.login-subject{
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+.login form{
+  background: #fff;
+  border-radius:5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+.login fieldset{
+  position: relative;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+.login label{
+  display: inline-block;
+  width: 60px;
+}
+.user-pw label{
+  margin-top:5px;
+}
+.login input{
+  box-sizing: border-box;
+  width: 90px;
+  height: 22px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  font-size: 1.4rem;
+  font-family: 'Noto Sans Regular';
+}
+.btn_login{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fb5d1f;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: 'Noto Sans Regular';
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+.member{
+	background: #fff;
+	border-radius: 0 0 5px 5px;
+	padding: 2px 10px;
+}
+.member::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.signup{
+	float: left;
+}
+.find{
+	float: right;
+}
+.member a{
+	display: block;
+	padding: 8px 0;
+	letter-spacing: -1px;
+}
+.member a::before{
+	content: "g";
+	font-family: "webcafeIcon";
+	position: relative;
+	top: 2px;
+	color: #f00;
+}
+/*----------- 영역 테스트 -------------- */
+.slogan{
+  background-color: blue;
+  height: 15vh;
+}
+.footer-wrap{
+  background-color: gray;
+}
+.footer{
+  background-color:gold;
+  height: 20vh;
+}
+/*----------- 영역 테스트 -------------- */

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>박스모델-float</title>
+  <style>
+    /* embeded style */
+    *{
+      margin: 0;
+    }
+    div{
+      background-color: yellow;
+      width: 500px;
+      clear: both;
+    }
+    h1{
+      background-color: skyblue;
+      float: left;
+    }
+    h2{
+      background-color: silver;
+      height: 50px;
+    }
+    h3{
+      background-color: pink;
+    }
+    p{
+      background-color: lime;
+      width: 500px;
+    }
+    /* float 해제 가상요소 트릭 */
+    p::after{
+      content: "";
+      background: aqua;
+      display: block;
+      clear: both;
+    }
+    img{
+      float: right;
+      position: relative;
+      right: -50px;
+    }
+    .note{
+      clear: none;
+      height: 100px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+  </div>
+  <h3>제목3</h3>
+  <p>
+    <img src="images\news.gif" alt="">
+    [아시아경제 김보경 기자, 유제훈 기자] 청와대와 정부
+  </p>
+  <div class="note">
+    또한 기상청이 직접 긴급재난문자(CBS)를 발송토록 하고, 발송 시간을 일본 수준인 10초 이내로 단축한다는 방침이다.
+
+    김 정책위의장은 "현재는 기상청과 국민안전처 거쳐 국민에게 가는데 이것을 기상청에서 바로 문자보낼 수 있도록 하고, 중장기적으로 일본 수준의 10초 이내로 발송하는 것을 추진하기로 했다"고 전했다.
+
+    아울러 당정청은 지진 전문가, 계측 설비 확보 등
+      또한 기상청이 직접 긴급재난문자(CBS)를 발송토록 하고, 발송 시간을 일본 수준인 10초 이내로 단축한다는 방침이다.
+
+      김 정책위의장은 "현재는 기상청과 국민안전처 거쳐 국민에게 가는데 이것을 기상청에서 바로 문자보낼 수 있도록 하고, 중장기적으로 일본 수준의 10초 이내로 발송하는 것을 추진하기로 했다"고 전했다.
+
+      아울러 당정청은 지진 전문가, 계측 설비 확보 등
+        또한 기상청이 직접 긴급재난문자(CBS)를 발송토록 하고, 발송 시간을 일본 수준인 10초 이내로 단축한다는 방침이다.
+  </div>
+
+</body>
+</html>
