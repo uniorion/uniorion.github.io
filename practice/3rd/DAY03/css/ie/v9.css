@@ -1,0 +1,7 @@
+body {
+	background: silver;
+}
+
+body:before {
+	content: "IE 9";
+}

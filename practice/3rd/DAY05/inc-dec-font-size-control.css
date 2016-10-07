@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+
+body {
+	margin: 5rem;
+	font: 87.5%/1.75 "Spoqa Han Sans";
+}
+.demo-text-area p:first-line {
+	color : orange;
+}

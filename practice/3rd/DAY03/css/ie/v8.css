@@ -1,0 +1,7 @@
+body {
+	background: powderblue;
+}
+
+body:before {
+	content: "IE 8";
+}

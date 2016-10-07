@@ -1,0 +1,11 @@
+body {
+	background: #fff;
+}
+
+body:before {
+	content: "Modern";
+}
+
+.ie8 body {
+	background: #000;
+}
