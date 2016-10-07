@@ -10,11 +10,36 @@ img {
 	vertical-align: top;
 }
 
+
 /******************/
 /* 		가이드		 		*/
 .guide {
 	background: url("../images/leading-21.png");
 	min-height: 100vh;
+}
+
+
+/******************/
+/* 		공통		 			*/
+.clear-fix::after {
+	content: "";
+	display: block;
+	clear: both;
+} 
+
+
+/******************/
+/* 타이포그래피	  		*/
+body {
+	/*font: 0.875rem/1.5 "Spoqa Han Sans", "Nanum Gothic", Dotum, Sans-Serif;*/
+	font-size: 0.875rem;
+	line-height: 1.3125rem;
+	font-family: "Spoqa Han Sans", "Nanum Gothic", Dotum, Sans-Serif;
+}
+p {
+	margin-top: 1.3125rem;
+	margin-bottom: 0;
+	letter-spacing: -0.02em;
 }
 
 
@@ -27,22 +52,14 @@ img {
 }
 .container > div {
 	float: left;
-	margin-left: 10rem;
+	margin-top: 5.25rem;
 	width: 50rem;
 }
-.area-typography {
-	background: orange;
+.area-typography { 
+	margin-left: 10rem;
 }
-.content-typography {
-	box-sizing: border-box;
-	border-top: 1px solid #6b85f4;
-	height: 39.375rem;
-}
-
-
-
 .area-color {
-	background: green;
+	margin-left: 0; 
 }
 .area-list {
 	background: powderblue;
@@ -51,39 +68,54 @@ img {
 	background: silver;
 }
 
-/******************/
-/* 타이포그래피	  		*/
-body {
-	/*font: 0.875rem/1.5 "Spoqa Han Sans", "Nanum Gothic", Dotum, Sans-Serif;*/
-	font-size: 0.875rem;
-	line-height: 1.3125rem;
-	font: "Spoqa Han Sans", "Nanum Gothic", Dotum, Sans-Serif;
+/* 각 영역의 상단제목 */
+.area-title p {
+	float: left;
+	color: #7171ef;
+	letter-spacing: 0;
 }
-p {
-	margin-top: 1.3125rem;
-	margin-bottom: 0;
-	letter-spacing: -0.02em;
-}
-
-/* 각 영역 제목 */
 .area-title .title{
-	margin-bottom: 1.25rem;
-	color: #7171ef; 
 	font-size: 1.5rem;
 	font-weight: bold;
 }  
-.area-title p {
+.area-title .description {
+	font-size: 0.75rem;
+	margin-left: 1.1875rem;
+} 
+
+.content-typography {
+	box-sizing: border-box;
+	margin-top: 1.25rem;
+	border-top: 1px solid #6b85f4;
+	height: 39.375rem;
+}
+.content-typography div * {	
 	float: left;
-
 }
-.area-title::after{
-	content: "";
-	display: block;
-	clear: both;
+.content-typography div p {
+	margin-right: 2.5rem;
+	color: #7171ef;
+	letter-spacing: 0;
+}  
+.parag-1 p,
+.parag-2 p {
+	padding-top: 1.3125rem;
 }
-
-
-
+.parag-3 p,
+.parag-4 p,
+.parag-5 p {
+	padding-top: 0.625rem;
+} 
+.parag-p p:first-child {
+	margin-top: 0;
+	padding-bottom: 14.4375rem;
+}
+.parag-p p:last-child {
+	float: none;
+	width: 40.625rem;
+	color: #000;
+	letter-spacing: -0.02em;
+}
 
 /******************/
 /* 	제목 디자인 			*/
@@ -122,6 +154,64 @@ h1 {
   font-size: 3.41454rem; 
 }
 
+
+/******************/
+/* 	컬러  디자인 		*/
+.content-color {
+	margin-top: 1.25rem;
+	border-top: 1px solid #6b85f4;
+	height: 39.375rem;
+}
+.content-color ul {
+	margin-top: 2.625rem;
+}
+.content-color li {
+	float: left;
+	margin-right: 1.875rem;
+	font-family: "Helvetica"; 
+}
+.content-color li p {
+	margin-top: 0;
+	color: #fff;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+.content-color li > p {
+	margin-top: 0.625rem;
+	font-size: 0.75rem;
+	color: #000;
+	line-height: 0.875rem;
+}
+
+.color-box {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0;
+	width: 6.25rem;
+	height: 6.25rem;
+}
+.color-box.type1 {
+	background: #787F94;	
+}
+.color-box.type2 {
+	background: #7171EF;	
+}
+.color-box.type3 {
+	background: #44CB83;	
+}
+.color-box.type4 {
+	background: #63A2FC;	
+}
+.color-box.type5 {
+	background: #FF5448;	
+}
+.color-box.type6{
+	background: #FCB409;	
+}
+
+
 /******************/
 /* 	리스트 디자인 		*/
 ul,
@@ -138,7 +228,7 @@ ol,
 ol p {
 	margin-top: 1.3125rem;
 	letter-spacing: -0.01em;
-	color: #787f94;
+	/*color: #787f94;*/
 }
 ul p, 
 ol p {
@@ -226,27 +316,4 @@ dd::before {
 	left: -0.625rem;
 	/*height: 100%;*/
 	border: 0.0625rem solid #44cb83;
-}
-.area-color {
-	display: flex;
-
-}
-.box-list {
-	height: 7.875rem;
-}
-.color-box {
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #787f94;
-	margin-bottom: ;
-	width: 6.25rem;
-	height: 6.25rem;
-	font-family: "Helvetica";
-	/*font-size: 0.875rem;*/
-	color: #fff;
-}
-.area-color p {
-	margin-top: 0;
-}
+} 
