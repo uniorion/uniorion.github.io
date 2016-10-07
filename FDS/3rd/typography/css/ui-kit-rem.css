@@ -2,8 +2,9 @@
 
 /******************/
 /* 		reset		 		*/
-body {
+html, body {
 	margin: 0;
+	padding: 0;
 }
 img {
 	vertical-align: top;
@@ -24,7 +25,31 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 }
+.container > div {
+	float: left;
+	margin-left: 10rem;
+	width: 50rem;
+}
+.area-typography {
+	background: orange;
+}
+.content-typography {
+	box-sizing: border-box;
+	border-top: 1px solid #6b85f4;
+	height: 39.375rem;
+}
 
+
+
+.area-color {
+	background: green;
+}
+.area-list {
+	background: powderblue;
+}
+.area-table {
+	background: silver;
+}
 
 /******************/
 /* 타이포그래피	  		*/
@@ -40,6 +65,26 @@ p {
 	letter-spacing: -0.02em;
 }
 
+/* 각 영역 제목 */
+.area-title .title{
+	margin-bottom: 1.25rem;
+	color: #7171ef; 
+	font-size: 1.5rem;
+	font-weight: bold;
+}  
+.area-title p {
+	float: left;
+
+}
+.area-title::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+
+
 /******************/
 /* 	제목 디자인 			*/
 h1, h2, h3, h4, h5, h6 {
@@ -52,8 +97,11 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2 {
 	line-height: 3.9375rem;
 }
-h3, h4, h5, h6{
+h3, h4, h5 {
 	line-height: 2.625rem;
+}
+h6{
+	line-height: 1.3125rem;
 }
 h6 {  
 	font-size: 0.875rem;
@@ -61,7 +109,7 @@ h6 {
 h5 {  
 	font-size: 1.14887rem;  
 }
-h4 { 
+h4 {  
 	font-size: 1.50847rem; 
 }
 h3 { 
@@ -100,47 +148,58 @@ ul ul,
 ol ol {
 	margin-top: 0;
 }
+/*
+  •  "\2022"
+  ◦  "\25E6"
+  ▪  "\25AA"
+*/
 ul p::before {
-	content: "•";
+	content: "\2022";
 	position: relative;
 	top: -0.0625rem;
 	padding-right: 0.62399rem;
 	color: #44cb83;
 }
-ul ul li::before {
-	content: "\00b0";
+ul li li::before {
+	content: "\25E6";
 	position: relative;
 	top: 0.14325rem;
 	margin-left: 0.9375rem;
 	padding-right: 0.62399rem;
 	color: #44cb83;
 }
+
+/*   */
 ol {
-	counter-reset: step1-counter;
+	counter-reset: step-counter1;
 }
 ol ol {
-	counter-reset: step2-counter;
+	counter-reset: step-counter2;
 }
 ol li p {
-	counter-increment: step1-counter;
+	counter-increment: step-counter1;
 }
 ol ol li {
-	counter-increment: step2-counter;
+	counter-increment: step-counter2;
 }
-ol li p::before {
-	content: counter(step1-counter) ".";
-	position: relative;
-	top: -0.0625rem;
-	padding-right: 0.62399rem;
-	color: #44cb83;
-}
+
+ol li p:before,
+ol li p::before,
+ol ol li:before,
 ol ol li::before {
-	content: counter(step2-counter) ".";
 	position: relative;
 	top: -0.0625rem;
-	margin-left: 0.9375rem;
-	padding-right: 0.62399rem;
 	color: #44cb83;
+	padding-right: 0.62399rem;
+}
+ol li p:before,
+ol li p::before {
+	content: counter(step-counter1) ".";
+}
+ol ol li:before,
+ol ol li::before {
+	content: counter(step-counter2) ".";
+	margin-left: 0.9375rem;
 }
 dl {
 	margin-top: 1.3125rem;
@@ -156,16 +215,38 @@ dt {
 dd {
 	position: relative;
 	margin-left: 2.375rem;
-	height: 100%;
 	letter-spacing: -0.02em;
 	color: #586077;
-	border-radius: 5px;
 }
-dd span{
-	box-sizing: border-box;
+dd::before {
+	content: "";
 	position: absolute;
+	top: 0.4375rem;
+	bottom: 0.4375rem;
 	left: -0.625rem;
-	margin-top: 0.4375rem;
-	height: 69.05%;
+	/*height: 100%;*/
 	border: 0.0625rem solid #44cb83;
+}
+.area-color {
+	display: flex;
+
+}
+.box-list {
+	height: 7.875rem;
+}
+.color-box {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #787f94;
+	margin-bottom: ;
+	width: 6.25rem;
+	height: 6.25rem;
+	font-family: "Helvetica";
+	/*font-size: 0.875rem;*/
+	color: #fff;
+}
+.area-color p {
+	margin-top: 0;
 }
