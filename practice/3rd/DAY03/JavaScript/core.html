@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 코어 - 데이터 타입 변형, 타입 체크</title>
+	<script src="core.js"></script>
+	<style>
+		p {
+			margin: 3rem;
+			font-size: 3rem;
+		}
+	</style>
+</head>
+<body>
+		<p id="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum a excepturi neque mollitia! Rem animi quae laborum rerum quo sunt.</p>
+
+		<script>
+			var target_el = document.getElementById("target");
+			console.log("target_el:", target_el);
+
+			var target_el_font_size = target_el.style.fontSize;
+			console.log("target_el_font_size:", target_el_font_size);
+
+			var st_font_size = window.getComputedStyle(target_el).fontSize;
+			console.log("st_font_size:", st_font_size);
+			var convert_font_size = window.parseInt(st_font_size, 10);
+			console.log("convert_font_size:", convert_font_size);
+
+			var nst_font_size = target_el.currentStyle.fontSize;
+			console.log("nst_font_size:", nst_font_size);
+		</script>
+</body>
+</html>

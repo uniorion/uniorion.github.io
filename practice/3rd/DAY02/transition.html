@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+		.align-center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.box {
+			position: relative;
+			width: 300px;
+			height: 70px;
+			margin: 1em;
+			background: #ff0;
+			text-transform: capitalize;
+		}
+		.box::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 100%;
+			bottom: 0;
+			left: 0;
+			background: #f00;
+		}
+		.box:hover::after {
+			transition: all 0.4s;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	
+		<div class="box">
+			transition box transition box		transition box		
+		</div>
+
+		<div class="box align-center">
+			transition box transition box
+		</div>
+
+		<div class="box align-center">
+			transition box transition box			
+		</div>
+</body>
+</html>

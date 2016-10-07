@@ -1,0 +1,53 @@
+body{
+  margin: 4rem;
+  font-size: 80%;
+  font-family: 'YouandiModernTR';
+  color: #878787;
+  line-height: 1.5;
+}
+/* 테이블 공통 디자인 */
+table{
+  border-collapse: collapse;  /* 테두리 사이공간이 제거*/
+  border-top: 3px solid #444;
+  width: 1034px;
+  height: 588px;
+}
+caption.readable-hidden
+{
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+}
+th{
+  font-weight: normal;
+}
+th, td{
+  border: 1px solid #f4f4f4;
+  padding: 0;
+  text-align: left;
+}
+table td:first-child,
+table th:first-child{
+  border-left: 0;
+}
+table td:last-child,
+table th:last-child{
+  border-right: 0;
+} 
+.rowSubject{
+  width: 243px;
+  height: 80px;
+  padding-left: 65px;
+  color: #0e0e0e;
+  font-size: 14px;
+  font-weight: bold;
+}
+.reserve-info{
+  list-style: none; 
+}
+.reserve-info li::before{
+  content: "-";
+  padding-right:3px;
+}

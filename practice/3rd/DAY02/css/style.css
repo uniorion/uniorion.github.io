@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+.wrapper {
+	/*background: powderblue;*/
+	background: url("../images/people.png") 85% 100% no-repeat fixed;
+}
+.left-side { 
+	margin-left: 100px;
+	width: 60vw;
+	height: auto;
+}
+.bgz{
+	width: 200px;
+	height: 200px;
+	padding: 1rem;
+	border: 3px solid #000;
+	background: #f8f779;
+	background: url(../images/origin.jpg) no-repeat;
+	background-size: cover;
+}
+.box {
+	width: 200px;
+	height: 200px;
+	margin-top: 20px;
+	padding: 1rem;
+	background: powderblue;
+	border: 3px dashed #000;
+	text-transform: capitalize;
+}
+.clip-padding {
+	background-clip: padding-box;
+}
+.clip-content {
+	background-clip: content-box;
+}
+
+.box-img {
+	width: 200px;
+	height: 200px;
+	margin-top: 20px;
+	padding: 1rem;
+	background: pink url("../images/bg-people.png") no-repeat 50% 50%;
+	background-size: contain;
+	border: 3px dashed #000;
+	text-transform: capitalize;
+}
+.origin-padding {
+	background-origin: padding-box;
+}
+.origin-content {
+	background-origin: content-box;
+}

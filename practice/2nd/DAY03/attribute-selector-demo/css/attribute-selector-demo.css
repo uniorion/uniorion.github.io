@@ -1,0 +1,116 @@
+body {
+  font: 200 14px/1.5 "Spoqa Han Sans", Sans-Serif;
+  letter-spacing: 0.02em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: #2dbccb;
+}
+abbr { cursor: help; }
+
+/* Common ------------------------------------------ */
+nav ul,
+nav ol,
+.reset-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+nav a,
+.reset-list a {
+  text-decoration: none;
+}
+
+/* <a> 상태 디자인 */
+nav a:link,
+.reset-list a:link { color: #0d2e23; }
+nav a:visited,
+.reset-list a:visited { color: #0d2e23; }
+nav a:hover,
+.reset-list a:hover { color: #1aa375; }
+nav a:active,
+.reset-list a:active { background: #3bf8f3; }
+nav a:focus,
+.reset-list a:focus { background: #3bf8f3; outline: none; }
+
+/* DEMO Attr List --------------------------------- */
+.demo-attr-list {
+  width: 800px;
+  margin: 30px auto;
+  border-top: 1px solid #2bffd4;
+  border-bottom: 1px solid #2bffd4;
+  padding: 30px 0;
+}
+
+.demo-attr-list * {
+  margin: 0;
+}
+
+.demo-attr-list h1 {
+  margin-bottom: 10px;
+}
+
+/* External Link List ------------------------------------------------- */
+.external-list {}
+.external-list a[href^="http://"][target="_blank"],
+.external-list a[href^="https://"][target="_blank"] {
+  padding-right: 1em;
+  background: url("../images/icons/external-link/External Link.svg") no-repeat right 3px;
+  background-size: 13px 13px;
+}
+.external-list a[target="_blank"]:hover,
+.external-list a[target="_blank"]:focus {
+ 	background-color: #3bf8f3;			
+ }
+  
+
+/* File Format List ----------------------------------------------------------------- */
+.file-list {}
+.file-list li {margin-top: 2px;}
+.file-list a {padding-left: 1.5em;}
+.file-list a[href$=".css"] { background: url("../images/icons/file-type-collection/svg/css.svg") no-repeat; }
+.file-list a[href$=".doc"] { background: url("../images/icons/file-type-collection/svg/doc.svg") no-repeat; }
+.file-list a[href$=".mp3"] { background: url("../images/icons/file-type-collection/svg/mp3.svg") no-repeat; }
+.file-list a[href$=".mp4"] { background: url("../images/icons/file-type-collection/svg/mp4.svg") no-repeat; }
+.file-list a[href$=".exe"] { background: url("../images/icons/file-type-collection/svg/exe.svg") no-repeat; }
+.file-list a[href$=".ppt"] { background: url("../images/icons/file-type-collection/svg/ppt.svg") no-repeat; }
+.file-list a[href$=".txt"] { background: url("../images/icons/file-type-collection/svg/txt.svg") no-repeat; }
+.file-list a[href$=".svg"] { background: url("../images/icons/file-type-collection/svg/svg.svg") no-repeat; }
+.file-list a[href$=".xml"] { background: url("../images/icons/file-type-collection/svg/xml.svg") no-repeat; }
+.file-list a[href$=".zip"] { background: url("../images/icons/file-type-collection/svg/zip.svg") no-repeat; }
+
+.file-list a:hover,
+.file-list a:focus {
+ 	background-color: #3bf8f3;			
+ }
+/* SNS List --------------------------------------------------------------------------------- */
+.sns-list {}
+.sns-list:after,
+.sns-list::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.sns-list li {
+  float: left;
+  margin-right: 5px;
+}
+.sns-list a {
+  overflow: hidden;
+  display: block;
+  width: 32px;
+  height: 32px;
+  text-decoration: none;
+  text-indent: -9999em;
+}
+.sns-list a[href*="behance"]    { background-image: url("../images/icons/SNS/Behance.png");    }
+.sns-list a[href*="blogger"]    { background-image: url("../images/icons/SNS/Blogger.png");    }
+.sns-list a[href*="deviantArt"] { background-image: url("../images/icons/SNS/DeviantArt.png"); }
+.sns-list a[href*="dropbox"]    { background-image: url("../images/icons/SNS/Dropbox.png");    }
+.sns-list a[href*="evernote"]   { background-image: url("../images/icons/SNS/Evernote.png");   }
+
+.sns-list a:hover, 
+.sns-list a:focus {
+	outline: 3px solid #3bf8f3
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*.center-box{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 600px;
+			height: 400px;
+			border: 1px solid #000;
+			text-align: center;
+			margin-top: -200px;
+			margin-left: -300px;
+		}*/
+		.center-box{
+			border: 1px solid #000;
+			width: 600px;
+			height: 400px;
+		}
+		.child1{
+			position: absolute;
+			background: orange;
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 200px;
+			margin-top: -100px;
+			margin-left: -150px;
+		}
+		.pos-center-xy{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);		
+		}
+	</style>
+</head>
+<body>
+	<div class="center-box pos-center-xy">
+		<div class="child1"></div>
+	</div>
+</body>
+</html>

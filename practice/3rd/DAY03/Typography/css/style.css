@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+
+
+
+
+/*
+html, body, h2, p {
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 0.625rem;
+}
+body {
+	background: url("../images/leading-30.png");
+	font-size: 1em;
+	font-family: "Spoqa Han Sans";
+	line-height: 1.5rem;
+}
+.wrapper{
+	margin-top: 105px;
+	margin-left: 160px;
+}
+.left-side {
+	width: 80rem;
+}
+.area-title {
+	vertical-align: middle;
+	border-bottom: 1px solid #6b85f4;
+}
+.area-title h2,
+.area-title p {
+	float: left;
+	padding-top: 0.1rem;
+	color: #7171ef;
+}
+.area-title h2 {
+	padding-bottom: 2rem;
+	font-size: 2rem;
+}
+.area-title p {
+	margin-left: 1.8rem;
+	font-size: 1.2rem;
+}
+.area-title::after{
+	content: "";
+	display: block;
+	clear: both;
+}*/

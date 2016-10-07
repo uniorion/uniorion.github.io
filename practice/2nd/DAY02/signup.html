@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign up Form</title>
+	<style>
+		html{
+			font-size: 0.625em;
+		}
+		body{
+			background: grey;
+			font-size: 1.4rem;
+		}
+		.wrapper{
+			width: 360px;
+			margin:0 auto;
+			padding: 10px;
+			background: #fff;
+		}
+	  form{
+		}
+		.readable-hidden{
+			overflow:hidden;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h2 class="subject">Sign up</h2>
+			<button type="button" class="btn-close">닫기</button>
+		</header> 
+		<form action="javascript:alert('회원가입이 되었습니다.');">
+			<fieldset>
+				<legend class="readable-hidden">Sign up form</legend>
+				<div class="user-login">
+					<label for="user-login">Login</label><input type="text" id="user-login">
+				</div>
+				<div class="user-email">
+					<label for="user-email">E-mail</label><input type="text" id="user-email">
+				</div>
+				<div class="user-pw">
+					<label for="user-pw">Password</label><input type="password" id="user-pw">
+				</div>
+				<div class="user-pw-confirm">
+					<label for="user-pw-confirm">Confirm password</label><input type="password" id="user-pw-confirm">
+				</div>
+				<button class="btn_create_account" type="submit">Create account</button>
+			</fieldset>
+		</form>
+		<div class="social">
+			<p>or connect with</p>
+			<div class="social-btn">
+				<button type="button">facebook</button>
+				<button type="button">twitter</button>
+			</div>
+		</div>
+		<footer class="back-area">
+			<button type="button">Log in</button>
+		</footer>
+	</div>
+</body>
+</html>
