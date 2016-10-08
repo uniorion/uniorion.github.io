@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/ui-kit-rem.css">
 	<link href='http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
 </head>
-<body class="container guide">
+<body class="container">
 	<div class="area-typography">
 		<div class="area-title clear-fix">
 			<p class="title">TYPOGRAPHY</p>
@@ -45,11 +45,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="area-color clear-fix">
+	<div class="area-color">
 		<div class="area-title clear-fix">
 			<p class="title">COLOR</p> 
 		</div>
-		<div class="content-color">
+		<div class="content-color clear-fix">
 			<ul class="clear-fix">
 				<li>
 					<div class="color-box type1">
@@ -90,73 +90,141 @@
 			</ul> 
 		</div>
 	</div>
-
 	<div class="area-list">
 		<div class="area-title clear-fix">
 			<p class="title">LIST</p> 
 		</div>
-		<div class="content-list">
-			 
+		<div class="content-list clear-fix">
+			<ul class="content-list-1">
+				<li>
+					비순차 목록
+					<ul>
+						<li>하위 목록</li>
+						<li>하위 목록</li>
+						<li>하위 목록</li>
+					</ul>
+				</li>
+				<li>
+					비순차 목록
+					<ul>
+						<li>하위 목록</li>
+						<li>하위 목록</li>
+						<li>하위 목록</li>
+					</ul>
+				</li><div class="ol-color-content">
+			</ul> 
+	 		<ol class="content-list-2">
+				<li>
+					<div class="ol-color-content">순차 목록</div>
+					<ol>
+						<li><div class="ol-color-content">하위 목록</div></li>
+						<li><div class="ol-color-content">하위 목록</div></li>
+						<li><div class="ol-color-content">하위 목록</div></li>
+					</ol>
+				</li>
+				<li>
+					<div class="ol-color-content">순차 목록</div>
+					<ol>
+						<li><div class="ol-color-content">하위 목록</div></li>
+						<li><div class="ol-color-content">하위 목록</div></li>
+						<li><div class="ol-color-content">하위 목록</div></li>
+					</ol>
+				</li>
+			</ol>  
+		 	<dl class="content-list-3">
+		 		<dt>창의적 문제해결</dt>
+		 		<dd>더 향상된 결과를 위해, 폭넓은 시각에서 다양한 관점을 통합해 새로운 해결안을 제시함</dd>
+		 		<dt>창의적 문제해결 도구</dt>
+		 		<dd>잘 알려진 창의적 문제 해결법 도출을 위한 방법론들로는 브레인 스토밍, 마인드 맵 등이 있다.</dd>
+		 	</dl> 
 		</div>
-	</div>
+	</div> 
+
 	<div class="area-table">
 		<div class="area-title clear-fix">
 			<p class="title">TABLE</p> 
 		</div>
 		<div class="content-table">
-		 
+			<table class="table-type1">
+				<caption class="readable-hidden">테이블 디자인 타입1</caption>
+				<thead>
+					<tr>
+						<th>제목</th>
+						<th>종류</th>
+						<th>가격</th>
+						<th>수량</th>
+						<th>비고</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>사망 플래그</td>
+						<td>도서</td>
+						<td>50,000
+						<td>300</td>
+						<td>재고없음</td>
+					</tr>
+					<tr>
+						<td>설마 죽기야 하겠어</td>
+						<td>E-BOOK</td>
+						<td>50,000
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>이번이 정말 마지막이야</td>
+						<td>도서</td>
+						<td>50,000
+						<td>212</td>
+						<td>재고없음</td>
+					</tr>
+					<tr>
+						<td>곧 돌아올게 기다려</td>
+						<td>도서</td>
+						<td>50,000
+						<td>179</td>
+						<td>-</td>
+					</tr>
+				</tbody>
+			</table>
+ 			<table class="table-type2">
+				<caption class="readable-hidden">테이블 디자인 타입2</caption>
+				<tr>
+					<th></th>
+					<th></th>
+					<th scope="col">가격</th>
+					<th scope="col">수량</th>
+					<th scope="col">비고</th>
+				</tr>
+				<tr>
+					<th rowspan="2" scope="row">사망 플래그</td>
+					<td>도서</td>
+					<td>50,000
+					<td>300</td>
+					<td>재고없음</td>
+				</tr>
+				<tr>
+					<td>E-BOOK</td>
+					<td>50,000
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<th rowspan="2" scope="row">이번이 정말 마지막이야</td>
+					<td>도서</td>
+					<td>50,000
+					<td>212</td>
+					<td>재고없음</td>
+				</tr>
+				<tr>
+					<td>도서</td>
+					<td>50,000
+					<td>179</td>
+					<td>-</td>
+				</tr>
+			</table>
 		</div>
 	</div>
-<!-- 
 
-	<div class="area-list">
-		test
-	</div>
-	<div class="area-table">
-		test
-	</div> -->
-  
-	<!-- <div class="area-color">
-		<h6 class="title">COLOR</h6>
-		<ul>
-			<li>
-				<div class="color-box">
-					<p>#787F94</p>
-				</div>
-				<p>DEFAULT</p>
-			</li>
-			<li>
-				<div class="color-box">
-					<p>#787F94</p>
-				</div>
-				<p>DEFAULT</p>
-			</li>
-			<li>
-				<div class="color-box">
-					<p>#787F94</p>
-				</div>
-				<p>DEFAULT</p>
-			</li>
-			<li>
-				<div class="color-box">
-					<p>#787F94</p>
-				</div>
-				<p>DEFAULT</p>
-			</li>
-			<li>
-				<div class="color-box">
-					<p>#787F94</p>
-				</div>
-				<p>DEFAULT</p>
-			</li>
-			<li>
-				<div class="color-box">
-					<p>#787F94</p>
-				</div>
-				<p>DEFAULT</p>
-			</li>
-		</ul>
-	</div> -->
- 		 
 </body>
 </html>
