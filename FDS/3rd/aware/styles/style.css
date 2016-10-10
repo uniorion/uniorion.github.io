@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "utf-8"; 
 @import url(fonts.css);
 
 /*		reset			*/
@@ -47,6 +47,7 @@ body {
 	clear: both;
 }
 .readable-hidden {
+	position: absolute;
 	display:block;
   margin: -1px;
   padding: 0;
@@ -373,7 +374,6 @@ body {
 	top: 17.4rem;
 	left: 4.8rem;
 } 
-
 .area-title {
 	color: #1f4ba5;
 	font-size: 1.8rem;
@@ -408,7 +408,6 @@ body {
 	background: url("../images/icon/icon-ruby.png");
 }
 .contents-featured li:nth-child(1) p {
-	width: 7.5rem;
 	color: #868686;
 	font-size: 1.4rem;
 	line-height: 1.8rem;
@@ -462,3 +461,70 @@ body {
 	background: url("../images/icon/icon-new.png") no-repeat;
 }
 
+/* OUR BLOG 디자인  */
+.contents-blog .area-title{
+	margin-top: 8.7rem;
+	margin-left: 9.8rem;
+	width: 4.4rem;
+	text-align: center;
+}
+.contents-blog li {
+	box-sizing: border-box;
+	border-right: 1px solid #ececec;
+}
+.contents-blog li:nth-child(1) {
+	position:relative;
+	border-left: 1px solid #ececec;
+}
+.contents-blog li:nth-child(1).news:before,
+.contents-blog li:nth-child(1).news::before {
+	content: "";
+	position: absolute;
+	top: 4.3rem;
+	left: 11.2rem;
+	width: 16px;
+	height: 14px;
+	background: url("../images/icon/icon-news.png");
+}
+.contents-blog li:nth-child(1) p {
+	color: #868686;
+	font-size: 1.4rem;
+	line-height: 1.8rem;
+	text-align: center;
+} 
+.contents-blog li a {
+	display: block;
+	position:relative;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+.contents-blog li .blog-date,
+.contents-blog li .blog-title,
+.contents-blog li .blog-author {
+	position: absolute;
+}
+.contents-blog li .blog-date {
+	top: 6rem;
+	left: 8.2rem;
+	color: #868686;
+	font-size: 1.2rem;
+	font-family: "PT Serif Italic";
+}
+.contents-blog li .blog-title {
+	top: 9rem;
+	left: 4.4rem;
+	width: 15.8rem;
+	color: #fff;
+	font-size: 1.8rem;	
+	line-height: 2.4rem;
+}
+.contents-blog li .blog-author {
+	bottom: 5.7rem;
+	left: 7.9rem;
+	color: #aba9a2;
+	font-family: "Oswald Bold";
+}
+.contents-blog li .blog-author i {
+	font-family: "PT Serif Italic";
+}
