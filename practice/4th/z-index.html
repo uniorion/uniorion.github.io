@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>z-index 테스트</title>
+	<style>
+		.parent-box {
+			position: relative;
+			width: 20rem;
+			height: 20rem;
+			background: orange;
+			z-index: 0;
+		}
+
+		.child-box {
+			width: 10rem;
+			height: 10rem;
+			background: powderblue;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="parent-box">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente repellat similique dolores illum accusamus, quo ex deserunt tenetur optio nihil.
+			<div class="child-box">
+				자식 텍스트
+			</div>
+		
+
+	</div>
+
+
+</body>
+</html>

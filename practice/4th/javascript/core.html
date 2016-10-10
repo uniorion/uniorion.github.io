@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR"><!--<![endif]-->
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>자바스크립트 이벤트 핸들링</title>
+  <link rel="stylesheet" href="gs.css">
+  <style>
+  	.toggle-button-set {
+  		position: fixed;
+  		display: flex;
+  		/*z-index: 100;*/
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  		padding: 1rem;
+  		background: #000;
+  		color: #fff;
+  	}
+  	.toggle-button-set button {
+  		cursor: pointer;
+  		border: none;
+  		padding: 0.7rem 1.4rem;
+  		color: inherit;
+  		background: #787878;
+  	}
+    .toggle-button-set button:nth-child(1) {
+      border-radius: 1rem 0 0 1rem;
+    }
+    .toggle-button-set button:nth-child(2) {
+      border-left: 1px solid #dadada;
+      border-radius: 0 1rem 1rem 0;
+    }
+  </style>
+</head>
+<body class="this-is-grid container">
+	
+	<div class="toggle-button-set" role="group">
+		<button type="button" class="btn--show-grid">show-grid</button>
+		<button type="button" class="btn--hide-grid">hide-grid</button>
+	</div>
+
+<script src="core.js"></script>
+</body>
+</html>

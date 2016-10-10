@@ -74,11 +74,9 @@ body {
 	height: 48rem;
 }
 .contents-blog {
-	background: #F4C0FF;
 	height: 24rem;
 }
 .contents-comments {
-	background: #00FF90;
 	height: 48rem;
 }
 .contents-about {
@@ -86,11 +84,11 @@ body {
 	height: 48rem;
 }
 .contents-brands {
-	background: #E9FE5F;
+	/*background: #E9FE5F;*/
 	height: 12rem;
 }
 .footer {
-	background: #F1A568;
+	/*background: #F1A568;*/
 	height: 18rem;
 }
 
@@ -252,6 +250,10 @@ body {
 	font-size:  1.2rem;
 	line-height: 3rem;
 }
+.btn-price {
+	position: relative;
+	z-index: 10;
+}
 .btn-price em {
 	background: #1f4ba5;
 	padding-left: 2rem;
@@ -260,6 +262,7 @@ body {
 	font-family: "Oswald Bold";
 	letter-spacing: 0.1em;
 	border-radius: 1.5rem 0 0 1.5rem;
+	cursor: default;
 }
 .btn-price a {
 	padding-left: 2.4rem;
@@ -392,20 +395,24 @@ body {
 .contents-featured li {
 	box-sizing: border-box;
 	border-right: 1px solid #ececec;
+	border-bottom: 1px solid #ececec;
 }
 .contents-featured li:nth-child(1) {
 	position:relative;
 	border-left: 1px solid #ececec;
 }
-.contents-featured li:nth-child(1).ruby:before,
-.contents-featured li:nth-child(1).ruby::before {
+.contents-featured li:nth-child(5) {
+	border-left: 1px solid #ececec;
+}
+.contents-featured li:nth-child(1):before,
+.contents-featured li:nth-child(1)::before {
 	content: "";
 	position: absolute;
 	top: 4.3rem;
 	left: 11.2rem;
 	width: 16px;
 	height: 14px;
-	background: url("../images/icon/icon-ruby.png");
+	background: url("../images/icon/icon-ruby.png") no-repeat;
 }
 .contents-featured li:nth-child(1) p {
 	color: #868686;
@@ -471,20 +478,21 @@ body {
 .contents-blog li {
 	box-sizing: border-box;
 	border-right: 1px solid #ececec;
+	border-bottom: 1px solid #ececec;
 }
 .contents-blog li:nth-child(1) {
 	position:relative;
 	border-left: 1px solid #ececec;
 }
-.contents-blog li:nth-child(1).news:before,
-.contents-blog li:nth-child(1).news::before {
+.contents-blog li:nth-child(1):before,
+.contents-blog li:nth-child(1)::before {
 	content: "";
 	position: absolute;
 	top: 4.3rem;
 	left: 11.2rem;
 	width: 16px;
 	height: 14px;
-	background: url("../images/icon/icon-news.png");
+	background: url("../images/icon/icon-news.png") no-repeat;
 }
 .contents-blog li:nth-child(1) p {
 	color: #868686;
@@ -504,27 +512,294 @@ body {
 .contents-blog li .blog-author {
 	position: absolute;
 }
+.contents-blog li img {
+	display: none;
+	object-fit: cover;
+}
+.contents-blog li a:hover,
+.contents-blog li a:focus {
+	color: #fff;
+}
+.contents-blog li a:hover img,
+.contents-blog li a:focus img {
+	display: block;
+}
 .contents-blog li .blog-date {
-	top: 6rem;
-	left: 8.2rem;
 	color: #868686;
 	font-size: 1.2rem;
 	font-family: "PT Serif Italic";
 }
 .contents-blog li .blog-title {
-	top: 9rem;
-	left: 4.4rem;
 	width: 15.8rem;
-	color: #fff;
 	font-size: 1.8rem;	
 	line-height: 2.4rem;
 }
 .contents-blog li .blog-author {
-	bottom: 5.7rem;
-	left: 7.9rem;
 	color: #aba9a2;
 	font-family: "Oswald Bold";
+	letter-spacing: 0.1em;
 }
 .contents-blog li .blog-author i {
 	font-family: "PT Serif Italic";
+}
+.contents-blog li:nth-child(2) .blog-date {
+	top: 6rem;
+	left: 8.2rem;
+}
+.contents-blog li:nth-child(2) .blog-title {
+	top: 9rem;
+	left: 4.4rem;
+}
+.contents-blog li:nth-child(2) .blog-author {
+	bottom: 5.7rem;
+	left: 7.9rem;
+}
+.contents-blog li:nth-child(3) .blog-date {
+	top: 4.5rem;
+	left: 8.5rem;
+}
+.contents-blog li:nth-child(3) .blog-title {
+	top: 7.6rem;
+	left: 4.4rem;
+}
+.contents-blog li:nth-child(3) .blog-author {
+	bottom: 4.9rem;
+	left: 7.9rem;
+}
+.contents-blog li:nth-child(4) .blog-date,
+.contents-blog li:nth-child(5) .blog-date {
+	top: 2.6rem;
+	left: 3rem;
+}
+.contents-blog li:nth-child(4) .blog-title,
+.contents-blog li:nth-child(5) .blog-title {
+	top: 5rem;
+	left: 3rem;
+	width: 16.5rem;
+	font-size: 1.4rem;
+	text-align: left;
+	line-height: 1.4rem;
+}
+
+/*	WHAT PEOPLE SAY 디자인 	*/
+.contents-comments {
+	position: relative;
+}
+.contents-comments .area-title {
+	margin-top: 3.3rem;
+	margin-left: 16.2rem;
+}
+.contents-comments .area-title::after {
+	content: "";
+	position: absolute;
+	top: 9.3rem;
+	left: 23.4rem;
+	width: 13px;
+	height: 11px;
+	background: url("../images/icon/icon-double-quote-o.png") no-repeat;
+}
+.contents-comments:before,
+.contents-comments::before {
+	content: "";
+	position: absolute;
+	top: 3.9rem;
+	left: 3rem;
+	width: 16px;
+	height: 16px;
+	background: url("../images/icon/icon-chat.png") no-repeat;
+}
+.btn-reload {
+	position: absolute;
+	top: 3.4rem;
+	right: 3rem;
+	width: 30px;
+	height: 30px;
+	text-indent: -9999px;
+	border: none;
+	background: url("../images/btn/btn-reload.png") no-repeat;
+}
+.btn-reload:hover {
+	cursor: pointer;
+}
+.comments-list {
+	margin-top: 5.2rem;
+	margin-left: 3.9rem;
+}
+.comments-list li {
+	position: relative;
+	width: 41.4rem;
+	text-align: center;
+}
+.comments-list li q {
+	color: #868686;
+	font-size: 1.8rem;
+	font-family: "PT Serif Italic";
+	line-height: 3rem;
+}
+.comments-list li q::before,
+.comments-list li q::after {
+	content: "";
+}
+.comments-list li figure {
+	position: absolute;
+	margin: 0;
+	bottom: -10.2rem;
+	left: 10.4rem;
+}
+.comments-list li figure > * {
+	float: left;
+}
+.comments-list li img {
+	-webkit-clip-path: circle(50%);
+	clip-path: circle(50%);
+}
+.comments-list li figcaption {
+	margin-top: 1.2rem;
+	margin-left: 2rem;
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+}
+.comments-list li figcaption i {
+	color: #b8b8b8;
+	font-size: 1.2rem;
+	line-height: 1.8rem;	
+}
+.pagination {
+	margin-left: 22.5rem;
+	margin-bottom: 4.2rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.pagination li {
+	float: left;
+	margin-right: 0.8rem;
+	width: 10px;
+	height: 10px;
+	text-indent: -9999px;
+	background: url("../images/btn/btn-paging-off.png") no-repeat;
+	cursor: pointer;
+}
+.pagination li.on {
+	margin-top: -0.2rem;
+	width: 14px;
+	height: 14px;
+	background: url("../images/btn/btn-paging-on.png") no-repeat;	
+}
+
+
+/*	WHO WE ARE 디자인 	*/
+.contents-about {
+	position: relative;
+}
+.contents-about .area-title {
+	margin-top: 3.3rem;
+	margin-left: 18.6rem;
+}
+.contents-about .area-title::after {
+	content: "";
+	position: absolute;
+	top: 24.3rem;
+	left: 23.3rem;
+	width: 13px;
+	height: 11px;
+	background: url("../images/icon/icon-double-quote-o.png") no-repeat;
+}
+.contents-about:before,
+.contents-about::before {
+	content: "";
+	position: absolute;
+	top: 3.9rem;
+	left: 2.9rem;
+	width: 16px;
+	height: 16px;
+	background: url("../images/icon/icon-briefcase.png") no-repeat;
+}
+.contents-about span {
+	position: absolute;
+	top: 4rem;
+	right: 3rem;
+	width: 6.3rem;
+	color: #868686;
+	font-size: 1.4rem;
+}
+.about-info {
+	position: relative;
+	background: orange;
+	width: 48rem;
+	height: 12rem;
+}
+.about-info div {
+	box-sizing: border-box;
+	position: absolute;
+	width: 12rem;
+	height: 6rem;
+	background: #1f4ba5;
+	color: #fff;
+}
+.about-info div em {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-style: normal;
+	font-size: 1.8rem;
+	line-height: 1.8rem;
+	font-family: "Oswald Bold";
+	letter-spacing: 0.1em;
+}
+.about-info div i {
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+	font-family: "PT Serif Italic";
+}
+.about-info .countries {
+	top: 6rem;
+	left: 6rem;
+	padding-top: 1.5rem;
+	padding-left: 5.1rem;
+}
+.about-info .brands {
+	top: 0;
+	left: 30rem; 
+	padding-top: 1.5rem; 
+	padding-left: 5.2rem;
+}
+.about-info .countries::before,
+.about-info .brands::before {
+	content: "";
+	position: absolute;
+	top: 2.2rem;
+	left: 2rem;
+	height: 16px;
+}
+.about-info .countries::before {
+	width: 13px;
+	background: url("../images/icon/icon-map.png") no-repeat;
+}
+.about-info .brands::before { 
+	width: 14px;
+	background: url("../images/icon/icon-storage.png") no-repeat;
+}
+.contents-about q {
+	position: absolute;
+	top: 27.4rem;
+	left: 4.7rem;
+	width: 38.5rem;
+	color: #868686;
+	font-size: 2.4rem;
+	line-height: 3rem;
+	font-family: "PT Serif Italic";
+} 
+.contents-about q::before,
+.contents-about q::after {
+	content: "";
+}
+.contents-about p {
+	position: absolute;
+	top: 35.1rem;
+	left: 3rem;
+	width: 42.5rem;
+	color: #868686;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	text-align: center;
 }

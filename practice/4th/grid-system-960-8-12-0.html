@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR"><!--<![endif]-->
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>using CSS Grid System 960px (8 Columns, 0 Gutter)</title>
+  <link href="http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="grid-system-960-8-12-0.css">
+  <style>
+    .box {
+      height: 120px;
+      background: #000;
+      color: #000;
+      text-align: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box:nth-child(1){background: #FFB3B3;}
+    .box:nth-child(2){background: #98B0FC;}
+    .box:nth-child(3){background: #BBFEA1;}
+    .box:nth-child(4){background: #9C9898;}
+    .box:nth-child(5){background: #D27551;}
+    .box:nth-child(6){background: #68E8B8;}
+    .box:nth-child(7){background: #9BA643;}
+    .box:nth-child(8){background: #C505B0;}
+  </style>
+</head>
+<body> 
+
+  <div class="container">
+    <div class="row"> 
+      <div class="box col-1">1</div>
+      <div class="box col-1">2</div>
+      <div class="box col-1">3</div>
+      <div class="box col-1">4</div>
+      <div class="box col-1">5</div>
+      <div class="box col-1">6</div>
+      <div class="box col-1">7</div>
+      <div class="box col-1">8</div>
+    </div>
+    <div class="row"> 
+      <div class="box col-2 push-1">1</div>
+      <div class="box col-2 push-3">2</div>
+    </div>
+    <div class="row"> 
+      <div class="box col-4 push-2">1</div>
+    </div>
+    <div class="row"> 
+      <div class="box col-2 push-3">1</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row"> 
+      <div class="box col-1 push-1">1</div>
+      <div class="box col-1 push-2">2</div>
+      <div class="box col-1 push-3">3</div>
+      <div class="box col-1 push-3">4</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row"> 
+      <div class="box col-1 push-3">1</div>
+      <div class="box col-1 push-1">2</div>
+      <div class="box col-1 pull-1">3</div>
+      <div class="box col-1 pull-3">4</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row"> 
+      <div class="box col-1 "">1</div>
+      <div class="box col-1 prefix-1">2</div>
+      <div class="box col-1 prefix-1">3</div>
+      <div class="box col-1 prefix-1">4</div>
+    </div>
+  </div>
+
+</body>
+</html>

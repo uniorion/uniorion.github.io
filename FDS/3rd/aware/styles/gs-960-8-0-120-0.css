@@ -74,8 +74,8 @@
 .col-7 { width: 84rem; }
 .col-8 { width: 96rem; }
 
-
+/*
 .row [class^="box-"]:nth-child(1) { background: #f00; }
 .row [class^="box-"]:nth-child(2) { background: #f0f; }
 .row [class^="box-"]:nth-child(3) { background: #ff0; }
-.row [class^="box-"]:nth-child(4) { background: #0ff; }
+.row [class^="box-"]:nth-child(4) { background: #0ff; }*/
