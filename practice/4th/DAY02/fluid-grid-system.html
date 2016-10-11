@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fluid grid system</title>
+	<link rel="stylesheet" href="gs-1380-12-14-87-14.css">
+	<script src="gs-system-util.js"></script>
+	<style>
+    body {
+      margin: 0;
+    }
+    .container {
+      /*width: 80%;*/
+      min-height: 100vh;
+    }
+    .row {
+      margin-bottom: 20px;
+    }
+    .box {
+      height: 100px;
+      background: #333;
+      color: #fff;
+    }
+    .fall {
+      background: url("bg-fall.jpg") no-repeat left center;
+      padding-bottom: 50.56%;
+    }
+	</style>
+</head>
+<body class="responsive-crop">
+
+  <div class="container show-grid">
+    <div class="row">
+      <div class="box fluid col-6">column 6</div>
+      <div class="box fluid col-6">column 6</div>
+    </div>
+    <div class="row">
+      <div class=" fluid box col-3">
+        <img class="rwd-img" src="http://placehold.it/900x400/34AF7F/fff" alt="" width="900" height="400"> 
+      </div>
+      <div class="box col-3 responsive-crop-container">
+        <img src="content-img.PNG" class="responsive-crop-content" alt="" width="667" height="391">
+      </div>
+      <div class="fluid box col-4">
+        <div class="fall rwd-bg"
+              role="img" 
+              aria-label="디스코의 상징, 전설적인 작곡가 조지오 모로더"></div>
+      </div>
+      <div class="fluid box col-2">column 2</div>
+    </div>
+  </div>
+	
+</body>
+</html>
