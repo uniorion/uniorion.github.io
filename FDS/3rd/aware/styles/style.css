@@ -187,7 +187,6 @@ body {
 	width: 72rem;
 }
 .slider-list {
-	background: powderblue;
 	width: 24rem;
 }
 
@@ -208,6 +207,7 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
+	overflow: hidden;
 }
 .product-info a span {
 	position: absolute;
@@ -420,7 +420,7 @@ body {
 	position:relative;
 	text-align: center;
 	width: 100%;
-	height: 100%;
+	height: 100%; 
 }
 .contents-featured li .featured-names,
 .contents-featured li .featured-price {
@@ -501,6 +501,7 @@ body {
 	text-align: center;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 .contents-blog li .blog-date,
 .contents-blog li .blog-title,
@@ -891,13 +892,11 @@ body {
 }
 .footer-copyright,
 .footer-guide,
-.footer-socialnPay,
-.footer-payment {
+.footer-socialnPay {
 	border-top: 1px solid #353535;
 	border-left: 1px solid #353535;
+	box-sizing: border-box;
 }
-
-
 .footer-category {
 	box-sizing: border-box;
 	padding-top: 2.5rem;
@@ -946,15 +945,126 @@ body {
 	font-family: "PT Serif Italic";
 	text-align: center;
 }
-.footer-guide fieldset {
+.footer-guide form fieldset {
 	border: none;
 }
-.footer-guide .sign-email {
+.footer-guide form input {
 	background: #393939;
-	width: 36rem;
+	margin-left: 5rem;
+	width: 31.5rem;
 	height: 3rem;
+	padding-left: 4.5rem;
 	border: none;
 	border-radius: 1.5rem;
+	color: #fff;
 	font-size: 1.2rem;
 	font-family: "PT Serif Italic";
+}
+.footer-guide form label {
+	position: relative;
+}
+.footer-guide form label::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 2.2rem;
+	left: 6.4rem;
+	width: 16px;
+	height: 14px;
+	background: url("../images/icon/icon-mail.png") no-repeat;
+}
+.footer-guide form input::-webkit-input-placeholder {
+	color: #757575;
+}
+.footer-guide form button {
+	position: relative;
+	border: none;
+	background: none;
+	text-indent: -9999px;
+	top: 0.2rem;
+	left: -3rem;
+	width: 18px;
+	height: 15px;
+	background: url(../images/icon/icon-arrow-right.png) no-repeat center;
+	cursor: pointer;
+}
+.footer-guide ul {
+	position: relative;
+	margin-top: 1.5rem;
+	margin-left: 7.6rem;
+}
+.footer-guide li {
+	float: left;
+	margin-right: 2.3rem;
+}
+.footer-guide li a {
+	color: #959595;
+	font-size: 1.2rem;
+	line-height: 2.4rem;	
+}
+
+.footer-socialnPay ul {
+	box-sizing: border-box;
+}
+.footer-socialnPay ul:first-child {
+	height: 6rem;
+	border-bottom: 1px solid #353535;
+}
+.footer-socialnPay ul li {
+	background: #fff;
+	float: left;
+	text-indent: -9999px
+}
+.footer-socialnPay ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.footer-social {
+	height: 6rem;
+}
+.footer-social li {
+	margin-top: 2.5rem;
+	margin-right: 3.5rem;
+	width: 16px;
+	height: 18px;
+}
+.footer-social li:nth-child(1) {
+	margin-left: 4rem;
+	background: url("../images/icon/icon-social-twitter.png") no-repeat;
+}
+.footer-social li:nth-child(2) {
+	/*margin-top: -0.1rem;*/
+	background: url("../images/icon/icon-social-instagram.png") no-repeat;
+}
+.footer-social li:nth-child(3) {
+	/*margin-top: -0.2rem;*/
+	background: url("../images/icon/icon-social-pinterest.png") no-repeat;
+}
+.footer-social li:nth-child(4) {
+	/*margin-top: -0.3rem;*/
+	margin-right: 0;
+	background: url("../images/icon/icon-social-facebook.png") no-repeat;
+}
+.footer-payment {
+	margin-top: 2.5rem;
+	margin-left: 3.6rem;
+}
+.footer-payment li {
+	margin-right: 2rem;
+}
+.footer-payment li:nth-child(1) {
+	width: 43px;
+	height: 14px;
+	background: url("../images/icon/icon-pay-visa.png") no-repeat;
+}
+.footer-payment li:nth-child(2) {
+	width: 34px;
+	height: 20px;
+	background: url("../images/icon/icon-pay-mastercard.png") no-repeat;
+}
+.footer-payment li:nth-child(3) {
+	width: 58px;
+	height: 16px;
+	background: url("../images/icon/icon-pay-paypal.png") no-repeat;
 }
