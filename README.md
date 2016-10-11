@@ -2,7 +2,6 @@
 
 [https://uniorion.github.io/FDS](https://uniorion.github.io/FDS)
 
-
 | Folder | Description | 
 |:-------|:--------|
 | /FDS| 주차별 과제수행 폴더 | 
@@ -24,6 +23,7 @@
     - AutoFileName
     - Bracket Highlighter
     - Theme Flatland
+    - ColorHighter
 3. 기본환경 설정 변경 (Preferences -> Settings-User)
 ```
 
@@ -45,3 +45,10 @@
 #### # Slack
 
 #### # Trello
+
+---
+
+### Bookmark
+
+
+- 구글 크롬 확장 프로그램 만들기 [http://hodol.kr/xe/note/17558]
