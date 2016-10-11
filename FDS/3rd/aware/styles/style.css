@@ -80,11 +80,9 @@ body {
 	height: 48rem;
 }
 .contents-about {
-	background: #FF8383;
 	height: 48rem;
 }
 .contents-brands {
-	/*background: #E9FE5F;*/
 	height: 12rem;
 }
 .footer {
@@ -725,7 +723,6 @@ body {
 }
 .about-info {
 	position: relative;
-	background: orange;
 	width: 48rem;
 	height: 12rem;
 }
@@ -779,6 +776,37 @@ body {
 	width: 14px;
 	background: url("../images/icon/icon-storage.png") no-repeat;
 }
+.about-info span {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+}
+.about-info .about-pic-1 {
+	top: 0;
+	left: 0;
+	background: url(../images/common/about-pic-01.png) no-repeat;
+}
+.about-info .about-pic-2 {
+	top: 0;
+	left: 18rem;
+	background: url(../images/common/about-pic-02.png) no-repeat;
+}
+.about-info .about-pic-3 {
+	top: 6rem;
+	left: 24rem;
+	background: url(../images/common/about-pic-03.png) no-repeat;
+}
+.about-info .about-pic-4 {
+	top: 6rem;
+	right: 6rem;
+	background: url(../images/common/about-pic-04.png) no-repeat;
+}
+.about-info .about-pic-5 {
+	top: 6rem;
+	right: 0;
+	background: url(../images/common/about-pic-05.png) no-repeat;
+}
 .contents-about q {
 	position: absolute;
 	top: 27.4rem;
@@ -802,4 +830,54 @@ body {
 	font-size: 1.4rem;
 	line-height: 2.4rem;
 	text-align: center;
+}
+
+/* Brands 디자인 */
+.contents-brands li {
+	box-sizing: border-box;
+	text-indent: -9999px;
+	text-align: center;
+	border-left: 1px solid #ececec;
+}
+.contents-brands li:nth-child(1) {
+	background: url("../images/common/brands-logo-HnM.png") no-repeat 50% 50%;
+}
+.contents-brands li:nth-child(2) {
+	background: url("../images/common/brands-logo-puma.png") no-repeat 50% 50%;
+}
+.contents-brands li:nth-child(3) {
+	background: url("../images/common/brands-logo-adidas.png") no-repeat 50% 50%;
+}
+.contents-brands li:nth-child(4) {
+	background: url("../images/common/brands-logo-converse.png") no-repeat 50% 50%;
+}
+.contents-brands li:nth-child(5) {
+	background: url("../images/common/brands-logo-boss.png") no-repeat 50% 50%;
+}
+.contents-brands li:nth-child(6) {
+	background: url("../images/common/brands-logo-nike.png") no-repeat 50% 50%;
+}
+.contents-brands li:nth-child(7) {
+	background: url("../images/common/brands-logo-crown.png") no-repeat 50% 50%;
+}
+.contents-brands li:nth-child(8) {
+	position: relative;
+	padding-top: 3.6rem;
+	text-indent: 0;
+	color: #1f4ba5;
+	font-size: 1.4rem;
+	font-family: "Oswald Bold";
+	line-height: 2.4rem;
+	/*z-index: 0;*/
+	border-right: 1px solid #ececec;
+}
+.contents-brands li:nth-child(8) em {
+	position: absolute;
+	top: 3.2rem;
+	left: 1.7rem;
+	color: #e5e5e5;
+	font-size: 6rem;
+	font-style: normal;
+	line-height: 6rem;
+	z-index: -1;
 }
