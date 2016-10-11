@@ -64,9 +64,6 @@ body {
 	height: 8rem;
 	position: relative;
 }
-.contents {
-	height: 98rem;
-}
 .contents-category {
 	height: 24rem;
 }
@@ -619,6 +616,16 @@ body {
 .btn-reload:hover {
 	cursor: pointer;
 }
+.contents-comments,
+.contents-about {
+	box-sizing: border-box;
+	border-right: 1px solid #ececec;
+	border-bottom: 1px solid #ececec;
+}
+.contents-comments {
+	border-left: 1px solid #ececec;	
+}
+
 .comments-list {
 	margin-top: 5.2rem;
 	margin-left: 3.9rem;
@@ -684,7 +691,6 @@ body {
 	height: 14px;
 	background: url("../images/btn/btn-paging-on.png") no-repeat;	
 }
-
 
 /*	WHO WE ARE 디자인 	*/
 .contents-about {
@@ -837,10 +843,11 @@ body {
 	box-sizing: border-box;
 	text-indent: -9999px;
 	text-align: center;
-	border-left: 1px solid #ececec;
+	border-right: 1px solid #ececec;
 }
 .contents-brands li:nth-child(1) {
 	background: url("../images/common/brands-logo-HnM.png") no-repeat 50% 50%;
+	border-left: 1px solid #ececec;
 }
 .contents-brands li:nth-child(2) {
 	background: url("../images/common/brands-logo-puma.png") no-repeat 50% 50%;
@@ -868,8 +875,6 @@ body {
 	font-size: 1.4rem;
 	font-family: "Oswald Bold";
 	line-height: 2.4rem;
-	/*z-index: 0;*/
-	border-right: 1px solid #ececec;
 }
 .contents-brands li:nth-child(8) em {
 	position: absolute;
@@ -880,4 +885,76 @@ body {
 	font-style: normal;
 	line-height: 6rem;
 	z-index: -1;
+}
+.footer {
+	background: #222;
+}
+.footer-copyright,
+.footer-guide,
+.footer-socialnPay,
+.footer-payment {
+	border-top: 1px solid #353535;
+	border-left: 1px solid #353535;
+}
+
+
+.footer-category {
+	box-sizing: border-box;
+	padding-top: 2.5rem;
+	margin-left: 9rem;
+	height: 6rem;
+	text-align: center;
+}
+.footer-category li {
+	float: left;
+	margin-left: 3.8rem;
+	color: #fff;
+}
+.footer-category li::after {
+	content: "\2022";
+	padding-left: 3.8rem;
+	color: #656565;
+}
+.footer-category li a {
+	color: #fff;
+	font-size: 1.4rem;
+}
+.footer-category li:first-child {
+	margin-left: 0;
+}
+.footer-category li:last-child::after {
+	content: "";
+}
+
+.footer-copyright {
+	position: relative;
+	color: #656565;
+}
+.footer-copyright::before {
+	content: "";
+	position: absolute;
+	top: 2.7rem;
+	left: 7.3rem;
+	width: 97px;
+	height: 20px;
+	background: url("../images/common/logo-aware-footer.png") no-repeat;
+}
+.footer-copyright p {
+	margin-top: 6.5rem;
+	font-size: 1.2rem;
+	line-height: 1.8rem;
+	font-family: "PT Serif Italic";
+	text-align: center;
+}
+.footer-guide fieldset {
+	border: none;
+}
+.footer-guide .sign-email {
+	background: #393939;
+	width: 36rem;
+	height: 3rem;
+	border: none;
+	border-radius: 1.5rem;
+	font-size: 1.2rem;
+	font-family: "PT Serif Italic";
 }
