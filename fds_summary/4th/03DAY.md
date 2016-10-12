@@ -5,7 +5,7 @@
 
 ### 정보분석 (Comparative Data)
 
-1. `typeof | typeof() (키워드)`
+#### 1. `typeof | typeof() (키워드)`
 typeof는 함수가 아니라, 뒤에나오는 데이터 유형을 감지하여 감지된 데이터 유형 값을 문자열로 반환한다.
 ```js
 // 싱글 'var' 패턴(single 'var' pattern)
@@ -33,7 +33,7 @@ console.log("null 데이터 유형:", typeof null);
 ```
 
 
-2. `instanceof (키워드)`
+#### 2. `instanceof (키워드)`
 * instance 란?
     - 실체화된(생성된) 객체
     - 생성된 객체의 모체(클래스(Class), 프로토타입(prototype))
@@ -57,7 +57,7 @@ console.log( 'boo instanceof Boolean:', boo instanceof Boolean);
 ```
 
 
-3. `constructor (속성)`
+#### 3. `constructor (속성)`
 * 자바스크립트 객체라면 모두 가지고 있는 속성으로 자신을 생성한 생성자를 가리켜서 알려준다. 
 * 객체에 대해서는 정확한 값을 반환하지만, 아래와 같이 null, undefined 은 에러를 발생한다.
 ```js
@@ -67,9 +67,8 @@ console.log( "undefined.constructor : ",  undefined.constructor );
 ```
 
 
-4. `isType() (사용자정의)`
-* 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다.
- *=> 만들자!*
+#### 4. `isType() (사용자정의)`
+* 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다. *=> 만들자!*
 ```js
 // 언어 차원에서 지원되지 않는 사용자 정의 함수
 // isType() 유틸리티 헬퍼 함수
@@ -79,8 +78,8 @@ function isType(data) {
 }
 ```
 
-
-> 참고서적 : _자바스크립트 + jQuery 완전정복 스터디 | 김춘경 저_
+<br>
+> 참고서적 : _자바스크립트 + jQuery 완전정복 스터디 - 김춘경 저_
  
 
 ---
