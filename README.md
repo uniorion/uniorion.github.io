@@ -50,9 +50,9 @@
 
 ### Bookmark
 
-
 - 구글 크롬 확장 프로그램 만들기 [http://hodol.kr/xe/note/17558]
 
+- 구글 Device metrics [https://design.google.com/devices/]
 
 ---
 
