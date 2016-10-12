@@ -19,4 +19,27 @@
 	height: auto;
 	transform: translateX(-50%);
 }
-
+.rwd-iframe-container {
+	overflow: hidden;
+	position: relative;
+	min-width: 100%;
+	height: 0;
+	/* 
+		4:3 = 75%
+		16:9 = 56.25%
+		21:9 = 42.857142857
+	*/
+	padding-bottom: 56.25%; 
+}
+.rwd-iframe-container.ratio-4-3 {
+	padding-bottom: 75%;
+}
+.rwd-iframe-container.ratio-21-9 {
+	padding-bottom: 42.857142857%;
+}
+.rwd-iframe-container iframe {
+	border: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
