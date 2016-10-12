@@ -66,10 +66,12 @@ console.log( "null.constructor : ", null.constructor );
 console.log( "undefined.constructor : ",  undefined.constructor ); 
 ```
 
+<br>
 > 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다.
+<br>
 
 #### 4. `isType() (사용자정의)`
-* 없는건 만들어 쓰자!
+없는건 만들어 쓰자!
 ```js
 // 언어 차원에서 지원되지 않는 사용자 정의 함수
 // isType() 유틸리티 헬퍼 함수
@@ -85,5 +87,118 @@ function isType(data) {
 
 ---
 
-## HTML & CSS
+## CSS
+
+### 초기화 모듈
+
+#### # reset.css [http://meyerweb.com/eric/tools/css/reset/]
+- 비표준 또는 마크업에서 사용하지 않는 요소 제거
+- 성능상 좋지 않은 코드 제거
+
+#### # normalize.css [https://necolas.github.io/normalize.css/]
+- 브라우저 사이의 간극을 줄이는 목적으로 제작됨.
+- /*! 주석문 */ 은 삭제하지 않는다. 
+- reset.css 는 오래되서 현재와 맞지 않는다.
+```css
+-ms-text-size-adjust: 100%; /* 3 */
+-webkit-text-size-adjust: 100%; /* 3 */
+```
+
+#### # ress.css [https://github.com/filipelinhares/ress]
+- normailize를 에서 확장한 모듈
+
+### Crop Image
+* .webp 포맷 - 구글에서 만듬 용량이 가볍고, 퀄리티가 좋으나 지원하는 브라우저가 적다.
+
+재사용을 위한 모듈 내용은 수정하지 않고, 별도의 파일에서 커스텀 스타일을 준다.<br>
+- 모듈내에서 너무 많은 스타일(제약)을 두면, 재사용성이 떨어진다.
+```css
+.page.container {
+    min-width: 960px;
+    max-width: 1380px;
+}
+```
+
+calc 내장함수를 사용하여 퍼센트 계산 
+```css
+{ padding-bottom: 50%;
+  padding-bottom: calc(350/700*100%); // ie는 10+ 이상 지원 }
+```
+
+문서에서 키보드이벤트 연결하여 'show-grid' 토글하기
+```js
+// function toggleGrid()
+function toggleGrid() {
+  var _container = document.querySelector('.container');
+
+  // 있으면?
+  if ( _container.classList.contains('show-grid')  ) {
+    _container.classList.remove('show-grid');
+  }
+  // 없으면?
+  else {
+    _container.classList.add('show-grid');
+  }
+}
+// [shift+g] 키 감지하여 toggleGrid() 실행
+document.onkeydown = function(event) {
+    if ( event.shiftKey && (event.keyCode === 71) ) {
+      toggleGrid();
+    }
+}
+```
+
+### iframe (inline frame) 반응형 모듈
+* map 이나 video 에 많이 사용.
+* `frameborder="0"` 속성은 비표준, `border: 0` 으로 대체할 수 있다.
+
+* 배경이미지와 마찬가지로 width 폭을 모를 경우, height를 고정적으로 명시할 수 없어 반응형 이미지에 
+적용되는 기술을 사용할 수 없다.
+* 반응형 배경이미지에 적용되어 사용되었던 기술을 활용
+```css
+.rwd-iframe-container {         /* iframe 을 감싸는 요소가 필요. */
+    overflow: hidden;
+    position: relative;
+    min-width: 100%;
+    height: 0;
+    /* 
+     *  4:3 = 75%
+     *  16:9 = 56.25%
+     *  21:9 = 42.857142857
+    */
+    padding-bottom: 56.25%;     /* 가로 대비 세로의 화면 비율  */
+}
+.rwd-iframe-container.ratio-4-3 {
+    padding-bottom: 75%;
+}
+.rwd-iframe-container.ratio-21-9 {
+    padding-bottom: 42.857142857%;
+}
+.rwd-iframe-container iframe {
+    border: 0;                  /* frameborder="0"를 대체 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+```
+
+### 픽셀 밀도
+> 공간 (대부분inch에서 사용)에 픽셀이 들어가는 물리적인 수치를 말한다.
+> 웹브라우저는 96ppi
+
+* Retina Display
+  - inch당 픽셀을 x2배로 제작 디스플레이.
+  - 물리적인 크기는 같으나 픽셀 집약도을 높임.
+
+* 디바이스 픽셀 밀도
+  - 벡터그래픽과 달리 비트맵그래픽(gif, jpg, png..) 은 디바이스 픽셀 밀도에 영향을 받는다.
+  - 벡터그래픽은 색이 많아지면 용량이 커진다.
+  - `window.devicePixelRatio` 콘솔에서 확인 가능.
+  - 픽셀 면적이 x2배일 때, 44px 버튼은 88px이 되어야한다.
+
+* pt, dp [https://design.google.com/devices/]
+
+* 그래픽 디자이너는 x1 배율의 벡터그래픽을 제작한 후, 디바이스 픽셀 밀도를 고려하여 내보내야 한다.
+* 
+
 
