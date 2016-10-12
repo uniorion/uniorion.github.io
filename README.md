@@ -23,7 +23,7 @@
     - AutoFileName
     - Bracket Highlighter
     - Theme Flatland
-    - ColorHighter
+    - Color Highliter
 3. 기본환경 설정 변경 (Preferences -> Settings-User)
 ```
 

@@ -1,16 +1,16 @@
 ## JavaScript
 
 ### 함수(Function)
-* 함수 리터럴 표현식, 변수에 `참조`
+* 함수 리터럴 표현식, 변수에 `참조`<br>
 `var myFn = function() {};`
 
 * onmouseover, onmouseout 보다는<br> 
 __onmouseenter, onmouseleave__ 사용 권장.
 
-* 객체(Object)의 프로퍼티(변수)에 함수 참조
+* 객체(Object)의 프로퍼티(변수)에 함수 참조<br>
 `obj.onclick = function() {};`
 
-* 함수(Function), 변수에 참조
+* 함수(Function), 변수에 참조<br>
 `var myFn = new Function();`
 
 ```js
@@ -35,7 +35,9 @@ function fnObjDec() {
 ### 배열(Array)
 * 변수에 담을 수 있는 값은 하나이기 때문에 여러개의 값을 담을 수 있는 배열을 사용.
 * 배열은 객체, 변수에 할당하면 변수는 이 객체를 참조하게 된다.
-* 배열 선언
+
+> 배열 선언
+
 ```js
 // 배열 객체 생성
 var arr = new Array();  // 권장 X
@@ -47,13 +49,12 @@ members[1] = '근희';
 
 members.push('세진');     // 배열에 새 원소를 추가
 ```
-* 배열에 연관배열(속성:값) 형태로 원소로 추가 하지 말것!
+* 배열에 연관배열(속성:값) 형태로 원소를 추가 하지 말것!
 
 * 유사배열
 : 문서객체모델(DOM)의 노드리스트(node List)는 배열과 흡사해보이나, 배열은 아니다.<br>
-: 
 ```js
-// NODE LIST | 반환, 배열이 아니다!
+// 다음은 NODE LIST를 반환, 배열이 아니다!
 document.querySelectorAll('body *');
 document.getElementsByTagName('link');
 >> ['link', 'link']
@@ -104,4 +105,45 @@ myObj.property = data;
 * flex 요소는 중첩될 수 있다. 
 * 속성 하나로 박스 배치가 자유롭다.
 
+---
 
+### 유연한 이미지 실습
+
+> 콘텐츠 이미지일 경우
+
+```css
+.fluid img,
+img.rwd-img {
+  width: 100%;
+  height: auto;
+}
+```
+
+
+> 배경 이미지일 경우
+
+```html
+<div role="image" class="maestro rwd-bg" aria-label="전설적인 작곡가"></div>
+.fluid .rwd-bg {
+  width: 100%;
+  height: 0;
+  background-size: cover;
+}
+.maestro {
+  background: url ("...") no-repeat center;
+  padding-bottom: 71.08% /* 543/740(세로/가로비율) X 100% */
+}
+```
+
+html에 클래스값 maestro과 rwd-bg를 가진 div 요소를 생성하고 배경에 이미지를 삽입, 원래 이미지의 세로/가로 비율에 맞게 % 값을 설정해 줌
+
+> 재단 이미지 : 콘텐츠이미지를 포함하는 컨테이너 요소의 폭에 맞춰 크기가 동적으로 잘려서 보여지는
+
+```html
+.crop-img{
+  width: 100%;
+  height: 100vh;
+  background: url( ) center top;
+  background-size: cover;
+}
+```

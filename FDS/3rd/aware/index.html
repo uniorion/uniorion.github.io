@@ -20,7 +20,7 @@
 				<a href="#"><img src="images/common/logo-aware.png" alt="aware Logo" width="97" height="20"></a>
 			</h1>
 			<button type="button" class="btn-side-menu">Menu</button>
-			<nav class="hearder-menu">
+			<nav class="hearder-menu" role="navigation">
 				<h2 class="readable-hidden">Main Menu</h2>
 				<ul class="clear-fix">
 					<li><a href="#">Men</a></li>
@@ -31,16 +31,16 @@
 			</nav>
 			<ul class="header-my-menu clear-fix">
 				<li>
-					<a href="#"><img src="images/icon/icon-bag.png" alt="Basket">
+					<a href="#" role="button"><img src="images/icon/icon-bag.png" alt="Basket">
 					<span class="items-counter" data-item="3" aria-describedby="basket-item-count"></span>
 					</a>
 					<p class="readable-hidden" id="basket-item-count">3 Items are in your basket</p>
 				</li>
 				<li>
-					<a href="#"><img src="images/icon/icon-face.png" alt="My Information"></a>
+					<a href="#" role="button"><img src="images/icon/icon-face.png" alt="My Information"></a>
 				</li>
 				<li>
-					<a href="#"><img src="images/icon/icon-search.png" alt="Search"></a>
+					<a href="#" role="search"><img src="images/icon/icon-search.png" alt="Search"></a>
 				</li>
 			</ul>
 		</header>
@@ -49,7 +49,7 @@
 	      <div class="box-4 col-6 contents-slider clear-fix">
 					<h2 class="readable-hidden">This area is Slide Show</h2>
 					<div class="slider-main">
-						<ul class="clear-fix">
+						<ul class="clear-fix" role="banner">
 							<li>
 								<img src="images/contents/cont-mans-jean.png" alt="Man's Jean" width="720" height="480">
 								<div class="product-info">
@@ -59,20 +59,19 @@
 										<span class="desription">Skinny Comfort Ultra Stretch Light Wash</span>
 									</a>	
 									<div class="btn-price">
-										<em>$145</em><a href="#">Buy now</a>
+										<em>$145</em><a href="#" role="button">Buy now</a>
 									</div>								
 								</div>
 							</li>
 						</ul>
 						<div class="slider-nav">
-							<a href="#" class="btn-prev">preview</a>
-							<a href="#" class="btn-next">next</a>
+							<a href="#" class="btn-prev" role="button">preview</a>
+							<a href="#" class="btn-next" role="button">next</a>
 						</div>
 					</div>
 				</div>
-
 	      <div class="box-4 col-2 slider-list">
-					<ul>
+					<ul role="banner">
 						<li>
 							<a href="#"><img src="images/contents/cont-slide-item01.png" alt="Product Image Description 1" width="240" height="120"></a>
 						</li>
@@ -89,7 +88,7 @@
 	      </div>
 			</div>
       <div class="row">
-				<ul class="contents-category">
+				<ul class="contents-category" role="banner">
 					<li class="box-2 col-4">
 						<a href="#">
 							<img src="images/contents/cont-category-banner01.png" alt="Women's blue shoes" width="480" height="240">
@@ -115,7 +114,7 @@
 				</ul>
 			</div>
 			<div class="row">
-				<ul class="contents-featured">
+				<ul class="contents-featured" role="banner">
 					<li class="box-2 col-2">
 						<h2 class="area-title">FEATURED PRODUCTS</h2>
 						<p>the best<br>of our store</p>
@@ -220,21 +219,24 @@
 						</li>
 					</ul>
 					<ul class="pagination">
-						<li>1</li>
-						<li class="on">2</li>
-						<li>3</li>
-						<li>4</li>
+						<li role="button">1</li>
+						<li class="on" role="button">2</li>
+						<li role="button">3</li>
+						<li role="button">4</li>
 					</ul>
 					<button type="button" class="btn-reload">Reload</button>
 				</div>
-
 				<div class="box-4 col-4 contents-about">
 					<h2 class="area-title">WHO WE ARE</h2>
 					<span>est. 2015</span>
 					<div class="about-info">
 						<div class="countries"><em>245</em><i>countires</i></div>
 						<div class="brands"><em>2970</em><i>brands</i></div>
-						<span class="about-pic-1"></span><span class="about-pic-2"></span><span class="about-pic-3"></span><span class="about-pic-4"></span><span class="about-pic-5"></span>
+						<span class="about-pic-1" role="image"></span>
+						<span class="about-pic-2" role="image"></span>
+						<span class="about-pic-3" role="image"></span>
+						<span class="about-pic-4" role="image"></span>
+						<span class="about-pic-5" role="image"></span>
 					</div>
 					<q>It's the hope of slaves sitting around a fire singing freedom songs.</q>
 					<p>For the African-American community, that path means embrac-<br>ing the burdens of our past without becoming victims of our past. But if we see this conflict only from one side or the other, then we will be blind.</p>
@@ -242,7 +244,7 @@
 			</div>
 			<div class="row">
 				<h2 class="readable-hidden">Our Brands</h2>
-				<ul class="contents-brands">
+				<ul class="contents-brands" role="banner">
 					<li class="box-1 col-1">H&amp;M</li>
 					<li class="box-1 col-1">Puma</li>
 					<li class="box-1 col-1">Adidas</li>
@@ -255,7 +257,7 @@
 			</div>
 		</main>
 		<footer class="footer">
-			<nav>
+			<nav role="navigation">
 				<h2 class="readable-hidden">Category</h2>
 				<ul class="footer-category">
 					<li><a href="#">Men</a></li>
@@ -280,7 +282,7 @@
 							<button type="submit">Submit</button>
 						</fieldset>
 					</form>
-					<ul>
+					<ul role="list">
 						<li><a href="#">Privacy &amp; Cookies</a></li>
 						<li><a href="#">Terms &amp; Conditions</a></li>
 						<li><a href="#">Accessibility</a></li>
@@ -288,22 +290,19 @@
 				</div>
 				<div class="box-1 col-2 footer-socialnPay">
 					<ul class="footer-social clear-fix">
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#">Pinterest</a></li>
-						<li><a href="#">Facebook</a></li>
+						<li><a href="#" role="button">Twitter</a></li>
+						<li><a href="#" role="button">Instagram</a></li>
+						<li><a href="#" role="button">Pinterest</a></li>
+						<li><a href="#" role="button">Facebook</a></li>
 					</ul>
-					<ul class="footer-payment clear-fix">
+					<ul class="footer-payment clear-fix" role="banner">
 						<li>VISA</li>
 						<li>Master Card</li>
 						<li>Paypal</li>
 					</ul>
 				</div>
-				
 			</div>
 		</footer>
-
 	</div>
-
 </body>
 </html>
