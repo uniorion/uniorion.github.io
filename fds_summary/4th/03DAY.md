@@ -22,7 +22,7 @@ console.log( typeof num + str );    // 8 + '' => 8
 console.log( typeof (num + str) );  // string
 ```
 
-array, object, null 모두 object 를 반환하므로 typeof로 구분할 수 없다.
+array, object, null 모두 object 를 반환하므로 typeof 로 구분할 수 없다.
 ```js
 var arr = [num, boo, fnc],
     obj = {"number_type": num, "boolean": boo };
@@ -66,9 +66,10 @@ console.log( "null.constructor : ", null.constructor );
 console.log( "undefined.constructor : ",  undefined.constructor ); 
 ```
 
+> 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다.
 
 #### 4. `isType() (사용자정의)`
-* 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다. *=> 만들자!*
+* 없는건 만들어 쓰자!
 ```js
 // 언어 차원에서 지원되지 않는 사용자 정의 함수
 // isType() 유틸리티 헬퍼 함수
