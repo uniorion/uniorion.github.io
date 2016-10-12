@@ -109,9 +109,8 @@ function isType(data) {
 
 ### Crop Image
 * .webp 포맷 - 구글에서 만듬 용량이 가볍고, 퀄리티가 좋으나 지원하는 브라우저가 적다.
-
-재사용을 위한 모듈 내용은 수정하지 않고, 별도의 파일에서 커스텀 스타일을 준다.<br>
-- 모듈내에서 너무 많은 스타일(제약)을 두면, 재사용성이 떨어진다.
+* 재사용을 위한 모듈 내용은 수정하지 않고, 별도의 파일에서 커스텀 스타일을 준다.<br>
+  - 모듈내에서 너무 많은 스타일(제약)을 두면, 재사용성이 떨어진다.
 ```css
 .page.container {
     min-width: 960px;
@@ -119,13 +118,13 @@ function isType(data) {
 }
 ```
 
-calc 내장함수를 사용하여 퍼센트 계산 
+calc() 내장함수를 사용하여 퍼센트 계산 
 ```css
 { padding-bottom: 50%;
-  padding-bottom: calc(350/700*100%); // ie는 10+ 이상 지원 }
+  padding-bottom: calc(350/700*100%); }
 ```
 
-문서에서 키보드이벤트 연결하여 'show-grid' 토글하기
+문서에서 키보드이벤트 연결하여 'show-grid' 스타일 토글하기
 ```js
 // function toggleGrid()
 function toggleGrid() {
@@ -199,6 +198,13 @@ document.onkeydown = function(event) {
 * pt, dp [https://design.google.com/devices/]
 
 * 그래픽 디자이너는 x1 배율의 벡터그래픽을 제작한 후, 디바이스 픽셀 밀도를 고려하여 내보내야 한다.
-* 
+
+#### 사람이 보는 크기의 인식 고려
+
+#### 1. 픽셀 밀도 낮추기
+#### 2. 크기 바꾸기
+
+사진 같은 비트맵 이미지를 제외하고는 대부분의 UI는 벡터를 사용하여 제작하며 디자인 배율은 x1에서
+시작해야 한다.
 
 
