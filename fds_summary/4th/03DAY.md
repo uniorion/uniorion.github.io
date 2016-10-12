@@ -104,7 +104,7 @@ function isType(data) {
 -webkit-text-size-adjust: 100%; /* 3 */
 ```
 
-#### # ress.css
+#### # ress.css [https://github.com/filipelinhares/ress]
 - normailize를 에서 확장한 모듈
 
 ---
