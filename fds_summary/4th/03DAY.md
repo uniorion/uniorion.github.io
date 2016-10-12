@@ -22,7 +22,7 @@ console.log( typeof num + str );    // 8 + '' => 8
 console.log( typeof (num + str) );  // string
 ```
 
-array, object, null 모두 object 를 반환하므로 typeof로 구분할 수 없다.
+array, object, null 모두 object 를 반환하므로 typeof 로 구분할 수 없다.
 ```js
 var arr = [num, boo, fnc],
     obj = {"number_type": num, "boolean": boo };
@@ -66,9 +66,12 @@ console.log( "null.constructor : ", null.constructor );
 console.log( "undefined.constructor : ",  undefined.constructor ); 
 ```
 
+<br>
+> 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다.
+<br>
 
 #### 4. `isType() (사용자정의)`
-* 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다. *=> 만들자!*
+없는건 만들어 쓰자!
 ```js
 // 언어 차원에서 지원되지 않는 사용자 정의 함수
 // isType() 유틸리티 헬퍼 함수
@@ -84,5 +87,67 @@ function isType(data) {
 
 ---
 
-## HTML & CSS
+## CSS
+
+### 스타일 초기화 모듈
+
+#### # reset.css [http://meyerweb.com/eric/tools/css/reset/]
+- 비표준 또는 마크업에서 사용하지 않는 요소 제거
+- 성능상 좋지 않은 코드 제거
+
+#### # normalize.css [https://necolas.github.io/normalize.css/]
+- 브라우저 사이의 간극을 줄이는 목적으로 제작됨.
+- /*! 주석문 */ 은 삭제하지 않는다. 
+- reset.css 는 오래되서 현재와 맞지 않는다.
+```css
+-ms-text-size-adjust: 100%; /* 3 */
+-webkit-text-size-adjust: 100%; /* 3 */
+```
+
+#### # ress.css
+- normailize를 에서 확장한 모듈
+
+---
+
+### Crop Image
+* .webp 포맷 - 구글에서 만듬 용량이 가볍고, 퀄리티가 좋으나 지원하는 브라우저가 적다.
+
+재사용을 위한 모듈 내용은 수정하지 않고, 별도의 파일에서 커스텀 스타일을 준다.<br>
+- 모듈내에서 너무 많은 스타일(제약)을 두면, 재사용성이 떨어진다.
+```css
+.page.container {
+    min-width: 960px;
+    max-width: 1380px;
+}
+```
+
+calc 내장함수를 사용하여 퍼센트 계산 
+```css
+{ padding-bottom: 50%;
+  padding-bottom: calc(350/700*100%); // ie는 10+ 이상 지원 }
+```
+
+문서에서 키보드이벤트 연결하여 'show-grid' 토글하기
+```js
+// function toggleGrid()
+function toggleGrid() {
+  var _container = document.querySelector('.container');
+
+  // 있으면?
+  if ( _container.classList.contains('show-grid')  ) {
+    _container.classList.remove('show-grid');
+  }
+  // 없으면?
+  else {
+    _container.classList.add('show-grid');
+  }
+}
+// [shift+g] 키 감지하여 toggleGrid() 실행
+document.onkeydown = function(event) {
+    if ( event.shiftKey && (event.keyCode === 71) ) {
+      toggleGrid();
+    }
+}
+```
+
 

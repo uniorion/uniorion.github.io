@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RWD 반응형 웹 디자인</title>
+	<link rel="stylesheet" href="../../../../FDS/modules/css/initialization/normalize.css">
+	<link rel="stylesheet" href="../../../../FDS/modules/css/grid-system-static.css">
+	<link rel="stylesheet" href="../../../../FDS/modules/css/grid-system-fluid.css">
+	<link rel="stylesheet" href="../../../../FDS/modules/css/rwd.css">
+	<link rel="stylesheet" href="responsive-web-design.css">
+</head>
+<body>
+	<main class="page container fluid">
+
+		<div class="row isolate">
+			<div class="col-3 o7">
+				<img class="rwd-img" src="http://placehold.it/800x200/" alt="">
+			</div>
+			<div class="col-3 o2">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita at voluptas architecto quibusdam eveniet possimus fuga consequatur atque mollitia corrupti aperiam porro, veniam sequi eligendi non, debitis. Consectetur quidem, dicta.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita at voluptas architecto quibusdam eveniet possimus fuga consequatur atque mollitia corrupti aperiam porro, veniam sequi eligendi non, debitis. Consectetur quidem, dicta.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="banner col-1 rwd-crop-bg">
+			</div>
+
+			<div class="col-6">
+				<div class="cropping rwg-crop-container">
+					<img src="http://www.parkhotelgroup.com/d/alexandra/media/Dining_Outlets/the-coffee-belt.jpg" alt="" width="1024" height="678" >
+				</div>
+			</div>
+		</div>
+
+	</main>
+<script src="../../../../FDS/modules/js/gs-utils.js"></script>
+<script>
+document.onkeydown = function(event) {
+	if ( event.shiftKey && event.keyCode === 71 ) {
+	  toggleGrid();
+	}
+}
+</script>
+</body>
+</html>

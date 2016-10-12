@@ -11,7 +11,6 @@ var num = 102,
 console.log("num 변수에 복사된 데이터 유형:", typeof num);
 console.log("str 변수에 복사된 데이터 유형:", typeof str);
 console.log("boo 변수에 복사된 데이터 유형:", typeof boo);
-
 // 참조데이터 유형 
 console.log("fnc 변수에 참조된 데이터 유형:", typeof fnc);
 console.log("arr 변수에 참조된 데이터 유형:", typeof arr);
