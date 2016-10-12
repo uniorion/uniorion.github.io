@@ -5,10 +5,10 @@
 <br><br>
 ### 정보분석 (Comparative Data)
 
-#### # typeof | typeof()
+#### #1 typeof | typeof() (키워드)
 typeof는 함수가 아니라, 뒤에나오는 데이터 유형을 감지하여 감지된 데이터 유형 값을 문자열로 반환한다.
 ```js
-// 'var' 싱글톤 패턴(singleton pattern)
+// 싱글 'var' 패턴(single 'var' pattern)
 var num = 102,
     str = 'typeof는 함수가 아니다.';
 
@@ -33,7 +33,7 @@ console.log("null 데이터 유형:", typeof null);
 ```
 
 
-#### # instanceof 
+#### #2 instanceof (키워드)
 * instance 란?
     - 실체화된(생성된) 객체
     - 생성된 객체의 모체(클래스(Class), 프로토타입(prototype))
@@ -43,18 +43,41 @@ instanseof 사용법
 ```js
 // 인트턴스 instanseof 원형(모체)  => '인스턴스' 는 '원형'으로 생성된 객체인가?
 // return BOOLEAN {true, false
-console.log( 'obj instanceof Object:'   , obj instanceof Object);
-console.log( 'arr instanceof Array:'    , arr instanceof Array);
-console.log( 'fnc instanceof Function:' , fnc instanceof Function);
+console.log( 'obj instanceof Object:'   , obj instanceof Object);   // true
+console.log( 'arr instanceof Array:'    , arr instanceof Array);    // true
+console.log( 'arr instanceof Object:'   , arr instanceof Object);   // true
+console.log( 'fnc instanceof Function:' , fnc instanceof Function); // true
 ```
-* `arr instanceof Array`을 사용하여 
+
+* 원시데이터 유형 > 객체인것처럼 메소드를 지원해주지만 객체가 아니다.
+* 이유는 원시 데이터 유형은 실상 객체가 아닌, 값이기 때문이다.
+* 다만 자바스크립트 엔진이 원시 데이터 유형(null, undefined 제외)의 값을 마치 객체인 것처럼 사용할 수 있게 만들어 준다.
+
+#### #3 constructor (속성)
+* 자바스크립트 객체라면 모두 가지고 있는 속성으로 자신을 생성한 생성자를 가리켜서 알려준다. 
+* 객체에 대해서는 정확한 값을 반환하지만, 아래와 같이 null, undefined 은 에러를 발생한다.
+```js
+// 에러 발생
+console.log( "null.constructor : ", null.constructor );
+console.log( "undefined.constructor : ",  undefined.constructor ); 
+```
 
 
+#### #4 isType() (사용자정의)
+* 결국, 자바스크립트는 올바르게 데이터타입을 체크하는 기능을 제공하지 않는다.
+ *=> 만들자!*
+```js
+// 언어 차원에서 지원되지 않는 사용자 정의 함수
+// isType() 유틸리티 헬퍼 함수
+// 객체가 아닌 유형도 검증이 가능 
+function isType(data) {
+    return Object.prototype.toString.call(data).toLowerCase().slice(8, -1);
+}
+```
 
 
 > 참고서적 : _자바스크립트 + jQuery 완전정복 스터디 | 김춘경 저_
-
-※ 모듈별로 쪼개 관리하는 훈련이 필요하다.
+ 
 
 ---
 
