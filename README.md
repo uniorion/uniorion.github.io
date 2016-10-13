@@ -32,6 +32,7 @@
     - Web Developer Tool
     - Open WAX
     - headingsmap
+    - Octotree : github 트리뷰 제공
 
 #### # Firefox - Extensions
     - Firebug
@@ -39,10 +40,12 @@
     - Headingsmap
     - Open wax
 
+#### # Blisk - 모바일 화면을 같이 보여주는 브라우저
+
 #### # Git - [https://git-scm.com/](https://git-scm.com/)
 
 #### # Source Tree - [https://www.sourcetreeapp.com/](https://www.sourcetreeapp.com/)
-
+    
 #### # Slack
 
 #### # Trello
@@ -54,6 +57,10 @@
 - 구글 크롬 확장 프로그램 만들기 [http://hodol.kr/xe/note/17558]
 
 - 구글 Device metrics [https://design.google.com/devices/]
+
+- IcoMoon [https://icomoon.io/] - 웹폰트 제작 툴
+
+- Zeplin [https://app.zeplin.io] - 이미지 협업 클라우드
 
 ---
 
