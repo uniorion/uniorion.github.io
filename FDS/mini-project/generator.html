@@ -4,41 +4,45 @@
 	<meta charset="UTF-8">
 	<title>Generator</title>
 	<link rel="stylesheet" href="../../modules/css/initialization/ress.min.css">
+	<link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
 	
 	<div class="container">
 		<header class="header">
-			<h1>GS Generator</h1>
+			<!-- <h1>GS Generator</h1> -->
 			<form action="/" method="">
 				<fieldset>
 					<legend>input form</legend>
 					<label for="rdo_gs_type_stt">static</label>
-					<input type="radio" id="rdo_gs_type_stt" value="stt" checked>
+					<input type="radio" name="rdo_gs_type" id="rdo_gs_type_stt" value="stt" checked>
 					<label for="rdo_gs_type_fld">fluid</label>
-					<input type="radio" id="rdo_gs_type_fld" value="fld">
+					<input type="radio" name="rdo_gs_type" id="rdo_gs_type_fld" value="fld"><br>
 	 
 					<label for="">Total Width</label>
-					<input type="text" id="txt_total_width">
+					<input type="text" id="txt_total_width" value="960"><span>px</span><br>
 					<label for="txt_columns">Columns</label>
-					<input type="text" id="txt_columns">
+					<input type="text" id="txt_columns" value="8"><span>px</span><br>
 					<label for="txt_margin">Margin</label>
-					<input type="text" id="txt_margin">
+					<input type="text" id="txt_margin" value="5"><span>px</span><br>
 					<label for="txt_gutter">Gutter</label>
-					<input type="text" id="txt_gutter">
+					<input type="text" id="txt_gutter" value="10"><span>px</span><br>
 				</fieldset>
 			</form>
 		</header>
 
 		<div class="grid-view">
-			grid view
+ 			<textarea name="txta_css" id="txta_css" cols="30" rows="10">
+ 				test
+ 			</textarea>
 		</div>		
 
 		<footer class="footer">
-			footer
+ 
 		</footer>
 	</div>	
 	
+	<script src="js/gs-generator.js" type="text/javascript"></script>
 </body>
 </html>

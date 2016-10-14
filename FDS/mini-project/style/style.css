@@ -1,27 +1,48 @@
-		body {
- 
-		}
-		.container {
-			
-		}
-		.header {
-			background: #FFD9D9;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 1920px;
-			height: 400px;
-		}
-		.grid-view {
-		  background: #B6EFFD; 
-		  margin-top: 400px;
-			width: 2000px;
-			height: 300px;
-		}
-		.footer {
-			background: #FCE5A6;
-			position: fixed;
-			bottom: 0;
-			width: 1920px;
-			height: 200px;
-		}
+
+
+html {
+	font-size: 0.625rem;
+}
+
+body {
+	margin: 10rem;
+	font-size: 2rem;
+}
+
+input[id*="txt_"] {
+	background: #E9E9E9;
+	margin-top: 1rem;
+	padding-right: 1rem;
+	width: 10rem;
+	height: 3.5rem;
+	text-align: right;
+	border-radius: 0.5rem;
+}
+textarea {
+	border: 1px solid #B2B2B2;
+}
+.container {
+	
+}
+.header {
+	/*background: #FFD9D9;*/
+	margin: 10rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 1920px;
+	height: 400px;
+}
+.grid-view {
+  /*background: #B6EFFD; */
+  margin-top: 400px;
+	width: 2000px;
+	/*min-height: 300px;*/
+}
+.footer {
+	/*background: #FCE5A6;*/
+	position: fixed;
+	bottom: 0;
+	width: 1920px;
+	height: 200px;
+}

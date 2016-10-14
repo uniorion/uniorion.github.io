@@ -33,6 +33,7 @@
     - Open WAX
     - headingsmap
     - Octotree : github 트리뷰 제공
+    - High Contrast : 브라우저 고대비모드 제공
 
 #### # Firefox - Extensions
     - Firebug
