@@ -19,7 +19,7 @@
 > 장애와 장애인의 차이 
 > : 일시적인 장애는 누구나 가질 수 있지만, 장애인이란? 장기간 장애를 가지고 있는 사람.
 
-참고> [웹 접근성 기술 백서][http://inside.olleh.com/html/WebAccessibility/2013%EB%85%84%20%EC%9B%B9%20%EC%A0%91%EA%B7%BC%EC%84%B1%20%EA%B8%B0%EC%88%A0%20%EB%B0%B1%EC%84%9C_(%EC%A3%BC)KT.pdf]
+참고> [웹 접근성 기술 백서](http://inside.olleh.com/html/WebAccessibility/2013%EB%85%84%20%EC%9B%B9%20%EC%A0%91%EA%B7%BC%EC%84%B1%20%EA%B8%B0%EC%88%A0%20%EB%B0%B1%EC%84%9C_(%EC%A3%BC)KT.pdf)
 
 
 
@@ -31,29 +31,27 @@
 * 지침에 대한 실무 사례 제공
 * 유연성, 검증 가능성에 관한 업그레이드   e.g> NHN의 NWCAG
 
-#### 2.1 인식의 용이성
+### 2.1 인식의 용이성
 
-##### 2.1.1 대체텍스트
+#### 2.1.1 대체텍스트
 
-    - 적절한 대체 텍스트 
     - <img> 사용시 alt 반드시 제공
     - 영문 이니셜 사용 시 . 사용 또는 lang 속성사용
     - 웹툰 등 대체텍스트 정보가 긴 경우 longdesc 속성을 사용
     - title 속성은 모바일에서 무용지물
 
-
-대체 텍스트 제공 기법 (Image Replcement)
+> ※ 대체 텍스트 제공 기법 (Image Replcement) <br>
 > 1. WA IR 기법 <br>
 >  : position 속성을 주어  <br>
 > 2. Phark Method <br>
->  : text-indent를 이용하여 화면 바깥으로(-9999px만큼 내어 쓰기) 빼내어 보이지 않게 하는 방법
+>  : text-indent를 이용하여 화면 바깥으로(-9999px만큼 내어 쓰기) 빼내어 보이지 않게 하는 방법<br>
+> 참고> [http://darum.daum.net/convention/css/css_ir](http://darum.daum.net/convention/css/css_ir)
 
-
-##### 2.1.2 멀티미디어 대체 수단
+#### 2.1.2 멀티미디어 대체 수단
 
     - 자막/ 원고/수화 제공
 
-##### 2.1.3 명료성
+#### 2.1.3 명료성
 
     - 색으로만 구분되는 콘텐츠 주의
     - 명확하게 인식 가능한 지시 사항 제공
