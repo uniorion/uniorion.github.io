@@ -19,7 +19,8 @@
 
 
 `참고)` [웹 접근성 기술 백서](http://inside.olleh.com/html/WebAccessibility/2013%EB%85%84%20%EC%9B%B9%20%EC%A0%91%EA%B7%BC%EC%84%B1%20%EA%B8%B0%EC%88%A0%20%EB%B0%B1%EC%84%9C_(%EC%A3%BC)KT.pdf)
-<br>
+
+<br><br>
 
 ## 2. 한국 웹 접근성 콘텐츠 지침 2.0 (KWCAG 2.0)
 
@@ -27,14 +28,14 @@
 * 4개의 원칙, 13개의 지침
 * 검사 항목(22가지)을 구체적으로 제시
 * 지침에 대한 실무 사례 제공
-* 유연성, 검증 가능성에 관한 업그레이드   e.g> NHN의 NWCAG
+* 유연성, 검증 가능성에 관한 업그레이드   e.g) NHN의 NWCAG
 
 ### 2.1 인식의 용이성
 
 #### 2.1.1 대체텍스트
 
     - 영문 이니셜 사용 시 . 으로 구분 또는 lang 속성사용
-    - `<img>` 사용시 alt 반드시 제공. alt가 없으면 src 파일명을 읽는다.
+    - <img> 사용시 alt 반드시 제공. alt가 없으면 src 파일명을 읽는다.
     - title 속성은 모바일에서 무용지물
     - 웹툰 등 대체텍스트 정보가 긴 경우 longdesc 속성을 사용
     - map 영역에도 적절한 alt, title 속성값이 필요하다.
@@ -42,7 +43,7 @@
 
 ※ 대체 텍스트 제공 기법 (Image Replcement) <br>
 > 1. WA IR 기법 <br>
->  : position 속성을 주어  <br>
+>  : position 속성을 사용하여 성능상 이슈가 있다<br>
 > 2. Phark Method <br>
 >  : text-indent를 이용하여 화면 바깥으로(-9999px만큼 내어 쓰기) 빼내어 보이지 않게 하는 방법<br>
 
@@ -73,7 +74,7 @@
     - 자동재생 배경음악 사용 주의 > 바로 멈춤기능 제공
 
 > 4.5:1 을 꼭 지켜야하나?
-> : 24(18pt) 이상, 굵은 18px(14pt) > 명도 대비 3:1 
+> : 24(18pt) 이상, 굵은 18px(14pt) 환경에선 명도 대비 3:1 
 
 
 
@@ -84,15 +85,14 @@
     - 키보드로 내비게이션을 운용할 수 없다
     - 탭, 엔터, 스페이스 키만으로 운용
     - 마우스가 올라왔을때 focus가 와야하며, 시각적으로 표시 해주어야 한다.
-    - focus가 없는 요소에는 onclick 이벤트를 주지 않아야 한다.
+    - focus를 못받는 요소에는 onclick 이벤트를 주지 않아야 한다.
     - 방향키, 스페이스, page up/down 등의 키보드 탐색을 지원해야 한다.
+
+* _tabindex 속성은 `<div>`, `<span>` 요소와 같이 포커스를 못받는 요소에게 포커스가 가도록 한다.
 
 > 404페이지
 > - 홈링크 제공
 > - 사용자가 의도한 페이지정보, 검색, 페이지 이탈 기능 등을 제공해야 한다. 
-
-div tabindex
-aria-haspopup = true > 이 요소는 뭔가 감추고 있다.
 
 #### 2.2.2 충분한 시간 제공
 
@@ -115,35 +115,28 @@ aria-haspopup = true > 이 요소는 뭔가 감추고 있다.
 
 ![flex-direction-terms](https://www.w3.org/TR/2014/WD-css-flexbox-1-20140925/images/flex-direction-terms.svg)
 
-출처:[W3C - CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/2014/WD-css-flexbox-1-20140925/)
+출처 : [W3C - CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/2014/WD-css-flexbox-1-20140925/)
 
 * flex container : flex 아이템을 감싸는 부모 요소
 * flex item : flex container 안에 포함된 자식 요소
 * main axis : item 이 정렬되는 주축
 * cross axis : 주축에 교차가 되는 축
 
-> display: flex         // block 처럼 동작 
-> display: inline-flex  // inline-block 처럼 동작 
-
-
-부모에 flex direction : row, row-reverse, column, column
-
-align-content: 부모가 wrap인 상태에서 item 이 다음 행으로 떨어졌을 경우 묶어서 정렬
-
-#### # Flex Line Wraping
-flex-wrap
-nowrap, wrap, wrap-reverse
-
 #### # Shorthand
-flex-flow : <flex-direction> <flex-wrap>;  
+```
+flex-flow : <flex-direction> <flex-wrap>;
 flex: <grow> <shrink> <basis>;
-         
+```
+
 #### # Display Order
 - order는 기본값이 0, 같은 값이면 마크업 순서대로
 - 마크업 순서에 구애 받지 않고 배치할 수 있기 때문에 접근성을 향상 시킬 수 있다.
- 
+<br><br>
 
 `참고)` 
-- A Visual Guide to CSS3 Flexbox Properties (https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
-- A Complete Guide to Flexbox (https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- Solved by Flexbox (https://philipwalton.github.io/solved-by-flexbox/)
+
+- [A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+- [Flexbox playground](https://codepen.io/enxaneta/full/adLPwv/)
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
+- [flexibility](https://github.com/jonathantneal/flexibility)
