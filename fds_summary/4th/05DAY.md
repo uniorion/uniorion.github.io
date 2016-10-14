@@ -116,7 +116,7 @@ aria-haspopup = true > 이 요소는 뭔가 감추고 있다.
 * direction 속성으로 row, column 방향으로 자유자재 배치
 * 자식의 order 값으로 순서 자유 배치
 
-[flex-direction-terms]![https://www.w3.org/TR/2014/WD-css-flexbox-1-20140925/images/flex-direction-terms.svg]
+![flex-direction-terms](https://www.w3.org/TR/2014/WD-css-flexbox-1-20140925/images/flex-direction-terms.svg)
 
 
 flex-container
