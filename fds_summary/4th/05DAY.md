@@ -106,29 +106,29 @@ aria-haspopup = true > 이 요소는 뭔가 감추고 있다.
 
 ## Flexbox 
 
-    - block 레이아웃 : 문서 배치
+    - Block 레이아웃 : 문서 배치
     - Inline 레이아웃 : 텍스트 배치
     - Table 레이아웃 : 표 배치 
     - Positioning 레이아웃 : 격리된 배치
     - Flex 레이아웃 : 유연한 배치, 모바일에 유리 
     - Grid 레이아웃 : 큰 화면에 적합. 현재는 지원 브라우저가 거의 없다.
 
-* direction 속성으로 row, column 방향으로 자유자재 배치
-* 자식의 order 값으로 순서 자유 배치
-
 ![flex-direction-terms](https://www.w3.org/TR/2014/WD-css-flexbox-1-20140925/images/flex-direction-terms.svg)
 
+출처:[W3C - CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/2014/WD-css-flexbox-1-20140925/)
 
-flex-container
-flex-item
+* flex container : flex 아이템을 감싸는 부모 요소
+* flex item : flex container 안에 포함된 자식 요소
+* main axis : item 이 정렬되는 주축
+* cross axis : 주축에 교차가 되는 축
 
-display: flex   block 처럼 동작 
-display: inline-flex 
+> display: flex         // block 처럼 동작 
+> display: inline-flex  // inline-block 처럼 동작 
 
-justify-contents : 주축을 기준으로 정렬
-aline-items: 교차축을 기준으로 정렬
 
 부모에 flex direction : row, row-reverse, column, column
+
+align-content: 부모가 wrap인 상태에서 item 이 다음 행으로 떨어졌을 경우 묶어서 정렬
 
 #### # Flex Line Wraping
 flex-wrap
@@ -136,11 +136,14 @@ nowrap, wrap, wrap-reverse
 
 #### # Shorthand
 flex-flow : <flex-direction> <flex-wrap>;  
-
-
+flex: <grow> <shrink> <basis>;
+         
 #### # Display Order
+- order는 기본값이 0, 같은 값이면 마크업 순서대로
+- 마크업 순서에 구애 받지 않고 배치할 수 있기 때문에 접근성을 향상 시킬 수 있다.
+ 
 
-
-
-
-
+`참고)` 
+- A Visual Guide to CSS3 Flexbox Properties (https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+- A Complete Guide to Flexbox (https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- Solved by Flexbox (https://philipwalton.github.io/solved-by-flexbox/)
