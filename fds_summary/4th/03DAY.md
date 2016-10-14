@@ -1,7 +1,7 @@
 ## Javascript
 
-* Array, Function, Object 형은 모두 참조가 가능한 객체이다. 
-* Object 는 legnth 속성을 가지지 않는다. 
+* Array, Function, Object 형은 모두 참조가 가능한 객체이다.
+* Object 는 `length` 속성을 가지지 않는다.
 
 ### 정보분석 (Comparative Data)
 
@@ -12,17 +12,17 @@ typeof는 함수가 아니라, 뒤에나오는 데이터 유형을 감지하여 
 var num = 102,
     str = 'typeof는 함수가 아니다.';
 
-console.log("num 변수에 복사된 데이터 유형:", typeof num); // => number  
-console.log("str 변수에 복사된 데이터 유형:", typeof str); // => string  
+console.log("num 변수에 복사된 데이터 유형:", typeof num); // => number
+console.log("str 변수에 복사된 데이터 유형:", typeof str); // => string
 ```
 
 만약 감지하고자 하는 데이터 유형이 2개 이상이라면 _괄호()를 사용하여 데이터를 묶어서 체크_ 해야 한다.
 ```js
-console.log( typeof num + str );    // 8 + '' => 8 
-console.log( typeof (num + str) );  // string
+console.log( typeof num + str );    // 'number'
+console.log( typeof (num + str) );  // 'string'
 ```
 
-array, object, null 모두 object 를 반환하므로 typeof 로 구분할 수 없다.
+array, object, null 모두 `'object'` 를 반환하므로 typeof 로 구분할 수 없다.
 ```js
 var arr = [num, boo, fnc],
     obj = {"number_type": num, "boolean": boo };
@@ -58,12 +58,12 @@ console.log( 'boo instanceof Boolean:', boo instanceof Boolean);
 
 
 #### 3. `constructor (속성)`
-* 자바스크립트 객체라면 모두 가지고 있는 속성으로 자신을 생성한 생성자를 가리켜서 알려준다. 
+* 자바스크립트 객체라면 모두 가지고 있는 속성으로 자신을 생성한 생성자를 가리켜서 알려준다.
 * 객체에 대해서는 정확한 값을 반환하지만, 아래와 같이 null, undefined 은 에러를 발생한다.
 ```js
 // 에러 발생
 console.log( "null.constructor : ", null.constructor );
-console.log( "undefined.constructor : ",  undefined.constructor ); 
+console.log( "undefined.constructor : ",  undefined.constructor );
 ```
 
 <br>
@@ -75,7 +75,7 @@ console.log( "undefined.constructor : ",  undefined.constructor );
 ```js
 // 언어 차원에서 지원되지 않는 사용자 정의 함수
 // isType() 유틸리티 헬퍼 함수
-// 객체가 아닌 유형도 검증이 가능 
+// 객체가 아닌 유형도 검증이 가능
 function isType(data) {
     return Object.prototype.toString.call(data).toLowerCase().slice(8, -1);
 }
@@ -83,7 +83,7 @@ function isType(data) {
 
 <br>
 > 참고서적 : _자바스크립트 + jQuery 완전정복 스터디 - 김춘경 저_
- 
+
 
 ---
 
@@ -91,20 +91,20 @@ function isType(data) {
 
 ### 초기화 모듈
 
-#### # reset.css [http://meyerweb.com/eric/tools/css/reset/]
+#### # [reset.css](http://meyerweb.com/eric/tools/css/reset/)
 - 비표준 또는 마크업에서 사용하지 않는 요소 제거
 - 성능상 좋지 않은 코드 제거
 
-#### # normalize.css [https://necolas.github.io/normalize.css/]
+#### # [normalize.css](https://necolas.github.io/normalize.css/)
 - 브라우저 사이의 간극을 줄이는 목적으로 제작됨.
-- /*! 주석문 */ 은 삭제하지 않는다. 
+- /*! 주석문 */ 은 삭제하지 않는다.
 - reset.css 는 오래되서 현재와 맞지 않는다.
 ```css
 -ms-text-size-adjust: 100%; /* 3 */
 -webkit-text-size-adjust: 100%; /* 3 */
 ```
 
-#### # ress.css [https://github.com/filipelinhares/ress]
+#### # [ress.css](https://github.com/filipelinhares/ress)
 - normailize 에서 확장한 모듈
 
 ### Crop Image
@@ -118,7 +118,7 @@ function isType(data) {
 }
 ```
 
-calc() 내장함수를 사용하여 퍼센트 계산 
+calc() 내장함수를 사용하여 퍼센트 계산
 ```css
 { padding-bottom: 50%;
   padding-bottom: calc(350/700*100%); }
@@ -151,7 +151,7 @@ document.onkeydown = function(event) {
 * map 이나 video 에 많이 사용.
 * `frameborder="0"` 속성은 비표준, `border: 0` 으로 대체할 수 있다.
 
-* 배경이미지와 마찬가지로 width 폭을 모를 경우, height를 고정적으로 명시할 수 없어 반응형 이미지에 
+* 배경이미지와 마찬가지로 width 폭을 모를 경우, height를 고정적으로 명시할 수 없어 반응형 이미지에
 적용되는 기술을 사용할 수 없다.
 * 반응형 배경이미지에 적용되어 사용되었던 기술을 활용
 ```css
@@ -160,7 +160,7 @@ document.onkeydown = function(event) {
     position: relative;
     min-width: 100%;
     height: 0;
-    /* 
+    /*
      *  4:3 = 75%
      *  16:9 = 56.25%
      *  21:9 = 42.857142857
@@ -200,7 +200,7 @@ document.onkeydown = function(event) {
 * 사진 같은 비트맵 이미지를 제외하고는 대부분의 UI는 벡터를 사용하여 제작하며, 디자인 배율은 x1에서
 시작해야 한다.
 
-* 브레이크포인트 
+* 브레이크포인트
   - 우리가 만드는 서비스의 사용자층을 고려하고 콘텐츠를 분석하여 전략을 수립.
 
 ### CSS3 미디어쿼리
@@ -223,4 +223,4 @@ document.onkeydown = function(event) {
 
 <br><br>
 참조)
-> Device metrics - https://design.google.com/devices/[https://design.google.com/devices/] 
+> [Device metrics](https://design.google.com/devices/)
