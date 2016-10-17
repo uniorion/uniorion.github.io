@@ -12,6 +12,8 @@
 	<div class="container">
 		<header class="header">
 			<!-- <h1>GS Generator</h1> -->
+		</header>
+		<div class="contents">
 			<form action="/" method="">
 				<fieldset>
 					<legend>input form</legend>
@@ -23,17 +25,27 @@
 					<label for="">Total Width</label>
 					<input type="text" id="txt_total_width" value="960"><span>px</span><br>
 					<label for="txt_columns">Columns</label>
-					<input type="text" id="txt_columns" value="8"><span>px</span><br>
-					<label for="txt_margin">Margin</label>
-					<input type="text" id="txt_margin" value="5"><span>px</span><br>
-					<label for="txt_gutter">Gutter</label>
-					<input type="text" id="txt_gutter" value="10"><span>px</span><br>
+					<input type="text" id="txt_columns" value="4"><span>px</span><br>
+					<label for="txt_margin_width">Margin</label>
+					<input type="text" id="txt_margin_width" value="10"><span>px</span><br>
+					
+					<label for="txt_gutter_width">Gutter</label>
+					<input type="text" id="txt_gutter_width" value="20"><span>px</span><br>
 				</fieldset>
 			</form>
-		</header>
+			<div class="result">
+				<div>
+					<p class="column-width"></p>
+				</div>
+				<div>
+					<p class="column-width"></p>
+				</div>
+			</div>
+			<button class="btn_calculate" type="button">CALCULATE</button>
+		</div>
 
 		<div class="grid-view">
- 			<textarea name="txta_css" id="txta_css" cols="30" rows="10">
+ 			<textarea name="txta_css" id="txta_css" cols="1000" rows="20">
  				test
  			</textarea>
 		</div>		
@@ -42,7 +54,14 @@
  
 		</footer>
 	</div>	
-	
-	<script src="js/gs-generator.js" type="text/javascript"></script>
+	<script src="js/gs-generator.js"></script>
+	<script src="js/gs-make-css.js"></script>
+	<script>
+
+		window.onloads = function () {
+				calcGrid();
+
+		};
+	</script>
 </body>
 </html>
