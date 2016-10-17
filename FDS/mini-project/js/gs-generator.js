@@ -1,4 +1,7 @@
-// 요소찾아 변수에 담기
+
+var 	unit = 'px';
+
+// 요소찾아 변수에 참조
 var 	el_gs_type_stt 		= document.getElementById('rdo_gs_type_stt')
 		, el_gs_type_fld 		= document.getElementById('rdo_gs_type_fld')
 		, el_total_width 		= document.getElementById('txt_total_width')
@@ -8,15 +11,16 @@ var 	el_gs_type_stt 		= document.getElementById('rdo_gs_type_stt')
 		, el_txta_css				= document.getElementById('txta_css')
 		, el_btn_calculate 	= document.getElementsByClassName('btn_calculate')[0];
 
+
+
 var  	gs_type_val 	= getRadioCheckedValue('rdo_gs_type')
-		, total_width 	= null
-		,	columns 			= null
+		, total_width 	= 0
+		,	columns 			= 0
 		,	margin_width 	= window.parseInt(el_margin_width.value, 10)
 		,	gutter_width 	= null;
 
-var 	unit = 'px';
 
-var 	margin_width_fix 		= margin_width
+var 	margin_width_fix 		= 0
     , column_width 				= 0
     , total_gutter_width	= 0
     , ex_margin 					= 0
@@ -24,14 +28,17 @@ var 	margin_width_fix 		= margin_width
     , mod_column_width 		= 0;
 
 
-function calcGrid() {
-
+function setInputValue() {
 	total_width 		= window.parseInt(el_total_width.value, 10);
 	columns 				= window.parseInt(el_columns.value, 10);
 	margin_width 		= window.parseInt(el_margin_width.value, 10);
-	gutter_width 		= window.parseInt(el_gutter_width.value, 10);
-
-	total_gutter_width	= gutter_width * ( columns - 1 );			// 거터의 총넓이
+	gutter_width 		= window.parseInt(el_gutter_width.value, 10);	
+	margin_width_fix = margin_width;
+}
+	
+// 그리드 요소 값 계산
+function calcGrid() {
+	total_gutter_width	= gutter_width * ( columns - 1 );					// 거터의 총넓이
 	ex_margin 					= total_width - ( margin_width_fix * 2 );	// 총넓이에서 양쪽마진값을 뺀 값
 	total_column_width	= ex_margin - total_gutter_width;					// 컬럼의 총넓이
 	mod_column_width 		= total_column_width % columns;
@@ -51,21 +58,17 @@ function calcGrid() {
 	else if ( isEven( mod_column_width ) === false ) 	// 총컬럼 넓이를 컬럼수로 나눈 값이 홀수이면
 	{
 		console.log("calcGrid() : odd");
-		if ( isEven( columns ) === true ) {	// 나머지가 홀수일 때, 컬럼수가 짝수이면 정수 계산이 안됨.
-			console.log("정수 계산 안됨.");
+		if ( isEven( columns ) === false ) {	// 나머지가 홀수일 때, 컬럼수가 짝수이면 정수 계산이 안됨.  960-6-0-13, 960-7-0-14
+			console.log("정수 계산 안됨.");					// ************* 경고 디스플레이 처리 필요
 			return;
 		}
 		mod_column_width = mod_column_width + 1;
 		margin_width_fix = margin_width_fix + (mod_column_width / 2);
 		calcGrid();
 	}
-	else
-	{
-		console.log("calcGrid() : ex");
-	}
 }
 
-
+// 요소 값 입력
 function displayResult() {
 
 }
@@ -119,7 +122,9 @@ function getRadioCheckedValue(rdo_name) {
 	이벤트 연결
 */
 // Calculate
-el_btn_calculate.onclick = function() {
+el_btn_calculate.onclick = function()
+{
+	setInputValue();
 	calcGrid();
 
 	console.log("column_width : ", column_width);

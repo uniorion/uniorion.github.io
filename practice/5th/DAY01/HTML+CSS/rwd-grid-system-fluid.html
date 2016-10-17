@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko-KR" dir="ltr">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>모바일 퍼스트 그리드 시스템</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../modules/css/initialization/normalize.css">
+  <link rel="stylesheet" href="../../../../modules/css/gs-mobile-first.css">
+  <script src="../../../../modules/js/gs-utils.js"></script>
+  <style>
+  	html {
+  		background: #fff;
+  	}
+  	.app {
+  		min-height: 100vh;
+  		background: url("http://alistapart.com/d/_made/d/misc-images/rwd-4_450_736_81.jpg") no-repeat center bottom;
+  		color: #323232;
+  	}
+		.app * {
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+		.app .row:first-child {
+			background: #fff;
+			color: #9c7d0f;
+		}
+
+    @media only screen and (min-width: 768px) {
+      .app {
+        background-image: url("http://alistapart.com/d/_made/d/misc-images/rwd-3_1500_1078_81.jpg");
+        background-size: contain;
+      }
+    }
+    @media only screen and (min-width: 1025px) and (max-width: 3000px) {
+      .app {
+        background-image: url("http://alistapart.com/d/_made/d/misc-images/rwd-3_1500_1078_81.jpg");
+        background-size: contain;
+    }
+  </style>
+</head>
+<body>
+	
+	<div class="app container show-grid" lang="en">
+		<div class="row">
+			<div class="column m1-2 t3-4">
+				<h1 lang="en">Mobile First</h1>
+			</div>
+			<div class="column m1-2 t1-4">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias aut suscipit doloremque eos optio, dolorem provident consequuntur iusto praesentium totam blanditiis, iure voluptas porro nulla at id laudantium incidunt?</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column m1-3 t1-5">
+				column m1-3
+			</div>
+			<div class="column m2-3 t4-5">
+				column m2-3
+			</div>
+		</div>
+		<div class="row">
+			<div class="column m1-3 t2-6 d7-12">
+				column d7-3
+			</div>
+			<div class="column m1-3 t1-6 d3-12">
+				column d3-3
+			</div>
+			<div class="column m1-3 t3-6 d2-12">
+				column d2-3
+			</div>
+		</div>
+		<div class="row">
+			<div class="column m1-4 t6-7">
+				column m1-4
+			</div>
+			<div class="column m3-4 t1-7">
+				column m3-4
+			</div>
+		</div>
+		<div class="row">
+			<div class="column m1-4 t6-7">
+				column m1-4
+			</div>
+			<div class="column m3-4 t1-7">
+				column m3-4
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

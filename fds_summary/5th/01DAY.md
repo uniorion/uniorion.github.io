@@ -16,35 +16,28 @@ if ( 조건문1 ) {
 }
 ```
 
- 
-#### isolate Floating 테크닉
-float 속서이 적용된 방향으로만 음수 margin만 적용 가능하다.
-
-#### flex: none;
-> flex: none;  >> 0 0 auto,  display:block 과 똑같다.
 
 ---
 
 # HTML & CSS
 
-## Flex-Shortcode
-
-## CSS3 미디어쿼리
+## # CSS3 미디어쿼리
 * dppx : 디바이스 의존적 단위, ios, android
 * dpcm : 인쇄단위
 
 ### 비트맵 이미지의 반응형 대응 (png, jpg, gif, bmp )
-* content image 
+#### content image 
 ```html
-// [콘텐츠 이미지 예] : 모던 웹 브라우저에서 적용 가능한 고/저해상도 이미지 분기처리 방법
+// 모던 웹 브라우저에서 적용 가능한 고/저해상도 이미지 분기처리
 <img src="images/map.png"
      srcset="images/map@2x.png 2x, images/map@3x.png 3x" 
      alt="Map">
 ```
 참고) [The srcset Attribute.](https://webkit.org/demos/srcset/)
 
-* background image
+#### background image
 ```css
+// 레티나 디스플레이가 사용되고 있는 기기에 적용되는 media query
 // 미디어쿼리로 pixel ratio를 감지하여 이미지를 교체한다.
 @media (-webkit-min-device-pixel-ratio: 2),  
        (min--moz-device-pixel-ratio: 2),     
@@ -59,7 +52,23 @@ float 속서이 적용된 방향으로만 음수 margin만 적용 가능하다.
 ```
 참고) [MDN-device-pixel-ratio](https://developer.mozilla.org/ko/docs/Web/Guide/CSS/Media_queries#-moz-device-pixel-ratio)
 
+<br>
+
+## # 반응형 웹 디자인 패턴
+
+### 1.1 layout
+
+    - tiny Tweaks : 웹서비스 구조는 그대로 유지, 스케일만 변경
+    - Mostly Fluid : 유연한 멀티 컬럼 그리드 레이아웃에 기초하여 화면 크기에 따라 콘텐츠가 수직 방향으로 쌓이게 되는 패턴이다. 
+    - Column drop : 유연한 멀티 컬럼 그리드 레이아웃에 기초하여 화면 크기에 따라 콘텐츠를 단계적으로 떨궈 
+    - Column drop2 : Column drop과 비슷하지만, 화면크기에 따라 콘텐츠를 단계적으로 감춘다는 점에서 다소 다른 패턴이다.
+    - layer
+    - off Canvas : 좁은 공간을 효율적으로 사용할 수 있도록 감춰진 영역을 사용자의 요구에 따라 노출하는 패턴.
+    - select 
+    - toggle navigation : 글로벌 내비게이션 바 영역의 메뉴들이 모바일 화면에서 토글 버튼으로 바뀌어
+    - footer Navigation : 
+    - 
 
 
-
+#### # 유연한 그리드 시스템(Flexible Grid System)
 
