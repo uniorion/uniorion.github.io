@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Layout</title>
+	<link rel="stylesheet" href="../../../modules/css/initialization/normalize.css">
+	<style>
+		.bg-test {
+			height: 100vh;
+			background: #ccc;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.detect-DPR,
+		.detect-DPRx2 {
+			width: 400px;
+			height: 200px;
+			margin-right: 50px;
+			background: url('coffeex1.jpg') no-repeat;
+		} 
+		@media 	(-webkit-min-device-pixel-ratio: 2),
+						(min--moz-device-pixel-ratio: 2),
+						(min-resolution: 192dpi),
+						(min-resolution: 2dppx)
+					{ 
+						.detect-DPRx2 {
+							background-image: url(coffeex2.jpg);
+							background-size: 400px 294.5px;
+						} 
+					}
+	</style>
+</head>
+<body>
+
+	<div class="bg-test">
+		<div class="detect-DPR"></div>
+		<div class="detect-DPRx2"></div>
+	</div> 
+	<div>
+		<!-- [콘텐츠 이미지 예] : 모던 웹 브라우저에서 적용 가능한 고/저해상도 이미지 분기처리 방법 -->
+<!-- 		<img 	src="images/map.png"
+					srcset="images/map.png 1x, images/map@2x.png 2x" 
+					alt="Map"> -->
+	</div>
+
+</body>
+</html>
