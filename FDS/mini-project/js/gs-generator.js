@@ -9,7 +9,11 @@ var 	el_gs_type_stt 		= document.getElementById('rdo_gs_type_stt')
 		, el_margin_width 	= document.getElementById('txt_margin_width')
 		, el_gutter_width 	= document.getElementById('txt_gutter_width')
 		, el_txta_css				= document.getElementById('txta_css')
-		, el_btn_calculate 	= document.getElementsByClassName('btn_calculate')[0];
+		, el_btn_calculate 	= document.getElementsByClassName('btn-calculate')[0]
+		, el_btn_download 	= document.getElementsByClassName('btn-download')[0]
+		, el_content_area 	= document.getElementById('txt_content_area')
+		, el_column_width 	= document.getElementById('txt_column_width')
+		, el_fixed_margin 	= document.getElementById('txt_fixed_margin');
 
 
 
@@ -58,7 +62,7 @@ function calcGrid() {
 	else if ( isEven( mod_column_width ) === false ) 	// 총컬럼 넓이를 컬럼수로 나눈 값이 홀수이면
 	{
 		console.log("calcGrid() : odd");
-		if ( isEven( columns ) === false ) {	// 나머지가 홀수일 때, 컬럼수가 짝수이면 정수 계산이 안됨.  960-6-0-13, 960-7-0-14
+		if ( isEven( columns ) === true ) {	// 나머지가 홀수일 때, 컬럼수가 짝수이면 정수 계산이 안됨.  960-6-0-13, 960-7-0-14
 			console.log("정수 계산 안됨.");					// ************* 경고 디스플레이 처리 필요
 			return;
 		}
@@ -70,9 +74,14 @@ function calcGrid() {
 
 // 요소 값 입력
 function displayResult() {
-
+	el_content_area.value = total_width;
+	el_column_width.value = column_width;
+	el_fixed_margin.value	= margin_width_fix;
 }
 
+	console.log("column_width : ", column_width);
+	console.log("margin_width_fix : ", margin_width_fix);
+	console.log("mod_column_width : ", mod_column_width);
 
 function isType(data) {
     return Object.prototype.toString.call(data).toLowerCase().slice(8, -1);
@@ -126,10 +135,7 @@ el_btn_calculate.onclick = function()
 {
 	setInputValue();
 	calcGrid();
-
-	console.log("column_width : ", column_width);
-	console.log("margin_width_fix : ", margin_width_fix);
-	console.log("mod_column_width : ", mod_column_width);
+	displayResult();
 };
 // 라디오 버튼
 el_gs_type_stt.onclick = function() {

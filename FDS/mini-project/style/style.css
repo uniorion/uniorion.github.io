@@ -1,24 +1,190 @@
-
+@charset 'utf-8';
+@import url('fonts.css');
 
 html {
 	font-size: 0.625rem;
 }
-
 body {
-	margin: 5rem;
-	font-size: 2rem;
+	font-size: 2.4rem;
+	font-family: "HelveticaNeue Condensed";
 }
-
-input[id*="txt_"] {
-	background: #E9E9E9;
+/*
+  	공통 디자인 영역		
+ */
+input[type="text"] { 
 	margin-top: 1rem;
+	margin-right: 0.5rem;
 	padding-right: 1rem;
-	width: 10rem;
-	height: 3.5rem;
+	width: 14rem;
+	height: 3rem;
 	text-align: right;
-	border-radius: 0.5rem;
+	border: 1px solid #b0bbb0;
 }
 textarea {
 	font-size: 8px;
 	border: 1px solid #B2B2B2;
+}
+
+/* 버튼 디자인  */
+button {
+	height: 4.5rem;
+	font-size: 1.8rem;
+	font-family: "HelveticaNeue Condensed";
+}
+button:hover,
+button:focus {
+	outline: 2px solid #62abff;
+}
+.btn-calculate {
+	margin-top: 2.2rem;
+	width: 26.6rem;
+	background: #dfd4b8;
+	color: #991515;
+}
+.btn-download {
+	margin-top: 3.8rem;
+	width: 21.2rem;
+	background: #738672;
+	color: #fff;
+}
+
+/*  레이아웃 	*/
+.container {
+	width: 100%;
+
+}
+.header,
+.contents,
+.grid-view,
+.footer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 96rem;
+}
+.header {
+	padding-top: 3.8rem;
+	height: 15rem;
+	background: linear-gradient(#1c301a 0%, #2e412d 50%, #738672 100%);
+}
+/* 헤더 영역 디자인 	*/
+.header h1 {
+	/*margin-top: 6.2rem;*/
+	color: #fff;
+	font-size: 8.5rem;
+	font-family: "HelveticaNeue BoldCond";
+	text-align: center;
+}
+
+/* 입력 영역 디자인  */
+.contents {
+	position: relative;
+}
+.contents::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.calculate, 
+.recommend,
+.options {
+	float: left;
+}
+.calculate {
+	padding-top: 3rem;
+	padding-left: 5rem;
+	width: 35rem;
+}
+.calculate label:not(.rdo-label) {
+	display: inline-block;
+	width: 12rem;
+	height: 3rem;
+}
+.rdo-label {
+	margin-right: 1.5rem;
+	font-size: 2.1rem;
+}
+.unit {
+	font-size: 1.5rem;
+}
+.recommend {
+	padding-top: 6rem;
+	padding-left: 2.5rem;
+	width: 35rem;
+}
+.recommend label{
+	display: inline-block;
+	width: 13.5rem;
+	height: 3rem;
+}
+.recommend input {
+	width: 13rem;
+	border: none;
+	border-bottom: 1px solid #b0bbb0;
+}
+.recommend label:nth-of-type(1),
+.recommend label:nth-of-type(2) {
+	color: #738672;
+}
+.recommend label:nth-of-type(3) {
+	color: #bd8282; 
+}
+.options {
+	padding-top: 7rem;
+	width: 26rem;
+}
+.options div {
+	border-left: 1px solid #d5dad4;
+	padding-left: 4rem;
+}
+.options h2 {
+	font-size: 2.4rem;
+}
+.options input {
+	
+}
+.options label {
+	display: inline-block;
+	margin-top: 1rem;
+	margin-left: 1rem;
+	color: #738672;
+}
+/* 결과 노출 영역 */
+.grid-view {
+	margin-top: 1rem;
+	padding-left: 5rem;
+}
+
+/* 푸터 영역 */
+.footer {
+	position: relative;
+	background: #272e27;
+	height: 7rem;
+	color: #bfc1bf;
+}
+.footer ul {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	list-style-type: none;
+}
+.footer li {
+	float: left;
+	margin-right: 1.2rem;
+	font-size: 1.6rem;
+	font-family: "HelveticaNeue ThinCond";
+}
+.footer li:not(:first-child)::before {
+	content: '|';
+	padding-right: 1.2rem;
+}
+.footer a {
+	text-decoration: none;
+}
+.footer a:link,
+.footer a:visited {
+	color: #bfc1bf;
+}
+.footer a:hover,
+.footer a:focus {
+	outline: 2px solid #62abff;
 }
