@@ -45,6 +45,9 @@
 
 #### # Git - [https://git-scm.com/](https://git-scm.com/)
 
+#### # Sass
+    - node-sass
+
 #### # Source Tree - [https://www.sourcetreeapp.com/](https://www.sourcetreeapp.com/)
     
 #### # Slack
@@ -54,6 +57,8 @@
 ---
 
 ### Bookmark
+
+- 반응형 레이아웃 샘플 - [http://www.liquidapsive.com/]
 
 - 구글 크롬 확장 프로그램 만들기 [http://hodol.kr/xe/note/17558]
 

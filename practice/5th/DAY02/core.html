@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 조건문을 사용한 버튼 상태 변경</title>
+	<link rel="stylesheet" href="../../../modules/css/initialization/normalize.css">
+	<style>
+		body {
+			margin: 2rem;
+		}
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40rem;
+			height: 20rem;
+			background: #adadad;
+		}
+		[class*="ui-button-"] {
+			cursor: pointer;
+			box-sizing: border-box;
+			border: 0;
+			background-color: transparent;
+		}
+		[class*="ui-button-"]:focus {
+			outline: none;
+		}
+		[class*="ui-button-"]:active {
+			position: relative;
+			top: 2px;
+		}
+		.ui-button--toggle {
+			border-radius: 5px;
+			padding: 1em 1.2em;
+			font-size: 1.2rem;
+			background: #fff;
+			color: #aea28f;
+		}
+		.ui-button--toggle.pressed {
+			box-shadow: 0 0 10px hsla(0, 0%, 0%, .3) inset;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+	
+		<button type="button" class="ui-button--toggle">normal state</button>
+
+	</div>
+	<script src="core.js"></script>
+</body>
+</html>
