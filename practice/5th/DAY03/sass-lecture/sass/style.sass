@@ -1,0 +1,69 @@
+// 선택자 상속
+// 비공개 private module
+%reset-list
+	margin:
+		top: 0
+		bottom: 0
+	padding-left: 0
+	list-style-type: none
+
+%flex-center-middle
+	display: flex
+	justify-content: center
+	align-items: center
+
+%box
+	@extend %flex-center-middle
+	width: 100px
+	height: 100px
+
+// 중접 규칙
+// 부모 참조 선택자 &
+nav#gnb
+	// 모바일
+	@media screen and (max-width: 40em)
+		display: flex
+	// 데스트탑
+	@media screen and (min-width: 75em)
+		display: none
+	.show-grid &
+		display: block
+	ul
+		margin-top: 0
+		margin-bottom: 0
+		list-style-type: none
+		padding-left: 0
+	li
+		float: left
+		margin-right: 20px
+		&.current
+			background: #ff0
+	a
+		color: #333
+		&:hover,
+		&:focus
+			color: #808080
+
+.box-black
+	@extend %box
+	@extend %soho !optional
+	background: #000
+
+.box-red
+	@extend %box
+	background: #f00
+
+.box-green
+	@extend %box
+	background: #0f0
+
+.box-blue
+	@extend %box
+	background: #00f
+
+nav#gnb
+	@extend %reset-list
+
+main
+	nav#lnb
+	@extend %reset-list

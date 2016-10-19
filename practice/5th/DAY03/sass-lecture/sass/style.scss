@@ -1,0 +1,22 @@
+nav#gnb {
+	ul {
+		margin-top: 0;
+		margin-bottom: 0;
+		list-style-type: none;
+		padding-left: 0
+	}
+	li {
+		float: left;
+		margin-right: 20px;
+		&.current {
+			background: #ff0;
+		}
+	}
+	a {
+		color: #333;
+		&:hover,
+		&:focus {
+			color: #808080
+		}
+	}
+}

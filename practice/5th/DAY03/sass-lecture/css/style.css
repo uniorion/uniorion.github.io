@@ -1,0 +1,75 @@
+nav#gnb, main {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.box-black, .box-red, .box-green, .box-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-black, .box-red, .box-green, .box-blue {
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 40em) {
+  nav#gnb {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  nav#gnb {
+    display: none;
+  }
+}
+
+.show-grid nav#gnb {
+  display: block;
+}
+
+nav#gnb ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav#gnb li {
+  float: left;
+  margin-right: 20px;
+}
+
+nav#gnb li.current {
+  background: #ff0;
+}
+
+nav#gnb a {
+  color: #333;
+}
+
+nav#gnb a:hover, nav#gnb a:focus {
+  color: #808080;
+}
+
+.box-black {
+  background: #000;
+}
+
+.box-red {
+  background: #f00;
+}
+
+.box-green {
+  background: #0f0;
+}
+
+.box-blue {
+  background: #00f;
+}
+
+/*# sourceMappingURL=style.css.map */
