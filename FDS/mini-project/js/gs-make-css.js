@@ -27,6 +27,7 @@ function attachComment() {
 					+ "\n 	Grid System CSS v1.0 - " + (gs_type_val === "stt" ? "Static" : "Fluid")
 					+ "\n # width : " + total_width + "px"
 					+ "\n # columns : " + columns
+					+ "\n # column width : " + column_width + "px"
 					+ "\n # margin : " + margin_width_fix + "px"
 					+ "\n # gutter : " + gutter_width + "px"
 					+ "\n========================================== */";

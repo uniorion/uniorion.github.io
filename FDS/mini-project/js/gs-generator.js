@@ -34,17 +34,12 @@ var  	gs_type_val 				= getRadioCheckedValue('rdo_gs_type')
     , total_column_width	= 0
     , mod_column_width 		= 0;
 
-
-
 function setInputValue() {
 	total_width 		= window.parseInt(el_total_width.value, 10);
 	columns 				= window.parseInt(el_columns.value, 10);
 	margin_width 		= window.parseInt(el_margin_width.value, 10);
 	gutter_width 		= window.parseInt(el_gutter_width.value, 10);	
 	margin_width_fix = margin_width;
-
-	//---------------- 입력값 검증
-	//---------------- 입력값 검증
 	
 	if ( columns === 1 ) {
 		gutter_width = 0;			// 컬럼이 하나이면 거터값 무시하고 계산
@@ -75,7 +70,7 @@ function calcGrid() {
 		console.log("calcGrid() : odd");
 		if ( isEven( columns ) === true ) {	// 나머지가 홀수일 때, 컬럼수가 짝수이면 정수 계산이 안됨.
 			console.log("정수로 계산 안됨.");					// ************* 경고 디스플레이 처리 필요
-			// showAlert();
+			showAlert();
 			return false;
 		}
 		mod_column_width = mod_column_width + 1;
