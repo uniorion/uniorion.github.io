@@ -1,5 +1,6 @@
-const  GRID_COL_COLOR 	= 'hsla(163, 64%, 49%, 0.2)'
- 		 , GRID_LINE_COLOR	= '#7400ff';
+const  GRID_COL_COLOR_START 	= 'hsla(190, 84%, 59%, 0.5)'
+		 , GRID_COL_COLOR_END 		= 'hsla(163, 64%, 49%, 0.2)'
+ 		 , GRID_LINE_COLOR				= '#7400ff';
 
 var 	unit = 'px';
 
@@ -15,20 +16,25 @@ var 	el_gs_type_stt 		= document.querySelector('#rdo_gs_type_stt')
 		, el_btn_download 	= document.querySelector('.btn-download')
 		, el_content_area 	= document.querySelector('#txt_content_area')
 		, el_column_width 	= document.querySelector('#txt_column_width')
-		, el_fixed_margin 	= document.querySelector('#txt_fixed_margin');
+		, el_fixed_margin 	= document.querySelector('#txt_fixed_margin')
+		, el_opt_pu 				= document.querySelector('#chk_opt_pu')
+		, el_opt_fix 				= document.querySelector('#chk_opt_fix')
+		, el_opt_isolate 		= document.querySelector('#chk_opt_isolate')
+		, el_recommend_alert= document.querySelector('.recommend_alert');
 
-var  	gs_type_val 	= getRadioCheckedValue('rdo_gs_type')
-		, total_width 	= 0
-		,	columns 			= 0
-		,	margin_width 	= window.parseInt(el_margin_width.value, 10)
-		,	gutter_width 	= null;
-
-var 	margin_width_fix 		= 0
+var  	gs_type_val 				= getRadioCheckedValue('rdo_gs_type')
+		, total_width 				= 0
+		,	columns 						= 0
+		,	margin_width 				= window.parseInt(el_margin_width.value, 10)
+		,	gutter_width 				= null
+		,	margin_width_fix 		= 0
     , column_width 				= 0
     , total_gutter_width	= 0
     , ex_margin 					= 0
     , total_column_width	= 0
     , mod_column_width 		= 0;
+
+
 
 function setInputValue() {
 	total_width 		= window.parseInt(el_total_width.value, 10);
@@ -38,6 +44,8 @@ function setInputValue() {
 	margin_width_fix = margin_width;
 
 	//---------------- 입력값 검증
+	//---------------- 입력값 검증
+	
 	if ( columns === 1 ) {
 		gutter_width = 0;			// 컬럼이 하나이면 거터값 무시하고 계산
 	}
@@ -67,15 +75,17 @@ function calcGrid() {
 		console.log("calcGrid() : odd");
 		if ( isEven( columns ) === true ) {	// 나머지가 홀수일 때, 컬럼수가 짝수이면 정수 계산이 안됨.
 			console.log("정수로 계산 안됨.");					// ************* 경고 디스플레이 처리 필요
-			return;
+			// showAlert();
+			return false;
 		}
 		mod_column_width = mod_column_width + 1;
 		margin_width_fix = margin_width_fix + (mod_column_width / 2);
 		calcGrid();
 	}
+	return true;
 }
 
-// 요소 값 입력
+// 결과값 보여주기
 function displayResult() {
 	el_content_area.value = total_width;
 	el_column_width.value = column_width;
@@ -126,23 +136,37 @@ function getRadioCheckedValue(rdo_name) {
 	}
 }
 
-
 /*
 	이벤트 연결
 */
 // Calculate 버튼
 el_btn_calculate.onclick = function() {
+	hiddenAlert();
 	setInputValue();
-	calcGrid();
-	displayResult();
-	setCSS();
+	if ( calcGrid() ) {
+		setCSS();
+		displayResult();
+	}
 };
 // 라디오 버튼
 el_gs_type_stt.onclick = function() {
 	gs_type_val = getRadioCheckedValue('rdo_gs_type');
-	console.log(gs_type_val);
+	(gs_type_val === "stt") ? unit = 'px' : unit = '%';
 };
 el_gs_type_fld.onclick = function() {
 	gs_type_val = getRadioCheckedValue('rdo_gs_type');
-	console.log(gs_type_val);
+	(gs_type_val === "stt") ? unit = 'px' : unit = '%';
 };
+
+// 경고 노출 
+function showAlert() {
+	var str_class = el_recommend_alert.getAttribute('class');
+	str_class = str_class.replace(' on', '');
+	el_recommend_alert.setAttribute('class', str_class + ' on');
+}
+// 경고 숨김
+function hiddenAlert() {
+	var str_class = el_recommend_alert.getAttribute('class');
+	str_class = str_class.replace(' on', '');
+	el_recommend_alert.setAttribute('class', str_class);
+}
