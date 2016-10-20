@@ -149,10 +149,9 @@ function attachColumns() {
 
 	for(var i = 1; columns >= i; ++i) {
 		
-		if ( gs_type_val === "stt" ) { 
-			col_width = (column_width * i) + (gutter_width * (i - 1));
-		}
-		else if ( gs_type_val === "fld" ) {
+		col_width = (column_width * i) + (gutter_width * (i - 1));
+		
+		if ( (gs_type_val === "fld") ) {
 			col_width = percent(col_width, total_width);
 		}
 
@@ -174,10 +173,9 @@ function attachPushPull() {
 
 	for(var i = 1; columns >= i; ++i) {
 
-		if ( gs_type_val === "stt" ) { 
-			offset = (column_width * i) + (gutter_width * i);
-		}
-		else if ( gs_type_val === "fld" ) {
+		offset = (column_width * i) + (gutter_width * i);
+
+		if ( gs_type_val === "fld" ) {
 			offset = percent(offset, total_width);
 		}
 
@@ -196,10 +194,9 @@ function attachOffset() {
 
 	for(var i = 1; columns >= i; ++i) {
 
-		if ( gs_type_val === "stt" ) { 
-			offset = (column_width * i) + (gutter_width * i);
-		}
-		else if ( gs_type_val === "fld" ) {
+		offset = (column_width * i) + (gutter_width * i);
+
+		if ( gs_type_val === "fld" ) {
 			offset = percent(offset, total_width);
 		}
 
@@ -220,11 +217,10 @@ function attachIsolate() {
 	var offset = 0;
 
 	for(var i = 1; columns >= i; ++i) {
-		
-		if ( gs_type_val === "stt" ) { 
-			offset = offset = (column_width * (i-1)) + (gutter_width * (i-1));
-		}
-		else if ( gs_type_val === "fld" ) {
+	
+		offset = offset = (column_width * (i-1)) + (gutter_width * (i-1));
+
+		if ( gs_type_val === "fld" ) {
 			offset = percent(offset, total_width);
 		}
 

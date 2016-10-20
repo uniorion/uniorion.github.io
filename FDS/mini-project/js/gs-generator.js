@@ -49,6 +49,10 @@ el_btn_calculate.onclick = function() {
 		displayResult();
 	}
 };
+// Download 버튼
+el_btn_download.onclick = function() {
+	alert('Not yet...');
+};
 // 라디오 버튼
 el_gs_type_stt.onclick = function() {
 	gs_type_val = getRadioCheckedValue('rdo_gs_type');
