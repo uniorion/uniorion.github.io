@@ -1,10 +1,10 @@
-# Mini Project
+#### Mini Project
 
+<br>
 
+# **Grid System Generator**
 
-**Grid System Generator**
-
-### # 목적 
+## # 목적 
 ##### a. 그리드 시스템을 배운 후 따로 복습할 시간이 녹록지 않아 복습을 겸할 목적.
 ##### b. 다양한 그리드 시스템을 빠르게 대응하기 위함.
 ##### c. 반복 작업을 줄이고 일관된 코드로 유지보수를 용이하게 함.
