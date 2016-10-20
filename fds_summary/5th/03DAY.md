@@ -7,7 +7,8 @@
 > false == "false"  // false
 > false == "0"      // true
 > null == undefined // true
-**결론은 엄격한 비교(===)를 사용해라**
+
+**결론은 엄격한 비교(===)를 사용해라!**
 
 ### 삼항연산자
 ```js
@@ -60,7 +61,6 @@ console.log('------------------------------------------------');
 var viewport_width = window.innerWidth || document.docuementElement.clientWidth || document.body.clientWidth;
 
 // 위, 아래 구문은 동일한 결과를 가져온다.
-
 var viewport_width;
 
 if ( window.innerWidth ) {
@@ -99,22 +99,68 @@ switch ( members[3] ) {
 
 ## Sass
 node-sass --help
-> --watch : 디렉토리 감시, 저장할때마다 컴파일
-> --recursive : 하위폴더에 있는 것까지 컴파일
-> --out-style : 내보낼 스타일 설정ㄴ
+> --watch : 디렉토리 감시, 저장할때마다 컴파일<br>
+> --recursive : 하위폴더에 있는 것까지 컴파일<br>
+> --out-style : 내보낼 스타일 설정 {compact || compress || expanded || nested}
 
-### 문법
+#### Sass 폴더 변환 실행 명령
+> node-sass --watch --recursive sass --output css<br>
+> node-sass -w -r sass -o css --output-style expanded --source-map ./map
+
+#### Source Map 파일
+> 브라우저 요소 검사 시 스타일을 mapping을 sass파일로 볼 수 있게 한다.
+
+#### 문법
 * scss : css 문법을 사용하여 작성
 * sass : 중괄호와, 세미콜론을 쓰지 않음. 들여쓰기로 종속관계가 설정되므로 매우 중요하다.
          들여쓰기 시, tab || space 중 하나로 통일해야 한다.
 
-### Sass 폴더 변환 실행 명령
-node-sass --watch --recursive sass --output css
-node-sass -w -r sass -o css
-
-### Source Map 파일
-> 브라우저 요소 검사 시 스타일을 mapping을 sass파일로 볼 수 있게 한다.
-
-` node-sass -w -r --source-map ` 
-
 #### 주석
+* // —> 한줄 주석. 컴파일된 후에는 보이지 않는다.
+* /* —> 여러줄 주석. 줄바꿈하고 한번 들여써서 사용, css 파일에 컴파일 됨.
+
+#### @extend: 상속
+```sass
+.box
+  display: block
+  width: 100px
+  height: 100px
+
+.box-black
+  @extend .box
+  background: #000
+
+.box-yellow
+  @extend .box
+  background: #ff0
+```
+
+#### %: Module not shown ( 대체 선택자 )
+* %선택자를 이용한 모듈은 비공개화 되어 css에 노출되지 않는다.
+```sass
+%flex-center-middle
+  display: flex
+  jusrify-content: center
+  align-items: center
+
+%box
+  @extend %flex-center-middle
+  width: 100px
+  height: 100px
+
+.box-black
+  @extend %box
+  background: black;
+
+.box-red
+  @extend %box
+  background: red;
+
+.box-green
+  @extend %box
+  background: green;
+
+.box-blue
+  @extend %box
+  background: blue;
+```

@@ -45,11 +45,10 @@
 
 #### # Git - [https://git-scm.com/](https://git-scm.com/)
 
-#### # Sass
-    - node-sass
+#### # Sass ( node-sass )
 
 #### # Source Tree - [https://www.sourcetreeapp.com/](https://www.sourcetreeapp.com/)
-    
+
 #### # Slack
 
 #### # Trello
