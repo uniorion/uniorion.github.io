@@ -1,5 +1,3 @@
-var	doc_CSS = null;	// 출력될 css 문서
-
 // css 문서내용 만들기
 function setCSS() {
 	attachComment();
@@ -18,9 +16,6 @@ function setCSS() {
 	}
 }
 
-/****************************
-	공통 css
-*/
 // 상단 주석
 function attachComment() {
 	doc_CSS =	"\n/* ======================================="
@@ -36,21 +31,21 @@ function attachComment() {
 function attachContainer() {
 	doc_CSS =	doc_CSS 
 					+ "\n\n.container {"
-					+ "\n	position: relative;"
-					+ "\n	width: " + (gs_type_val === "stt" ? total_width : "100") + unit + ";"
-					+ "\n	margin-left: auto;"
-					+ "\n	margin-right: auto;"
+					+ "\n position: relative;"
+					+ "\n width: " + (gs_type_val === "stt" ? total_width : "100") + unit + ";"
+					+ "\n margin-left: auto;"
+					+ "\n margin-right: auto;"
 					+ "\n}"
 					+ "\n.container[class*='show-'] {"
-					+ "\n  position: relative;"
+					+ "\n position: relative;"
 					+ "\n}"
 					+ "\n.container[class*='show-']::before {"
-					+ "\n 	content: '';"
-					+ "\n  position: absolute;"
-					+ "\n  z-index: 1000;"
-					+ "\n  top: 0;"
-					+ "\n  min-height: 100vh;"
-					+ "\n  width: 100%;"
+					+ "\n content: '';"
+					+ "\n position: absolute;"
+					+ "\n z-index: 1000;"
+					+ "\n top: 0;"
+					+ "\n min-height: 100vh;"
+					+ "\n width: 100%;"
 					+ "\n}";
 }
 
@@ -65,7 +60,6 @@ function attachGuide() {
 
 	// static
  	if ( gs_type_val === "stt" ) {
-
 		column_gradient = "transparent " + margin_width_fix + unit;
 		for (var i = 1; columns >= i; ++i) {
 
@@ -108,19 +102,22 @@ function attachGuide() {
 	// show-baseline
 	doc_CSS =	doc_CSS 
 					+ "\n.container.show-baseline::before {"
-					+ "\nbackground-image: linear-gradient(transparent 9px, " + GRID_LINE_COLOR + " 9px);"
-					+ "\nbackground-size: 1px 10px; }\n"
+					+ "\n background-image: linear-gradient(transparent 9px, " + GRID_LINE_COLOR + " 9px);"
+					+ "\n background-size: 1px 10px;"
+					+ "\n}\n";
 	// show-columns
 	doc_CSS =	doc_CSS
 					+ "\n.container.show-columns::before {"
-					+ "\nbackground-image: linear-gradient(90deg, " + column_gradient + ");"
-					+ "\nbackground-size: " + (gs_type_val === "stt" ? total_width : "100") + unit + " 1px; }\n"
+					+ "\n background-image: linear-gradient(90deg, " + column_gradient + ");"
+					+ "\n background-size: " + (gs_type_val === "stt" ? total_width : "100") + unit + " 1px;"
+					+ "\n}\n";
 	// show-grid
 	doc_CSS =	doc_CSS
 					+ "\n.container.show-grid::before {"
-					+ "\nbackground: linear-gradient(transparent 9px, " + GRID_LINE_COLOR + " 9px)"
-					+ "\n, linear-gradient(90deg, " + column_gradient + ");" 
-					+ "\nbackground-size: 1px 10px, " + (gs_type_val === "stt" ? total_width : "100") + unit + " 1px; }\n"
+					+ "\n background: linear-gradient(transparent 9px, " + GRID_LINE_COLOR + " 9px)"
+					+ "\n ,linear-gradient(90deg, " + column_gradient + ");" 
+					+ "\n background-size: 1px 10px, " + (gs_type_val === "stt" ? total_width : "100") + unit + " 1px;"
+					+ "\n}\n";
 }
  
 /*****************
@@ -130,27 +127,32 @@ function attachColumns() {
 	// row module
 	doc_CSS =	doc_CSS
 					+ "\n.row {"
-					+ "\nmargin-left: " + (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width))  + unit + ";"
-					+ "\nmargin-right: " + (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width)) + unit + "; }\n"
+					+ "\n margin-left: " 	+ (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width)) + unit + ";"
+					+ "\n margin-right: " + (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width)) + unit + ";"
+					+ "\n}\n"
 					+ "\n.row::after {"
-					+ "\ncontent: '';"
-					+ "\ndisplay: block;"
-					+ "\nclear: both; }\n"
+					+ "\n content: '';"
+					+ "\n display: block;"
+					+ "\n clear: both;"
+					+ "\n}\n";
 	// column module
 	doc_CSS =	doc_CSS
 					+ "\n.row div[class*='col-'] {"
-					+ "\nbox-sizing: border-box;"
-					+ "\nfloat: left; }\n"
+					+ "\n box-sizing: border-box;"
+					+ "\n float: left;"
+					+ "\n}\n"
 					+ "\n[class*='col-']:not(:last-child) {"
-					+ "\n  margin-right: " + (gs_type_val === "stt" ? gutter_width : percent(gutter_width, total_width)) + unit + "; }\n";
+					+ "\n  margin-right: " + (gs_type_val === "stt" ? gutter_width : percent(gutter_width, total_width)) + unit + ";"
+					+ "\n}\n";
 
 	var col_width = 0;
 
 	for(var i = 1; columns >= i; ++i) {
 		
-		col_width = (column_width * i) + (gutter_width * (i - 1));
-
-		if ( gs_type_val === "fld" ) {
+		if ( gs_type_val === "stt" ) { 
+			col_width = (column_width * i) + (gutter_width * (i - 1));
+		}
+		else if ( gs_type_val === "fld" ) {
 			col_width = percent(col_width, total_width);
 		}
 
@@ -162,17 +164,20 @@ function attachColumns() {
 		push, pull
 */
 function attachPushPull() {
-	doc_CSS =	doc_CSS
-					+ "\n\n[class*='push-'],"
+	doc_CSS =	doc_CSS + "\n"
+					+ "\n[class*='push-'],"
 					+ "\n[class*='pull-'] {"
-					+ "\nposition: relative; }\n";
+					+ "\n position: relative;"
+					+ "\n}\n";
 
 	var offset = 0;
 
 	for(var i = 1; columns >= i; ++i) {
-		offset = (column_width * i) + (gutter_width * i);
 
-		if ( gs_type_val === "fld" ) {
+		if ( gs_type_val === "stt" ) { 
+			offset = (column_width * i) + (gutter_width * i);
+		}
+		else if ( gs_type_val === "fld" ) {
 			offset = percent(offset, total_width);
 		}
 
@@ -190,9 +195,11 @@ function attachOffset() {
 	var offset = 0;
 
 	for(var i = 1; columns >= i; ++i) {
-		offset = (column_width * i) + (gutter_width * i);
 
-		if ( gs_type_val === "fld" ) {
+		if ( gs_type_val === "stt" ) { 
+			offset = (column_width * i) + (gutter_width * i);
+		}
+		else if ( gs_type_val === "fld" ) {
 			offset = percent(offset, total_width);
 		}
 
@@ -205,16 +212,19 @@ function attachOffset() {
 		isolate
 */
 function attachIsolate() {
-	doc_CSS =	doc_CSS
-					+ "\n\n.row.isolate [class*='col-'] {"
-					+ "\nmargin-right: -100%; }\n"
+	doc_CSS =	doc_CSS + "\n"
+					+ "\n.row.isolate [class*='col-'] {"
+					+ "\n margin-right: -100%;"
+					+ "\n}\n";
 
 	var offset = 0;
 
 	for(var i = 1; columns >= i; ++i) {
-		offset = (column_width * (i-1)) + (gutter_width * (i-1));
-
-		if ( gs_type_val === "fld" ) {
+		
+		if ( gs_type_val === "stt" ) { 
+			offset = offset = (column_width * (i-1)) + (gutter_width * (i-1));
+		}
+		else if ( gs_type_val === "fld" ) {
 			offset = percent(offset, total_width);
 		}
 

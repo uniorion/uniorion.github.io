@@ -9,50 +9,57 @@
 ========================================== */
 
 .container {
-  position: relative;
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+ position: relative;
+ width: 960px;
+ margin-left: auto;
+ margin-right: auto;
 }
 .container[class*='show-'] {
-  position: relative;
+ position: relative;
 }
 .container[class*='show-']::before {
-  content: '';
-  position: absolute;
-  z-index: 1000;
-  top: 0;
-  min-height: 100vh;
-  width: 100%;
+ content: '';
+ position: absolute;
+ z-index: 1000;
+ top: 0;
+ min-height: 100vh;
+ width: 100%;
 }
 .container.show-baseline::before {
-background-image: linear-gradient(transparent 9px, #7400ff 9px);
-background-size: 1px 10px; }
+ background-image: linear-gradient(transparent 9px, #7400ff 9px);
+ background-size: 1px 10px;
+}
 
 .container.show-columns::before {
-background-image: linear-gradient(90deg, transparent 10px, hsla(190, 84%, 59%, 0.5) 10px, hsla(163, 64%, 49%, 0.2) 110px, transparent 110px, transparent 130px, hsla(190, 84%, 59%, 0.5) 130px, hsla(163, 64%, 49%, 0.2) 230px, transparent 230px, transparent 250px, hsla(190, 84%, 59%, 0.5) 250px, hsla(163, 64%, 49%, 0.2) 350px, transparent 350px, transparent 370px, hsla(190, 84%, 59%, 0.5) 370px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 590px, transparent 590px, transparent 610px, hsla(190, 84%, 59%, 0.5) 610px, hsla(163, 64%, 49%, 0.2) 710px, transparent 710px, transparent 730px, hsla(190, 84%, 59%, 0.5) 730px, hsla(163, 64%, 49%, 0.2) 830px, transparent 830px, transparent 850px, hsla(190, 84%, 59%, 0.5) 850px, hsla(163, 64%, 49%, 0.2) 950px, transparent 950px, transparent 970px, transparent 950px);
-background-size: 960px 1px; }
+ background-image: linear-gradient(90deg, transparent 10px, hsla(190, 84%, 59%, 0.5) 10px, hsla(163, 64%, 49%, 0.2) 110px, transparent 110px, transparent 130px, hsla(190, 84%, 59%, 0.5) 130px, hsla(163, 64%, 49%, 0.2) 230px, transparent 230px, transparent 250px, hsla(190, 84%, 59%, 0.5) 250px, hsla(163, 64%, 49%, 0.2) 350px, transparent 350px, transparent 370px, hsla(190, 84%, 59%, 0.5) 370px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 590px, transparent 590px, transparent 610px, hsla(190, 84%, 59%, 0.5) 610px, hsla(163, 64%, 49%, 0.2) 710px, transparent 710px, transparent 730px, hsla(190, 84%, 59%, 0.5) 730px, hsla(163, 64%, 49%, 0.2) 830px, transparent 830px, transparent 850px, hsla(190, 84%, 59%, 0.5) 850px, hsla(163, 64%, 49%, 0.2) 950px, transparent 950px, transparent 970px, transparent 950px);
+ background-size: 960px 1px;
+}
 
 .container.show-grid::before {
-background: linear-gradient(transparent 9px, #7400ff 9px)
-, linear-gradient(90deg, transparent 10px, hsla(190, 84%, 59%, 0.5) 10px, hsla(163, 64%, 49%, 0.2) 110px, transparent 110px, transparent 130px, hsla(190, 84%, 59%, 0.5) 130px, hsla(163, 64%, 49%, 0.2) 230px, transparent 230px, transparent 250px, hsla(190, 84%, 59%, 0.5) 250px, hsla(163, 64%, 49%, 0.2) 350px, transparent 350px, transparent 370px, hsla(190, 84%, 59%, 0.5) 370px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 590px, transparent 590px, transparent 610px, hsla(190, 84%, 59%, 0.5) 610px, hsla(163, 64%, 49%, 0.2) 710px, transparent 710px, transparent 730px, hsla(190, 84%, 59%, 0.5) 730px, hsla(163, 64%, 49%, 0.2) 830px, transparent 830px, transparent 850px, hsla(190, 84%, 59%, 0.5) 850px, hsla(163, 64%, 49%, 0.2) 950px, transparent 950px, transparent 970px, transparent 950px);
-background-size: 1px 10px, 960px 1px; }
+ background: linear-gradient(transparent 9px, #7400ff 9px)
+ ,linear-gradient(90deg, transparent 10px, hsla(190, 84%, 59%, 0.5) 10px, hsla(163, 64%, 49%, 0.2) 110px, transparent 110px, transparent 130px, hsla(190, 84%, 59%, 0.5) 130px, hsla(163, 64%, 49%, 0.2) 230px, transparent 230px, transparent 250px, hsla(190, 84%, 59%, 0.5) 250px, hsla(163, 64%, 49%, 0.2) 350px, transparent 350px, transparent 370px, hsla(190, 84%, 59%, 0.5) 370px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 590px, transparent 590px, transparent 610px, hsla(190, 84%, 59%, 0.5) 610px, hsla(163, 64%, 49%, 0.2) 710px, transparent 710px, transparent 730px, hsla(190, 84%, 59%, 0.5) 730px, hsla(163, 64%, 49%, 0.2) 830px, transparent 830px, transparent 850px, hsla(190, 84%, 59%, 0.5) 850px, hsla(163, 64%, 49%, 0.2) 950px, transparent 950px, transparent 970px, transparent 950px);
+ background-size: 1px 10px, 960px 1px;
+}
 
 .row {
-margin-left: 10px;
-margin-right: 10px; }
+ margin-left: 10px;
+ margin-right: 10px;
+}
 
 .row::after {
-content: '';
-display: block;
-clear: both; }
+ content: '';
+ display: block;
+ clear: both;
+}
 
 .row div[class*='col-'] {
-box-sizing: border-box;
-float: left; }
+ box-sizing: border-box;
+ float: left;
+}
 
 [class*='col-']:not(:last-child) {
-  margin-right: 20px; }
+  margin-right: 20px;
+}
 
 .col-1 { width: 100px; }
 .col-2 { width: 220px; }
@@ -64,8 +71,9 @@ float: left; }
 .col-8 { width: 940px; }
 
 [class*='push-'],
-[class*='pull-'] {
-position: relative; }
+ [class*='pull-'] {
+ position: relative;
+}
 
 .push-1  { left: 120px;  }
 .pull-1  { right: 120px;  }
@@ -102,7 +110,8 @@ position: relative; }
 .suffix-8  { margin-right: 960px;  }
 
 .row.isolate [class*='col-'] {
-margin-right: -100%; }
+ margin-right: -100%;
+}
 
 .row.isolate .o1  { margin-left: 0px;  }
 .row.isolate .o2  { margin-left: 120px;  }

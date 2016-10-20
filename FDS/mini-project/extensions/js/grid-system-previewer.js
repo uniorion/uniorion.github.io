@@ -16,8 +16,8 @@ var 	el_gs_type_stt 		= document.querySelector('#rdo_gs_type_stt')
 var  	gs_type_val 				= getRadioCheckedValue('rdo_gs_type')
 		, total_width 				= 0
 		,	columns 						= 0
-		,	margin_width 				= window.parseInt(el_margin_width.value, 10)
-		,	gutter_width 				= null
+		,	margin_width 				= 0
+		,	gutter_width 				= 0
 		,	margin_width_fix 		= 0
     , column_width 				= 0
     , total_gutter_width	= 0
@@ -50,9 +50,10 @@ function click(e) {
 		calcGrid();
 	 	chrome.tabs.executeScript(null,
 	  	{code: getScript() });
-	} else {
+	} 
+	else if ( e.target.getAttribute('class') === 'btn-remove' ) {
 		chrome.tabs.executeScript(null,
-	  	{code: "var pre_grid_div = document.querySelector('#grid-system-guide');"
+	  	{code: "var pre_grid_div = document.querySelector('#grid-system-guide-parent');"
 						+ "if (pre_grid_div) { pre_grid_div.remove() }" });
 	}
 }
@@ -61,12 +62,8 @@ function setInputValue() {
 	total_width 		= window.parseInt(el_total_width.value, 10);
 	columns 				= window.parseInt(el_columns.value, 10);
 	margin_width 		= window.parseInt(el_margin_width.value, 10);
-	gutter_width 		= window.parseInt(el_gutter_width.value, 10);	
+	gutter_width 		= (columns === 1) ? 0 : window.parseInt(el_gutter_width.value, 10);	// 컬럼이 하나이면 거터값 무시
 	margin_width_fix = margin_width;
- 
-	if ( columns === 1 ) {
-		gutter_width = 0;			// 컬럼이 하나이면 거터값 무시하고 계산
-	}
 }
 	
 // 그리드 요소 값 계산
@@ -104,13 +101,16 @@ function calcGrid() {
 }
 
 function getScript() {
-	var make_div = 	"var pre_grid_div = document.querySelector('#grid-system-guide');"
+	var make_div 	= "var pre_grid_div = document.querySelector('#grid-system-guide-parent');"
 								+ "if (pre_grid_div) { pre_grid_div.remove() }"
 								+ "var el_body = document.body;"
-								+ "var el_div 	= document.createElement('div');"
-								+ "el_div.setAttribute('id', 'grid-system-guide');"
-								+ "el_body.appendChild(el_div);"
- 
+								+ "var el_div_parent 	= document.createElement('div');"
+								+ "el_div_parent.setAttribute('id', 'grid-system-guide-parent');"
+								+ "el_body.appendChild(el_div_parent);"
+								+ "var el_div_child 	= document.createElement('div');"
+								+ "el_div_child.setAttribute('id', 'grid-system-guide-child');"
+								+ "el_div_parent.appendChild(el_div_child);"
+
  	var   column_gradient = ""
 			, col_start 			= 0
 			, col_end 				= 0
@@ -162,21 +162,28 @@ function getScript() {
 	var bg_guide 	= "linear-gradient(transparent 9px, " + GRID_LINE_COLOR + " 9px)"
 								+ ", linear-gradient(90deg, " + column_gradient + ")" 
 
-	var result 	=	make_div 
-  						+ "el_div.style.background='" + bg_guide + "';"
-  						+ "el_div.style.backgroundSize='1px 10px, " + (gs_type_val === "stt" ? total_width : "100") + unit + " 1px';"
-  						+ "el_div.style.width='100%';"
-  						+ "el_div.style.height='200%';"
-  						+ "el_div.style.position='absolute';"
-  						+ "el_div.style.top='0';"
-  						+ "el_div.style.left='0';"
-  						+ "el_div.style.zIndex=10000;"
+	var result 	=	make_div  
++ "el_div_parent.style.width='100%';"
++ "el_div_parent.style.height='200%';"
++ "el_div_parent.style.position='absolute';"
++ "el_div_parent.style.top='0';"
++ "el_div_parent.style.left='0';"
++ "el_div_parent.style.zIndex=10000;"
++ "el_div_child.style.width='" + (gs_type_val === "stt" ? total_width : "100") + unit + "';"
++ "el_div_child.style.height='100%';"
++ "el_div_child.style.marginLeft='auto';"
++ "el_div_child.style.marginRight='auto';"
++ "el_div_child.style.background='" + bg_guide + "';"
++ "el_div_child.style.backgroundSize='1px 10px, " + (gs_type_val === "stt" ? total_width : "100") + unit + " 1px';"
+
+
   return result;
 }
 
 function isType(data) {
     return Object.prototype.toString.call(data).toLowerCase().slice(8, -1);
 }
+
 // 정수형 check 
 function isInt(num) {
 	if ( isType(num) !== 'number' ) {
@@ -189,6 +196,7 @@ function isInt(num) {
 		return false;
 	}
 }
+
 // 짝수 check
 function isEven(num) {
 	if ( isType(num) !== 'number' ) {
