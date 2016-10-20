@@ -2,9 +2,9 @@
 /* =======================================
   Grid System CSS v1.0 - Static
  # width : 960px
- # columns : 10
- # column width : 77px
- # margin : 5px
+ # columns : 8
+ # column width : 100px
+ # margin : 10px
  # gutter : 20px
 ========================================== */
 
@@ -30,17 +30,17 @@ background-image: linear-gradient(transparent 9px, #7400ff 9px);
 background-size: 1px 10px; }
 
 .container.show-columns::before {
-background-image: linear-gradient(90deg, transparent 5px, hsla(190, 84%, 59%, 0.5) 5px, hsla(163, 64%, 49%, 0.2) 82px, transparent 82px, transparent 102px, hsla(190, 84%, 59%, 0.5) 102px, hsla(163, 64%, 49%, 0.2) 179px, transparent 179px, transparent 199px, hsla(190, 84%, 59%, 0.5) 199px, hsla(163, 64%, 49%, 0.2) 276px, transparent 276px, transparent 296px, hsla(190, 84%, 59%, 0.5) 296px, hsla(163, 64%, 49%, 0.2) 373px, transparent 373px, transparent 393px, hsla(190, 84%, 59%, 0.5) 393px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 567px, transparent 567px, transparent 587px, hsla(190, 84%, 59%, 0.5) 587px, hsla(163, 64%, 49%, 0.2) 664px, transparent 664px, transparent 684px, hsla(190, 84%, 59%, 0.5) 684px, hsla(163, 64%, 49%, 0.2) 761px, transparent 761px, transparent 781px, hsla(190, 84%, 59%, 0.5) 781px, hsla(163, 64%, 49%, 0.2) 858px, transparent 858px, transparent 878px, hsla(190, 84%, 59%, 0.5) 878px, hsla(163, 64%, 49%, 0.2) 955px, transparent 955px, transparent 975px, transparent 955px);
+background-image: linear-gradient(90deg, transparent 10px, hsla(190, 84%, 59%, 0.5) 10px, hsla(163, 64%, 49%, 0.2) 110px, transparent 110px, transparent 130px, hsla(190, 84%, 59%, 0.5) 130px, hsla(163, 64%, 49%, 0.2) 230px, transparent 230px, transparent 250px, hsla(190, 84%, 59%, 0.5) 250px, hsla(163, 64%, 49%, 0.2) 350px, transparent 350px, transparent 370px, hsla(190, 84%, 59%, 0.5) 370px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 590px, transparent 590px, transparent 610px, hsla(190, 84%, 59%, 0.5) 610px, hsla(163, 64%, 49%, 0.2) 710px, transparent 710px, transparent 730px, hsla(190, 84%, 59%, 0.5) 730px, hsla(163, 64%, 49%, 0.2) 830px, transparent 830px, transparent 850px, hsla(190, 84%, 59%, 0.5) 850px, hsla(163, 64%, 49%, 0.2) 950px, transparent 950px, transparent 970px, transparent 950px);
 background-size: 960px 1px; }
 
 .container.show-grid::before {
 background: linear-gradient(transparent 9px, #7400ff 9px)
-, linear-gradient(90deg, transparent 5px, hsla(190, 84%, 59%, 0.5) 5px, hsla(163, 64%, 49%, 0.2) 82px, transparent 82px, transparent 102px, hsla(190, 84%, 59%, 0.5) 102px, hsla(163, 64%, 49%, 0.2) 179px, transparent 179px, transparent 199px, hsla(190, 84%, 59%, 0.5) 199px, hsla(163, 64%, 49%, 0.2) 276px, transparent 276px, transparent 296px, hsla(190, 84%, 59%, 0.5) 296px, hsla(163, 64%, 49%, 0.2) 373px, transparent 373px, transparent 393px, hsla(190, 84%, 59%, 0.5) 393px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 567px, transparent 567px, transparent 587px, hsla(190, 84%, 59%, 0.5) 587px, hsla(163, 64%, 49%, 0.2) 664px, transparent 664px, transparent 684px, hsla(190, 84%, 59%, 0.5) 684px, hsla(163, 64%, 49%, 0.2) 761px, transparent 761px, transparent 781px, hsla(190, 84%, 59%, 0.5) 781px, hsla(163, 64%, 49%, 0.2) 858px, transparent 858px, transparent 878px, hsla(190, 84%, 59%, 0.5) 878px, hsla(163, 64%, 49%, 0.2) 955px, transparent 955px, transparent 975px, transparent 955px);
+, linear-gradient(90deg, transparent 10px, hsla(190, 84%, 59%, 0.5) 10px, hsla(163, 64%, 49%, 0.2) 110px, transparent 110px, transparent 130px, hsla(190, 84%, 59%, 0.5) 130px, hsla(163, 64%, 49%, 0.2) 230px, transparent 230px, transparent 250px, hsla(190, 84%, 59%, 0.5) 250px, hsla(163, 64%, 49%, 0.2) 350px, transparent 350px, transparent 370px, hsla(190, 84%, 59%, 0.5) 370px, hsla(163, 64%, 49%, 0.2) 470px, transparent 470px, transparent 490px, hsla(190, 84%, 59%, 0.5) 490px, hsla(163, 64%, 49%, 0.2) 590px, transparent 590px, transparent 610px, hsla(190, 84%, 59%, 0.5) 610px, hsla(163, 64%, 49%, 0.2) 710px, transparent 710px, transparent 730px, hsla(190, 84%, 59%, 0.5) 730px, hsla(163, 64%, 49%, 0.2) 830px, transparent 830px, transparent 850px, hsla(190, 84%, 59%, 0.5) 850px, hsla(163, 64%, 49%, 0.2) 950px, transparent 950px, transparent 970px, transparent 950px);
 background-size: 1px 10px, 960px 1px; }
 
 .row {
-padding-left: 5px;
-padding-right: 5px; }
+margin-left: 10px;
+margin-right: 10px; }
 
 .row::after {
 content: '';
@@ -48,79 +48,67 @@ display: block;
 clear: both; }
 
 .row div[class*='col-'] {
-background-clip: content-box;
+box-sizing: border-box;
 float: left; }
 
 [class*='col-']:not(:last-child) {
-  padding-right: 20px; }
+  margin-right: 20px; }
 
-.col-1 { width: 77px; }
-.col-2 { width: 174px; }
-.col-3 { width: 271px; }
-.col-4 { width: 368px; }
-.col-5 { width: 465px; }
-.col-6 { width: 562px; }
-.col-7 { width: 659px; }
-.col-8 { width: 756px; }
-.col-9 { width: 853px; }
-.col-10 { width: 950px; }
+.col-1 { width: 100px; }
+.col-2 { width: 220px; }
+.col-3 { width: 340px; }
+.col-4 { width: 460px; }
+.col-5 { width: 580px; }
+.col-6 { width: 700px; }
+.col-7 { width: 820px; }
+.col-8 { width: 940px; }
 
 [class*='push-'],
 [class*='pull-'] {
 position: relative; }
 
-.push-1  { left: 97px;  }
-.pull-1  { right: 97px;  }
-.push-2  { left: 194px;  }
-.pull-2  { right: 194px;  }
-.push-3  { left: 291px;  }
-.pull-3  { right: 291px;  }
-.push-4  { left: 388px;  }
-.pull-4  { right: 388px;  }
-.push-5  { left: 485px;  }
-.pull-5  { right: 485px;  }
-.push-6  { left: 582px;  }
-.pull-6  { right: 582px;  }
-.push-7  { left: 679px;  }
-.pull-7  { right: 679px;  }
-.push-8  { left: 776px;  }
-.pull-8  { right: 776px;  }
-.push-9  { left: 873px;  }
-.pull-9  { right: 873px;  }
-.push-10  { left: 970px;  }
-.pull-10  { right: 970px;  }
+.push-1  { left: 120px;  }
+.pull-1  { right: 120px;  }
+.push-2  { left: 240px;  }
+.pull-2  { right: 240px;  }
+.push-3  { left: 360px;  }
+.pull-3  { right: 360px;  }
+.push-4  { left: 480px;  }
+.pull-4  { right: 480px;  }
+.push-5  { left: 600px;  }
+.pull-5  { right: 600px;  }
+.push-6  { left: 720px;  }
+.pull-6  { right: 720px;  }
+.push-7  { left: 840px;  }
+.pull-7  { right: 840px;  }
+.push-8  { left: 960px;  }
+.pull-8  { right: 960px;  }
 
-.prefix-1  { margin-left: 97px;  }
-.suffix-1  { margin-right: 97px;  }
-.prefix-2  { margin-left: 194px;  }
-.suffix-2  { margin-right: 194px;  }
-.prefix-3  { margin-left: 291px;  }
-.suffix-3  { margin-right: 291px;  }
-.prefix-4  { margin-left: 388px;  }
-.suffix-4  { margin-right: 388px;  }
-.prefix-5  { margin-left: 485px;  }
-.suffix-5  { margin-right: 485px;  }
-.prefix-6  { margin-left: 582px;  }
-.suffix-6  { margin-right: 582px;  }
-.prefix-7  { margin-left: 679px;  }
-.suffix-7  { margin-right: 679px;  }
-.prefix-8  { margin-left: 776px;  }
-.suffix-8  { margin-right: 776px;  }
-.prefix-9  { margin-left: 873px;  }
-.suffix-9  { margin-right: 873px;  }
-.prefix-10  { margin-left: 970px;  }
-.suffix-10  { margin-right: 970px;  }
+.prefix-1  { margin-left: 120px;  }
+.suffix-1  { margin-right: 120px;  }
+.prefix-2  { margin-left: 240px;  }
+.suffix-2  { margin-right: 240px;  }
+.prefix-3  { margin-left: 360px;  }
+.suffix-3  { margin-right: 360px;  }
+.prefix-4  { margin-left: 480px;  }
+.suffix-4  { margin-right: 480px;  }
+.prefix-5  { margin-left: 600px;  }
+.suffix-5  { margin-right: 600px;  }
+.prefix-6  { margin-left: 720px;  }
+.suffix-6  { margin-right: 720px;  }
+.prefix-7  { margin-left: 840px;  }
+.suffix-7  { margin-right: 840px;  }
+.prefix-8  { margin-left: 960px;  }
+.suffix-8  { margin-right: 960px;  }
 
 .row.isolate [class*='col-'] {
 margin-right: -100%; }
 
 .row.isolate .o1  { margin-left: 0px;  }
-.row.isolate .o2  { margin-left: 97px;  }
-.row.isolate .o3  { margin-left: 194px;  }
-.row.isolate .o4  { margin-left: 291px;  }
-.row.isolate .o5  { margin-left: 388px;  }
-.row.isolate .o6  { margin-left: 485px;  }
-.row.isolate .o7  { margin-left: 582px;  }
-.row.isolate .o8  { margin-left: 679px;  }
-.row.isolate .o9  { margin-left: 776px;  }
-.row.isolate .o10  { margin-left: 873px;  }
+.row.isolate .o2  { margin-left: 120px;  }
+.row.isolate .o3  { margin-left: 240px;  }
+.row.isolate .o4  { margin-left: 360px;  }
+.row.isolate .o5  { margin-left: 480px;  }
+.row.isolate .o6  { margin-left: 600px;  }
+.row.isolate .o7  { margin-left: 720px;  }
+.row.isolate .o8  { margin-left: 840px;  }

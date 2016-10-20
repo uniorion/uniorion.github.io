@@ -130,8 +130,8 @@ function attachColumns() {
 	// row module
 	doc_CSS =	doc_CSS
 					+ "\n.row {"
-					+ "\npadding-left: " + (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width))  + unit + ";"
-					+ "\npadding-right: " + (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width)) + unit + "; }\n"
+					+ "\nmargin-left: " + (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width))  + unit + ";"
+					+ "\nmargin-right: " + (gs_type_val === "stt" ? margin_width_fix : percent(margin_width_fix, total_width)) + unit + "; }\n"
 					+ "\n.row::after {"
 					+ "\ncontent: '';"
 					+ "\ndisplay: block;"
@@ -139,10 +139,10 @@ function attachColumns() {
 	// column module
 	doc_CSS =	doc_CSS
 					+ "\n.row div[class*='col-'] {"
-					+ "\nbackground-clip: content-box;"
+					+ "\nbox-sizing: border-box;"
 					+ "\nfloat: left; }\n"
 					+ "\n[class*='col-']:not(:last-child) {"
-					+ "\n  padding-right: " + (gs_type_val === "stt" ? gutter_width : percent(gutter_width, total_width)) + unit + "; }\n";
+					+ "\n  margin-right: " + (gs_type_val === "stt" ? gutter_width : percent(gutter_width, total_width)) + unit + "; }\n";
 
 	var col_width = 0;
 
