@@ -51,16 +51,15 @@ button:focus {
 /*  레이아웃 	*/
 .container {
 	width: 100%;
-	overflow: hidden;
 }
 .header-wrap {
 	background: linear-gradient(#1c301a 0%, #2e412d 50%, #738672 100%);
 }
 .contents-wrap {
-	min-height: 30rem;
+	height: 30rem;
 }
 .footer-wrap {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	background: #272e27;

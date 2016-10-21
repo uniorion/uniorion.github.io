@@ -1,0 +1,18 @@
+
+ $app-width: 1400px;
+ // 변수 이름의 _, - 모두 동일하게 처리된다.
+ $app-min-height: 60px;
+
+$bp-prop: min-width;
+// 브레이크포인트(중단점) 설계
+$bp-md: 760px;
+$bp-lg: 1220px;
+$bp-xl: 1480px;
+
+$medium-rwd-bp: "screen and (#{$bp-prop}: #{$bp-md+1}) and (max-width: #{$bp-lg})";
+
+// 가운데 정렬 박스 설정
+$box-width: 400px;
+$box-height: 200px;
+
+$google-webfont-name: "Antic|Paytone+One";
