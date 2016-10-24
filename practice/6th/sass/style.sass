@@ -1,4 +1,5 @@
 @import _mixins
+@import _functions
 
 // 플레이스홀더 셀렉터 %
 %clearfix
@@ -52,3 +53,25 @@ a
 
 .round-1
 	+circle(40px)
+
+
+%fl
+	float: left
+
+$i: 1
+$count: 14
+
+@while $i < $count
+	@debug $i
+	$i: $i + 1
+
+@for $i from 1 through $count
+	@debug $i
+	.col-#{$i}
+		@extend %fl
+		width: column($i)
+
+$icon-list: play, pause, next, previous, stop
+@each $icon in $icon-list
+	.icon-#{$icon}
+		background-image: url("images/icons/icon-#{$icon}.png")

@@ -3,13 +3,57 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sass</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../../modules/css/initialization/normalize.css">
+	<style>
+
+		.container {
+			margin: 5em;
+			width: 800px;
+			height: 600px;
+		}
+		.view,
+		.controller {
+			float: left;
+			height: 500px;
+		}
+		.view {
+			width:650px;
+		}
+		.view-img {
+			width: 100%;
+			height: auto;
+		}
+		.controller {
+			background: orange;
+			width:150px;
+		}
+		ul {
+			list-style-type: none;
+			display: flex;
+			flex-flow: column wrap;
+		}
+		.controller li img {
+			display: block;
+			width: 80px;
+			height: 80px;
+		}
+	</style>
 </head>
 <body>
-	
-	<a href="">테스트</a>
-	<a class="link" href="">테스트</a>
 
+	  <div class="container">
+	  	<div class="view">
+	  		<img class="view-img" src="images/flower01.jpg" alt="">
+	  	</div>
+	  	<div class="controller">
+	  		<ul>
+	  			<li><img src="images/flower01.jpg" alt=""></li>
+	  			<li><img src="images/flower02.jpg" alt=""></li>
+	  			<li><img src="images/flower03.jpg" alt=""></li>
+	  		</ul>
+	  	</div>
+	  </div>
 	
+<script src="control-dom-elements.js"></script>
 </body>
 </html>
