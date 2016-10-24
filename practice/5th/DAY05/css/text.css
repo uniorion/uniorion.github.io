@@ -1,0 +1,13 @@
+.box-items, .container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.box-items {
+  width: 100px;
+  height: 100px; }
+
+.box-items {
+  padding: 1em; }
+  .show-grid .box-items {
+    position: absolute; }

@@ -12,7 +12,7 @@
 // 모듈이 많다면 아래와 같이 개별적으로 로드하는 것이 좋음.
 // 환경 설철 파일 ($변수)
 @import config/vars
-/S/ 초기화 모듈
+// 초기화 모듈
 @import modules/normalize
 // 그리드 모듈
 // @import modules/grid
@@ -23,6 +23,18 @@
  * 사용자 정의 스타일링 코드 파트
  * --------------------------------
  */
+$break-small: 320px
+$break-large: 1200px
+
+.profile-pic
+  float: left
+  width: 250px
+  
+@media screen and (max-width: $break-small)
+  width: 100px
+  float: none
+
+
 
 $app-width: 1000px !default
 
@@ -86,4 +98,58 @@ $base-font-size: 14px
 .app 
   font: #{$base-font-size}/1.6 Helvetica
     family: $google-webfont-name
-  @include border-radius(10px)
+
+$family: "Droid+Sans"
+
+input[class='text']
+  font:
+    size: 14px
+
+@import url('http://fonts.googleapis.com/css?family=#{$family}')
+
+
+@mixin box-sizing
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+#app
+  @include box-sizing
+
+@mixin border-radius($origin) 
+  -webkit-border-radius: $origin
+  -moz-border-radius: $origin
+  -o-border-radius: $origin
+  border-radius: $origin
+
+@mixin box-sizing($origin)
+  -webkit-box-sizing: $origin
+  -moz-box-sizing: $origin
+  -o-box-sizing: $origin
+  -moz-box-sizing: $origin
+  box-sizing: $origin
+
+
+#app-button
+  border: 1px solid #628717
+  @include border-radius(3px)
+
+$box-width: 400px
+$box-height: 300px
+
+#center-box
+  @include box-sizing(content-box)
+  position: absolute
+  top: 0
+  left: 0 
+  width: $box-width
+  height: $box-height
+  margin:
+    left: $box-width / -2
+    top: $box-height / -2
+
+.sub-box 
+  @extend .center-box
+  background: #0E0909
+
+

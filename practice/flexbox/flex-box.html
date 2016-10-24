@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR"><!--<![endif]-->
+<!--[if IE 6]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko-KR" class="lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="lt-ie10 ie9"><![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Test</title>
+ 	<link rel="stylesheet" href="../../modules/css/initialization/normalize.css">
+  <style>
+		.container {
+			margin: 5em;
+			width: 400px;
+			height: 300px;
+			border: 1px solid #14436b;
+			display: flex;
+			justify-content: center;
+			align-items: space-around;
+			flex-direction: row;
+		}
+		.box {
+			width: 60px;
+			height: 60px;
+			/*flex:0 1 60px;*/
+		}
+
+		.box:nth-child(1) { background: #bb05bd; }
+		.box:nth-child(2) { background: #088966; }
+		.box:nth-child(3) { background: #F5C354; }
+		.box:nth-child(4) { background: #6F75FF; order:-1; }
+ 		
+ 		blockquote > cite:first-child + p {
+ 			background: orange;
+ 		}
+  </style>
+  <script>
+
+  	function getSomeMoney( money ) {
+	   	money = money || 100;
+	   	return money;
+    }
+    console.log( getSomeMoney(0) + " || " + getSomeMoney() );
+
+  </script>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="box">1</div>
+		<div class="box">2</div>
+		<div class="box">3</div>
+		<div class="box">4</div>
+	</div>
+
+	<blockquote cite="www.naver.com">
+	  <p>인용 1</p>
+	  <cite>스피노자</cite>
+	  <p>인용 2</p>
+	  <cite>갈릴레오</cite>
+	  <p>인용 3</p>
+	  <cite>뉴튼</cite>
+	</blockquote>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+%flex-center-mid
+  display: flex
+  justify-content: center
+  align-items: center
+
+%box
+  @extend %flex-center-mid
+  width: 100px
+  height: 100px
+
+.container
+	@extend %flex-center-mid
+
+.box-items
+	@extend %box
+	padding: 1em
+ 
+	.show-grid &
+		position: absolute
+
+

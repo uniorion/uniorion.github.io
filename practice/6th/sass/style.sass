@@ -1,0 +1,54 @@
+@import _mixins
+
+// 플레이스홀더 셀렉터 %
+%clearfix
+	// .lt-le8
+	// zoom: 1
+	&::after
+		content: ''
+		display: block
+		clear: box
+
+// 믹스인 (코드 섞어 생성한 것을 붙일 수 있도록..)
+// @mixin 	=
+// @include +
+=transition($property: all, $duration: 400ms, $easing-function: linear, $delay: null)
+	-webkit-transition: $property $duration $easing-function $delay
+	-moz-transition: $property $duration $easing-function $delay
+	-o-transition: $property $duration $easing-function $delay
+	transition: $property $duration $easing-function $delay
+
+=clearfix($support-ie: true)
+	@extend %clearfix
+	@if $support-ie
+		.lt-ie8 &
+			zoom: 1
+
+
+body
+	+transition(opacity, 0.4s, ease, 0.3s)
+
+.special-area
+	+clearfix(false)
+	// @extend %clearifx
+	+transition($easing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275))
+
+.row
+	+clearfix(false)
+
+.container .wrapper
+	+clearfix(true)
+
+=hover-link($padding-bottom: 2px, $border-bottom: 1px solid #767676) 
+	text-decoration: none
+	&:hover, &:focus 
+		padding-bottom: $padding-bottom
+		border-bottom: $border-bottom
+
+
+a
+	+hover-link()
+
+
+.round-1
+	+circle(40px)

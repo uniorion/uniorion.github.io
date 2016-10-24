@@ -69,6 +69,8 @@
 
 - 브런치 - 전민수 [https://brunch.co.kr/@ebprux]
 
+- 무료 한글 글꼴 [http://blog.naver.com/messinger00/220831856850]
+ 
 ---
 
 ### 서적
