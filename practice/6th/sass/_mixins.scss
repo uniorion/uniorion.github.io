@@ -1,7 +1,7 @@
 @mixin border-radius ($radius: 4px) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	border-radius: $radius;
+	-webkit-border-radisu: $radius;
+	-moz-border-radisu: $radius;
+	border-radisu: $radius;
 }
 
 @mixin background-origin ($origin: padding-box) {
