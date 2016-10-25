@@ -16,7 +16,7 @@ ES 6 (ECMA Script 2015)
 ~~~
 - for ( var [key, value] of [Array, Object, Map] ) { ... }
 ~~~
-
+<br>
 ### for ~ in 문
 ~~~js
 var fds = {}; // 객체 리터럴(값)
@@ -36,13 +36,13 @@ for ( var prop in fds ) {
   console.log('fds[prop] === fds.name:', fds.name); // 'Front-End Develop SCHOOL'
 }
 ~~~
-
+<br>
 ### 함수 ( Function )
-* 함수 선언식
+* 함수 선언식<br>
 `function fnDeclaration() { ... }`
-* 함수 표현식
+* 함수 표현식<br>
 `var fnExpression = function(){ ... };`
-
+<br>
 ### 전역(Global Scope) VS 지역(Local Scope)
 * 웹 브라우저(클라이언트, 프론트엔드) 환경에서 전역 객체라 함은 `window {}` 객체를 말한다.
 * 전역 변수, 함수는 웹 브라우저 환경에서 전역 객체인 window {} 객체의 속성이다.
@@ -69,7 +69,7 @@ document.onclick = globalFunction;  // 여기서 this 는 document를 가리키�
 ~~~
 
 * if, else, while, for, switch 구문에서의 블록문은 별도의 지역이 생성되지 않는다.<br>
-**오로지 함수(function) 에서만 지역이 생성된다.**
+**=> 오로지 함수(function) 에서만 지역이 생성된다.**
 ~~~js
 var scope_variable = '전역 변수';
 console.log(scope_variable);                // '전역 변수'
@@ -83,12 +83,12 @@ function createLocalScope() {
 createLocalScope();
 console.log(scope_variable);                // '전역 변수'
 ~~~
-
+<br>
 ### 스코프 체인
 > 유효 범위를 나타내는 스코프가 [[Scope]] 프로퍼티로 각 함수 객체 내에서 <br>
-> 연결리스트 형식으로 관리되는데 이를 "스코프 체인" 이라고 한다.
+> 연결리스트 형식으로 관리되는데 이를 "스코프 체인" 이라고 한다.<br>
 참고) http://programmer-seva.tistory.com/36 <br>
-
+<br>
 ### 호이스트(Hoist) 현상
 > 어떤 영역에서 함수 또는 변수 선언문이 영역의 최상단으로 끌어 올려지는 현상.
 #### 현상 1. function 선언문의 몸체(body)가 통째로 끌어 올려진다.
@@ -103,7 +103,9 @@ function understandingHoist() {
   awayKingdom();
   function awayKingdom() { ... }
 }
+
 // 위의 함수 지역에서 아래와 같이 호이스팅이 일어난다.
+
 function understandingHoist() {
   // 독립된 공간(영역, scope)
   function awayKingdom() { ... } // 함수 선언문은 상단으로 
@@ -117,12 +119,12 @@ function understandingHoist() {
   awayKingdom(); // 정상 실행
 }
 ~~~
-
+<br>
 ### Arguments
-* arguments는 유사 배열(like Array Object)
+* arguments는 유사 배열(like Array Object)<br>
   : .length 속성을 가짐, .push(), .pop() 배열 메소드는 가지고 있지 않음.
 * 값 설정도 가능 > `arguments[0] = '';`
-
+<br>
 ### 전역에 정의된 전역 함수
 ~~~js
 // 전역 함수 getName은 결과적으로 window 객체의 getName 속성이다.
