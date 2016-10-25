@@ -35,4 +35,13 @@ a {
   -moz-background-clip: padding-box;
   background-clip: padding-box; }
 
-/*# sourceMappingURL=style.css.map */
+.round-2 {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  -webkit-border-radisu: 20px;
+  -moz-border-radisu: 20px;
+  border-radisu: 20px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box; }
