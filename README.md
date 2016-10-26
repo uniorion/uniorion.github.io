@@ -43,9 +43,15 @@
 
 #### # Blisk - 모바일 화면을 같이 보여주는 브라우저
 
-#### # Git - [https://git-scm.com/](https://git-scm.com/)
+#### # Github - [https://www.github.com/](https://www.github.com/)
 
 #### # Sass ( node-sass )
+~~~
+a. nodejs 버전관리 설치 [nvm-window](https://github.com/coreybutler/nvm-windows/releases)<br>
+b. nvm ls available > node.js 설치가능 버전 확인<br>
+c. nvm install {version} > 원하는 버전의 node.js 설치<br>
+d. npm install -global node-sass : 전역으로 설치
+~~~
 
 #### # Source Tree - [https://www.sourcetreeapp.com/](https://www.sourcetreeapp.com/)
 
