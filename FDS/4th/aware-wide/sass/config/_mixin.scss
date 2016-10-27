@@ -1,0 +1,6 @@
+
+// 사이즈 조절
+@mixin size($width, $height){
+	width: $width;
+	height: $height;
+}

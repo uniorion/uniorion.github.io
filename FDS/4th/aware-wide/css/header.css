@@ -1,0 +1,144 @@
+.header {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  background: #fff;
+}
+
+.logo {
+  float: left;
+  margin-top: 27px;
+  margin-left: 82px;
+}
+
+.menu {
+  float: left;
+  margin-top: 30px;
+  margin-left: 63px;
+  font-size: 0.875rem;
+}
+
+.menu li {
+  float: left;
+  margin-right: 46px;
+}
+
+.menu a {
+  display: block;
+  color: #222222;
+}
+
+.menu span {
+  position: relative;
+  top: -1px;
+  left: 10px;
+  color: #214ca6;
+  font-size: .625rem;
+}
+
+fieldset {
+  text-align: center;
+  border: 0;
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 25px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  border-radius: 15px;
+  background: #393939;
+  border: none;
+  box-sizing: border-box;
+  padding: 7px 50px;
+  font-size: 0.75rem;
+  background: #f6f6f6;
+  margin-left: 35px;
+}
+
+.search a {
+  float: left;
+  display: block;
+  margin-right: 20px;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.search .btn-search {
+  position: absolute;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+}
+
+.menu-info {
+  float: right;
+  margin-top: 27px;
+  margin-right: 30px;
+}
+
+.menu-info li {
+  float: right;
+  margin-left: 40px;
+}
+
+.menu-info a {
+  width: 20px;
+  height: 20px;
+  display: block;
+  padding-top: 3px;
+  padding-right: 10px;
+}
+
+.menu-info .cart-count {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 8px;
+  background: #214ca6;
+  font-size: .625rem;
+  color: #fff;
+  text-indent: 0;
+  text-align: center;
+  line-height: 16px;
+}
+
+.login {
+  background: url(../images/icon/icon-login.svg) no-repeat bottom left;
+}
+
+.cart {
+  position: relative;
+  background: url(../images/icon/icon-cart.svg) no-repeat bottom left;
+  padding-left: 30px;
+  font-size: 0.75rem;
+  color: #222222;
+}
+
+.cart div {
+  margin-right: 35px;
+}
+
+.location {
+  background: url(../images/icon/icon-location.svg) no-repeat bottom left;
+  padding-left: 50px;
+  color: #868686;
+  font-size: 0.75rem;
+}
+
+.bar {
+  position: absolute;
+  display: inline-block;
+  top: 33px;
+  left: 30px;
+}
+
+/*# sourceMappingURL=header.css.map */
