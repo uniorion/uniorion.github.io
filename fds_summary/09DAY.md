@@ -1,22 +1,22 @@
 ## JavaSscript
 
-> 변수(Variable)에 값이 할당된다라는 것은
-> 값의 유형(Data Type)에 따라
-> 복사하거나, 참조(Reference)하게 된다.
+> 변수(Variable)에 값이 할당된다라는 것은<br>
+> 값의 유형(Data Type)에 따라<br>
+> 복사하거나, 참조(Reference)하게 된다.<br>
 
-1. 변수 선언
+##### 1. 변수 선언
 ```js
 var my_name; // 변수 선언 시, 기본적으로 undefined 값 할당
 ```
 
-2. 선언된 변수에 값 할당
+##### 2. 선언된 변수에 값 할당
 ```js
 var current_state;
 // 선언된 변수에 값을 할당
 current_state = 200;
 ```
 
-3. 선언과 동시에 값 할당
+##### 3. 선언과 동시에 값 할당
 ```js
 var current_state = 200;   // 숫자
 var is_finished   = false; // 불리언
@@ -24,12 +24,14 @@ var container_el  = null;  // 비어 있다.
 var my_name;               // 변수 선언만 하게 되면 undefined
 ```
 
-4. var 키워드를 한 번만 사용하는 싱글톤(Singleton) 패턴
+#####4. var 키워드를 한 번만 사용하는 싱글톤(Singleton) 패턴
 ```js
 var current_state = 200,   // 숫자
     is_finished   = false, // 불리언
     container_el  = null;  // 비어 있다.
 ```
+
+---
 
 ## HTML & CSS
 * img 요소에 인라인 스타일 적용

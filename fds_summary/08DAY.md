@@ -29,21 +29,29 @@
 CLI 기초 명령어
 ```
 ls -al 
-: 폴더내 리스트를 보여주는데 숨김파일과 파일권한(a), 소유주(l)도 보여줘 
+: 폴더내 리스트를 보여주는데 숨김파일과 파일권한(a), 소유주(l)도 보여줘
+
 mkdir 
-: [directory] make directory의 약자 디렉토리를 만들때 사용 
+: [directory] make directory의 약자 디렉토리를 만들때 사용
+
 cd 
 : [directory] change directory의 약자 해당 폴더로 이동할때 사용 
+
 mkdir test && cd '$_' 
 : 명령어 동시에 사용하기.
+
 rm -rf
 : 폴더 제거. 
+
 touch [file_name] f
 : file_name으로 파일 생성.
+
 vi [file_name] 
 : vi라는 에디터로 file을 열때 사용 
+
 wq 
 : vi에서 write하고 quit할때 사용 
+
 q! 
 : vi에서 저장하지 않고 나갈때 사용 
 ```
@@ -53,56 +61,53 @@ Git 명령어
 * upstream => 내가 포크떠온 원본 레포 (통상적)
 * stage에 commit 되지 않은 수정이 있으면 pull 되지 않음.
 
-###### git init
+###### `git init`
 : (.git) 폴더가 생김
 
-###### git-ignore 옵션
+###### `git-ignore 옵션`
 : 로컬에만 가지고 있어야하는, 제외할 파일을 정의
 
-###### git clone (git 주소)
+###### `git clone (git 주소)`
 : 현재폴더에 git 저장소를 동기화한다.
 
-###### git log
+###### `git log`
 : 
 
-###### git status
+###### `git status`
 : stage 상태를 보여줌.
 
-###### git add file_name
+###### `git add file_name`
 : stage 에 file_name을 올림
 
-###### git rm --cached file_name
+###### `git rm --cached file_name`
 : stage에서 file_name을 내림
 
-###### git push
+###### `git push`
 : remote repo에 commit 내용을 올림
 
-###### git config --list
+###### `git config --list`
 : 설정 내용을 표시 
 
-###### git remote -v
+###### `git remote -v`
 : git에 설정된 원격주소를 표시
 
-###### git push origin master
+###### `git push origin master`
 : 원격 push 주소로 내 레포중에서 master 브랜치의 내용을 올린다.
 
-###### git pull origin master
+###### `git pull origin master`
 : push origin 에서 master 브랜치의 내용을 내려 받음.
-
-###### pull = merge + fetch  >  그냥 받으면 충돌이 발생 할 수 있다.
-: 
-
-###### git pull --rebase origin master
+  
+###### `git pull --rebase origin master`
 : 지우고 다시 받아.
 
-###### git rebase --continue
+###### `git rebase --continue`
 :
 
-###### git checkout -b signup
+###### `git checkout -b signup`
 : signup 브랜치를 생성.
 
-###### git remote add upstream http://github.com/LeoHeo/pr-test.git
+###### `git remote add upstream http://github.com/LeoHeo/pr-test.git`
 : 내 레포에 'upstream' 이름으로 url 저장소를 fork 한다.
 
-###### git config --global core.autocrlf input
+###### `git config --global core.autocrlf input`
 : window에서 add 할때 개행문자 오류가 나면 해당 명령어 입력.

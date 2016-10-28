@@ -7,8 +7,11 @@
   - 편집창(input) 단위로 이동. label에 정보
   - ctrl+s로 검색 > alt, title, label 등에 기입된 모든 대체텍스트를 검색.
 <br>
+
 > 시작장애인에게 IT콘텐츠는 텍스트 뿐.
+
 <br>
+
 #### 대체텍스트, 링크텍스트
   - 버튼이 토글되는 기능을 가진다면 대체텍스트는 상태와 역할을 명확히 구분하여 일관되게 제공해야한다.
   - 상태와 기능을 모두 표시하는게 Best!
@@ -79,6 +82,8 @@
   - PNG-8 은 투명도 조절이 안됨.
 
 5. 액션기능 사용해서 자르기
-  a. ctrl 클릭으로 선택
-  b. 레이어에서 오른클릭 > context > duplicate layer > New > Ok
-  c. Image > Trim > Save for Web
+  a. ctrl 클릭으로 선택<br>
+  b. 레이어에서 오른클릭 > context > duplicate layer > New > Ok<br>
+  c. Image > Trim<br>
+  d. Actions 탭의 context 메뉴 > Insert Menu Item...<br>
+  e. File > Export > Save for Web<br>
