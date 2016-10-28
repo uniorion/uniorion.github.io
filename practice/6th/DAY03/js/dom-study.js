@@ -1,5 +1,3 @@
-/*! dom-study.js © yamoo9.net, 2016 */
-
 // IIFE 패턴을 사용하여 독립된 코드 공간을 생성
 // 모듈 패턴
 (function(global){
@@ -12,10 +10,15 @@
   var gnb        = doc.querySelector('#gnb'); // ElementNode
   var gnb_links  = gnb.querySelectorAll('a'); // NodeList
   var print_area = doc.querySelector('#print-area');
-  var updatePrintMessage = function () {
-   	console.log(this.getAttribute('data-print-message') );
 
-  }
+  var wrapperUpdatePrintMessage = function(i) {
+    var updatePrintMessage = function () {
+     	print_area.innerHTML = i + '. ' + this.getAttribute('data-print-message');
+      return false;
+    };
+
+    return updatePrintMessage; 
+  };
 
   // NodeList <= Like Array Object
   console.log( 'gnb_links.length:', gnb_links.length );
@@ -26,7 +29,7 @@
     var gnb_link = gnb_links[i];
     // gnb_link // NodeList ?, ElementNode ?
     // 문서객체 집합을 순환한 이유: 이벤트 핸들러(함수) 연결
-    gnb_link.onclick = updatePrintMessage;
+    gnb_link.onclick = wrapperUpdatePrintMessage(i);
   }
 
 
