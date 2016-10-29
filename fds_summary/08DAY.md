@@ -11,13 +11,24 @@
 : PC의 작업공간.
 
 ###### staging area
-: 임시적으로 머무는 공간.
+: working directory에서 local repo로 commit하기 전에 임시적으로 머무는 위치
 
 ###### local repository
 : 자신의 PC에서 버전 콘트롤을 할 수 있는 곳. 
 
 ###### remote repository
 : git을 호스팅하는 공간.
+
+###### fetch
+: remote repository에 있는 파일들을 local repository로 받아 온다.<br>
+하지만 현재 local repository에 있는 파일들과 합쳐지지 않은 상태이다.
+
+###### merge
+: fetch로 받아온 파일들을 local repository에 있는 파일과 합치는 것이다.
+
+###### pull
+: pull은 remote repository에 있는 파일들을 fetch -> merge를 한번에 하는 것이다
+
 
 #### Git != GitHub
 * GitHub는 **git hosting서버중에 하나**다.

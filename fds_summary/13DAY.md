@@ -6,14 +6,13 @@
 '문자열'.trim() // '문자열'에서 좌우 공백을 제거. trimRight(), trimLeft()
 ```
 
-### 1. 형 변환하기
-
-    * Boolean() |  !!
-    * !! 표현을 더 선호
+### 1. 형 변환하기 - boolean
+    - Boolean() |  !!
+    - !! 표현을 더 선호
 
 #### # undefined, null
-        - !! (false)  &  !(true)
-        - '', +''(string) &  String()
+    - !! (false)  &  !(true)
+    - '', +''(string) &  String()
 
 #### # isNaN(x)
 : 'x는 숫자형이 아닙니까?'
