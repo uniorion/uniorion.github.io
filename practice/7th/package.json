@@ -1,0 +1,18 @@
+{
+  "name": "dom-script-using-sass",
+  "version": "1.0.0",
+  "description": "my project using\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D DOM Script project using sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('this is project started...')",
+    "sass": "node-sass -w -r sass -o css --source-map ./css --output-style compressed",
+    "server": "http-server -o -a localhost -p 9090",
+    "start": "npm run sass | npm run server"
+  },
+  "keywords": [
+    "sass",
+    "domscript"
+  ],
+  "author": "uniorion <uniorion@gmail.com>",
+  "license": "ISC"
+}

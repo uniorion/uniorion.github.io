@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>자바스크립트 함수</title>
+  <!-- 웹 폰트 로드 -->
+  <link rel="stylesheet" href="fonts/you_and_i_modern/you_and_i_modern.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 아이언맨 로봇 스타일 -->
+  <style>
+  
+  </style>
+</head>
+<body>
+   
+  <div class="ironman">
+    <p class="message">Function is...</p>
+    <button type="button" class="ironman-print-button">
+      <img src="images/ironman.png" alt="ironman" width="256" height="256">
+    </button>
+  </div>
+ 
+<script>
+(function(global){
+  'use strict';
+  // Audio 생성자 함수를 new 키워드와 함께 사용하여
+  // 음원 객체 인스턴스를 생성합니다.
+  // 자바스크립트 방법
+  // var ironman_voice = new Audio();
+  // 표준 문서객체모델 API 방법
+  var ironman_voice = document.createElement('audio');
+  var ironman_voices = [];
+  ironman_voices.push('media/special.mp3');
+  ironman_voices.push('media/myturn.mp3');
+  ironman_voices.push('media/wantone.mp3');
+  ironman_voices.push('media/special.mp3');
+
+  ironman_voice.oncanplay = function() {
+    console.log('음원 파일이 재생될 준비가 되었습니다.');
+    // 음원 재생(play)
+    // 오디오 객체의 play() 메소드를 사용하자.
+    this.play();
+  };
+
+  // 아이언맨이 출력할 메시지 리스트 (list, Array)
+  var ironman_messages = [];
+  var ironman_message_count = 0
+  ironman_messages.push('함수는 일급객체(First Class Object)입니다.');
+  ironman_messages.push('함수는 호출 가능한 객체입니다.');
+  ironman_messages.push('함수는 전달인자를 통해 다양한 코드 처리가 가능합니다.');
+  ironman_messages.push('함수는 함수형 프로그래밍에서 매우 중요한 역할을 합니다.');
+
+  console.log('ironman_message:', ironman_messages);
+
+  var ironman         = document.querySelector('.ironman');
+  var ironman_message = document.querySelector('.message');
+  var ironman_button  = document.querySelector('.ironman-print-button');
+
+  // 버튼 객체에 이벤트 연결 (핸들러 함수)
+  ironman_button.onclick = function() {
+    // message 영역의 텍스트를 변경
+    var print_message = ironman_messages[ ironman_message_count++ % ironman_messages.length ];
+    
+    // 아래는 모두 같은 결과
+    // 방법 1. DOM API
+    ironman_message.firstChild.nodeValue = print_message;
+    // 방법 2. Standard API ( IE9+ 이상)
+    ironman_message.textContent = print_message;
+    // 방법 3. 표준이 됨. (innerText는 비표준)
+    ironman_message.innerHTML = print_message;
+
+    // 음원 주소를 src 속성으로 설정합니다.
+    ironman_voice.setAttribute('src', ironman_voices[ ironman_voices++ % ironman_messages.length ]);
+  };
+
+  ironman_button.onmouseleave = function() {
+    // console.log('날 떠났다');
+    ironman_voice.pause();
+    ironman_voice.currentTime = 0;
+  }
+
+})(this);
+</script>
+
+<!-- <script src="js/ironman.js"></script> -->
+</body>
+</html>
