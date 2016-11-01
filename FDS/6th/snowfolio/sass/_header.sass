@@ -1,0 +1,51 @@
+.header
+  position: relative
+  width: 75rem
+  height: 79.9rem
+  background: url('../images/bg-main-banner.png') no-repeat
+  .logo
+    position: absolute
+    top: 2.7rem
+    left: 3.2rem
+    +fontello('\e800', 3.4rem)
+    &.menu-on
+      +fontello('\e800', 3.4rem, #000)
+      z-index: 999
+  .btn-hambuger
+    position: absolute
+    top: 3.3rem
+    right: 2.9rem
+    +fontello('\e801', 2.3rem)
+    &.menu-on
+      +fontello('\e802', 3rem, #000)
+      z-index: 999
+  .main-title
+    position: absolute
+    top: 25.5rem
+    left: 8.8rem
+    margin-top: 0
+    color: #fff
+    font-size: 6.8rem
+    line-height: 1.2
+    +fontello('\e803', 2.3rem)
+  .drop-menu
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 20rem
+    width: 100%
+    background: #fff
+    z-index: 99
+    ul
+      margin-top: 15.4rem
+    li
+      margin-bottom: 7.7rem
+      text-align: center
+    a
+      font-family: 'Aileron Light'
+      font-size: 2.8rem
+      line-height: 1.29
+      color: #18191a
+    &.on
+      display: block

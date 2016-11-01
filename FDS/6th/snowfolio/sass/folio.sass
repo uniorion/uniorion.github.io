@@ -1,0 +1,45 @@
+@import module/_normalize.min
+@import common/_variable
+@import common/_mixin
+@import common/_placeholder
+@import common/_fonts
+@import _header
+@import _works
+@import _news
+@import _twitter
+@import _footer
+
+// 공통 스타일 영역
+.a11y-hide
+  text-indent: -9999px
+  overflow: hidden
+  width: 0px
+  height: 0px
+  display: block
+
+html
+  font-size: 0.625rem
+
+body
+  font-size: 1em
+  font-family: 'Aileron Regular'
+
+ul
+  padding: 0
+  list-style-type: none
+
+button
+  padding: 0
+  border: 0
+  background: transparent
+  cursor: pointer
+
+a
+  text-decoration: none
+  &:link,
+  &:visited
+    color: #fff
+  &:hover,
+  &:focus
+    color: #fff
+    out-line: 2px solid #1cc0fe

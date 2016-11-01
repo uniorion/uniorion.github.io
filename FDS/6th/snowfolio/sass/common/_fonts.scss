@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Aileron Regular';
+  src: url('../fonts/Aileron-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aileron Light';
+  src: url('../fonts/Aileron-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?56909078');
+  src: url('../fonts/fontello.eot?56909078#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff2?56909078') format('woff2'),
+       url('../fonts/fontello.woff?56909078') format('woff'),
+       url('../fonts/fontello.ttf?56909078') format('truetype'),
+       url('../fonts/fontello.svg?56909078#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* '\e800' : Logo */
+/* '\e801' : menu-close */
+/* '\e802' : menu-open */
+/* '\e803' : arrow */

@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="logo" unicode="&#xe800;" d="M353 144a353 353 0 1 0 0 706v-147a206 206 0 1 1 0-412v-147z m0-294v147a206 206 0 1 1 0 412v147a353 353 0 1 0 0-706z" horiz-adv-x="706" />
+
+<glyph glyph-name="menu-closed" unicode="&#xe801;" d="M22 850h1261a22 22 0 0 0 21-22v-43a22 22 0 0 0-21-22h-1261a22 22 0 0 0-22 22v43a22 22 0 0 0 22 22z m0-304h1261a22 22 0 0 0 21-22v-44a22 22 0 0 0-21-21h-1261a22 22 0 0 0-22 21v44a22 22 0 0 0 22 22z m0-305h1261a22 22 0 0 0 21-21v-44a22 22 0 0 0-21-22h-1261a22 22 0 0 0-22 22v44a22 22 0 0 0 22 21z m0-304h1261a22 22 0 0 0 21-22v-43a22 22 0 0 0-21-22h-1261a22 22 0 0 0-22 22v43a22 22 0 0 0 22 22z" horiz-adv-x="1304" />
+
+<glyph glyph-name="menu-opend" unicode="&#xe802;" d="M17 850h33a17 17 0 0 0 17-17v-966a17 17 0 0 0-17-17h-33a17 17 0 0 0-17 17v966a17 17 0 0 0 17 17z m233 0h33a17 17 0 0 0 17-17v-966a17 17 0 0 0-17-17h-33a17 17 0 0 0-17 17v966a17 17 0 0 0 17 17z m233 0h34a17 17 0 0 0 16-17v-966a17 17 0 0 0-16-17h-34a17 17 0 0 0-16 17v966a17 17 0 0 0 16 17z m234 0h33a17 17 0 0 0 17-17v-966a17 17 0 0 0-17-17h-33a17 17 0 0 0-17 17v966a17 17 0 0 0 17 17z" horiz-adv-x="767" />
+
+<glyph glyph-name="arrow" unicode="&#xe803;" d="M46 396h2181a45 45 0 0 0 46-45v-1a46 46 0 0 0-46-45h-2181a46 46 0 0 0-46 45v1a45 45 0 0 0 46 45z m1850 441l455-454a46 46 0 1 0-65-65l-455 454a46 46 0 0 0 0 65 46 46 0 0 0 65 0z m455-454a46 46 0 0 0 0-65l-455-454a46 46 0 1 0-65 64l455 455a46 46 0 0 0 65 0z" horiz-adv-x="2365" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,474 @@
+@charset "UTF-8";
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  line-height: 1.5;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active, a:hover {
+  outline-width: 0;
+}
+
+abbr[title] {
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"], [type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+@font-face {
+  font-family: 'Aileron Regular';
+  src: url("../fonts/Aileron-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Light';
+  src: url("../fonts/Aileron-Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?56909078");
+  src: url("../fonts/fontello.eot?56909078#iefix") format("embedded-opentype"), url("../fonts/fontello.woff2?56909078") format("woff2"), url("../fonts/fontello.woff?56909078") format("woff"), url("../fonts/fontello.ttf?56909078") format("truetype"), url("../fonts/fontello.svg?56909078#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* '\e800' : Logo */
+/* '\e801' : menu-close */
+/* '\e802' : menu-open */
+/* '\e803' : arrow */
+.header {
+  position: relative;
+  width: 75rem;
+  height: 79.9rem;
+  background: url("../images/bg-main-banner.png") no-repeat;
+}
+
+.header .logo {
+  position: absolute;
+  top: 2.7rem;
+  left: 3.2rem;
+}
+
+.header .logo::after {
+  content: "";
+  color: #fff;
+  font-family: 'fontello';
+  font-size: 3.4rem;
+}
+
+.header .logo.menu-on {
+  z-index: 999;
+}
+
+.header .logo.menu-on::after {
+  content: "";
+  color: #000;
+  font-family: 'fontello';
+  font-size: 3.4rem;
+}
+
+.header .btn-hambuger {
+  position: absolute;
+  top: 3.3rem;
+  right: 2.9rem;
+}
+
+.header .btn-hambuger::after {
+  content: "";
+  color: #fff;
+  font-family: 'fontello';
+  font-size: 2.3rem;
+}
+
+.header .btn-hambuger.menu-on {
+  z-index: 999;
+}
+
+.header .btn-hambuger.menu-on::after {
+  content: "";
+  color: #000;
+  font-family: 'fontello';
+  font-size: 3rem;
+}
+
+.header .main-title {
+  position: absolute;
+  top: 25.5rem;
+  left: 8.8rem;
+  margin-top: 0;
+  color: #fff;
+  font-size: 6.8rem;
+  line-height: 1.2;
+}
+
+.header .main-title::after {
+  content: "";
+  color: #fff;
+  font-family: 'fontello';
+  font-size: 2.3rem;
+}
+
+.header .drop-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 20rem;
+  width: 100%;
+  background: #fff;
+  z-index: 99;
+}
+
+.header .drop-menu ul {
+  margin-top: 15.4rem;
+}
+
+.header .drop-menu li {
+  margin-bottom: 7.7rem;
+  text-align: center;
+}
+
+.header .drop-menu a {
+  font-family: 'Aileron Light';
+  font-size: 2.8rem;
+  line-height: 1.29;
+  color: #18191a;
+}
+
+.header .drop-menu.on {
+  display: block;
+}
+
+.news {
+  display: flex;
+  padding: 78px 88px;
+  background-color: #0b0b0b;
+  color: #fff;
+  font-family: "AileronRegular", serif;
+  line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .news {
+    padding: 96px 112px;
+  }
+}
+
+.news h2 {
+  margin: 0;
+  min-width: 137px;
+  font-family: "AileronSemiBold", serif;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .news h2 {
+    font-size: 18px;
+  }
+}
+
+.news .content {
+  margin: 0;
+}
+
+.news .content p {
+  margin: 0;
+}
+
+.news .content p:first-child {
+  font-size: 32px;
+  font-weight: 400;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .news .content p:first-child {
+    font-size: 26px;
+  }
+}
+
+.news .content p:last-child {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .news .content p:last-child {
+    font-size: 14px;
+  }
+}
+
+.news .content .content-date {
+  margin-top: 32px;
+}
+
+.news .view-detail-wrap {
+  min-width: 100px;
+  padding-top: 40px;
+  text-align: right;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .news .view-detail-wrap {
+    padding-top: 20px;
+  }
+}
+
+.news .view-detail-wrap button {
+  width: 52px;
+  height: 32px;
+  background: #0b0b0b url("../images/icon-Arrow-m.svg") no-repeat right center;
+  border: 0;
+  cursor: pointer;
+}
+
+.news .view-detail-wrap button:hover {
+  background: #0b0b0b url("../images/icon-Arrow-hover-m.svg") no-repeat right center;
+}
+
+.a11y-hide {
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
+  display: block;
+}
+
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  font-size: 1em;
+  font-family: 'Aileron Regular';
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: #fff;
+}
+
+a:hover, a:focus {
+  color: #fff;
+  out-line: 2px solid #1cc0fe;
+}
+
+/*# sourceMappingURL=../map/folio.css.map */

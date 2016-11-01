@@ -1,0 +1,54 @@
+.news
+  display: flex
+  padding: 78px 88px
+  @media only screen and (min-width: 768px) and (max-width: 1024px)
+    padding: 96px 112px
+  background-color: #0b0b0b
+  color: #fff
+  font-family: "AileronRegular", serif
+  line-height: 1.2
+  h2
+    margin: 0
+    min-width: 137px
+    font-family: "AileronSemiBold", serif
+    font-size: 22px
+    @media only screen and (min-width: 768px) and (max-width: 1024px)
+      font-size: 18px
+    line-height: 1.2
+    font-weight: 400
+  .content
+    margin: 0
+    p
+      margin: 0
+      &:first-child
+        font-size: 32px
+        @media only screen and (min-width: 768px) and (max-width: 1024px)
+          font-size: 26px
+        font-weight: 400
+        -webkit-hyphens: auto
+        -moz-hyphens: auto
+        -ms-hyphens: auto
+        hyphens: auto
+      &:last-child
+        font-size: 20px
+        @media only screen and (min-width: 768px) and (max-width: 1024px)
+          font-size: 14px
+        font-weight: 400
+        color: rgba(255, 255, 255, 0.2)
+    .content-date
+      margin-top: 32px
+  .view-detail-wrap
+    min-width: 100px
+    padding-top: 40px
+    @media only screen and (min-width: 768px) and (max-width: 1024px)
+      padding-top: 20px
+    text-align: right
+    button
+      width: 52px
+      // height: 23px
+      height: 32px
+      background: #0b0b0b url('../images/icon-Arrow-m.svg') no-repeat right center
+      &:hover
+        background: #0b0b0b url('../images/icon-Arrow-hover-m.svg') no-repeat right center
+      border: 0
+      cursor: pointer
