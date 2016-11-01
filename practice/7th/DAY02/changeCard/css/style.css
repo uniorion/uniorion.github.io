@@ -1,0 +1,3 @@
+.container,.left-area,.right-area{display:flex;justify-content:center;align-items:center;flex:wrap}body{margin:0;padding:0}img{vertical-align:top;margin-right:10px;cursor:pointer}img.on{outline:3px solid #083AE7}.container{height:100vh}.left-area{background:#F0F0F0;width:50%;height:100%}.right-area{background:#848484;width:50%;height:100%}
+
+/*# sourceMappingURL=style.css.map */

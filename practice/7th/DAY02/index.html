@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript + DOM API</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- nav.gnb>ul[role=presentation]>li*4>a[href=# rel=external]{link-$$@-4} -->
+
+  <button type="button" class="copy-gnb-button">Copy GNB Element</button>
+
+  <nav id="gnb">
+    <ul role="presentation">
+      <li><a href="#link-07" rel="external">link-07</a></li>
+      <li><a href="#link-06" rel="external">link-06</a></li>
+      <li><a href="#link-05" rel="external">link-05</a></li>
+      <li><a href="#link-04" rel="external">link-04</a></li>
+    </ul>
+  </nav>
+
+  <p class="target-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum hic assumenda quas incidunt eos fuga delectus aliquam voluptates nobis cum <strong>inventore</strong> porro vero quod esse cupiditate, sit odit, excepturi corporis.
+  </p>
+  <p class="target-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum hic assumenda quas incidunt eos fuga delectus aliquam voluptates nobis cum <strong>inventore</strong> porro vero quod esse cupiditate, sit odit, excepturi corporis.
+  </p>
+  <div class="copyzone"></div>
+
+<!-- <script src="lib/DOM_Helper.js"></script> -->
+<!-- <script src="js/app.js"></script> -->
+<script id="table-template" type="text/html">
+  <table border="1" class="fds-table">
+      <caption>${table_caption}</caption>
+      <thead>
+        <tr>
+          <th scope="col">${table_heading_1}</th>
+          <th scope="col">${table_heading_2}</th>
+          <th scope="col">${table_heading_3}</th>
+          <th scope="col">${table_heading_4}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+          <td>data</td>
+        </tr>
+      </tbody>
+    </table>
+</script>
+<script src="js/dom-api.js"></script>
+
+<!-- <blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus cumque quasi exercitationem quis explicabo reprehenderit officia hic, minima mollitia voluptates.</p>
+</blockquote> -->
+</body>
+</html>
+
