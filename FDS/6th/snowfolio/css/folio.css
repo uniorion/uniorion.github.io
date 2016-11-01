@@ -235,7 +235,7 @@ template {
 /* '\e803' : arrow */
 .header {
   position: relative;
-  width: 75rem;
+  width: 100vw;
   height: 79.9rem;
   background: url("../images/bg-main-banner.png") no-repeat;
 }
