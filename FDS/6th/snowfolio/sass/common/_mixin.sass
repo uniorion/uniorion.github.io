@@ -5,3 +5,25 @@
     font:
       family: 'fontello'
       size: $size
+
+=rwd-bg($url, $width, $height)
+  background: url($url) no-repeat center
+    size: cover
+  padding-bottom: ($height/$width*100) + %
+
+
+@function rwd-px2vw($px, $type: m)
+  $base-width: 750
+  @if $type == t
+    $base-width: 1024
+  @else if $type == d
+    $base-width: 1920
+  @return ($px/$base-width) * 100 + vw
+
+@function rwd-px2per($px, $type: m)
+  $base-width: 750
+  @if $type == t
+    $base-width: 1024
+  @else if $type == d
+    $base-width: 1920
+  @return ($px/$base-width) * 100 + %

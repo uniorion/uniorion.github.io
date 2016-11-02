@@ -1,12 +1,11 @@
 .header
   position: relative
-  width: 75rem
-  height: 79.9rem
-  background: url('../images/bg-main-banner.png') no-repeat
+  width: 100%
+  +rwd-bg('../images/bg-main-banner-m.jpg', 750, 799)
   .logo
     position: absolute
     top: 2.7rem
-    left: 3.2rem
+    left: rwd-px2per(32, m)
     +fontello('\e800', 3.4rem)
     &.menu-on
       +fontello('\e800', 3.4rem, #000)
@@ -21,8 +20,8 @@
       z-index: 999
   .main-title
     position: absolute
-    top: 25.5rem
-    left: 8.8rem
+    top: rwd-px2per(255, m)
+    left: rwd-px2per(88, m)
     margin-top: 0
     color: #fff
     font-size: 6.8rem
@@ -49,3 +48,15 @@
       color: #18191a
     &.on
       display: block
+
+@media only screen and (min-width: 751px) and (max-width: 1024px)
+  .header
+    +rwd-bg('../images/bg-main-banner-t.jpg', 1024, 680)
+    .main-title
+      font-size: 6rem
+
+@media only screen and (min-width: 1025px)
+  .header
+    +rwd-bg('../images/bg-main-banner-d.jpg', 1920, 980)
+    .main-title
+      font-size: 8rem
