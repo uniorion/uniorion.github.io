@@ -1,29 +1,43 @@
-
-.grid-column
-  height: 200vw
-.cell
-  width: 50%
-
-@media only screen and (min-width: 768px) and (max-width: 1024px)
+.works
   .grid-column
     height: 200vw
   .cell
     width: 50%
+  .box2
+    p
+      font-size: 3.6rem
+      top: 10%
+    button
+      top: 40%
 
 
-@media only screen and (min-width: 1025px) 
-  .grid-column
-    height: 76vw
-  .cell 
-    width: 25%
-       
-.box1 
-  background: #ff0
-.box2 
-  position: relative
-  a
-    display: block
-    height: 100%
+  @media only screen and (min-width: 750 px) and (max-width: 1024px)
+    .grid-column
+      height: 200vw
+    .cell
+      width: 50%
+    .box2
+      p
+        font-size: 2.6rem
+        top: 30%
+      button
+        top: 50%
+  
+  
+  @media only screen and (min-width: 1025px) 
+    .grid-column
+      height: 78vw
+    .cell 
+      width: 25%
+    .box2
+      p
+        font-size: 2.6rem
+        top: 30%
+      button
+        top: 50%
+         
+  .box2 
+    position: relative
     &:hover::before
       content: ' '
       position: absolute
@@ -31,38 +45,31 @@
       left: 0
       right: 0
       bottom: 0
-      background: rgba(34,35,36,0.4)
-  // span
-  //   position: absolute
-  //   display: block
-  //   width: 100%
-  //   z-index: -1
-  //   text-align: center
-  //   left: 50%
-  //   top: 40%
-  //   font-size: 1.625rem
-  //   color: #fff
-  //   transform: translateX(-50%)
-  //   transition: all 0.9s
-  //   &:hover
-  //     z-index: 2
-
-
-
-.box3 
-  background: #0f0
-.box4 
-  background: #0ff
-.box5 
-  background: #00f
-.box6 
-  background: #f0f
-.box7 
-  background: #31487c
-.box8 
-  background: #bf09f4
-
-.rwd-img 
-  width: 100%
-  height: 100%
-  vertical-align: top
+      background: rgba(34,35,36,0.6)
+  .box2-hover
+    display: none
+    p
+      position: absolute
+      width: 80%
+      z-index: 2
+      text-align: center
+      font-family: 'Aileron Regular'
+      left: 50%
+      color: #fff
+      transform: translateX(-50%)
+    button
+      position: absolute
+      width: 54px
+      height: 23px
+      left: 50%
+      transform: translateX(-50%)
+      box-sizing: border-box
+      z-index: 2
+      background: url("../images/Arrow.svg")
+      margin-top: 40px
+      opacity: 0.7
+  
+  .rwd-img 
+    width: 100%
+    height: 100%
+    vertical-align: top

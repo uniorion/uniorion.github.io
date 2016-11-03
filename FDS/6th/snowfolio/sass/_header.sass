@@ -4,59 +4,128 @@
   +rwd-bg('../images/bg-main-banner-m.jpg', 750, 799)
   .logo
     position: absolute
-    top: 2.7rem
-    left: rwd-px2per(32, m)
+    top: px2per(27, 799)
+    left: px2per(32, 750)
     +fontello('\e800', 3.4rem)
     &.menu-on
       +fontello('\e800', 3.4rem, #000)
       z-index: 999
   .btn-hambuger
     position: absolute
-    top: 3.3rem
-    right: 2.9rem
+    top: px2per(33, 799)
+    right: px2per(29, 750)
     +fontello('\e801', 2.3rem)
     &.menu-on
       +fontello('\e802', 3rem, #000)
       z-index: 999
+  .carousel
+    display: none
   .main-title
     position: absolute
-    top: rwd-px2per(255, m)
-    left: rwd-px2per(88, m)
+    top: px2per(255, 750)
+    left: px2per(88, 750)
     margin-top: 0
+    margin-right: px2per(88, 750)
     color: #fff
     font-size: 6.8rem
-    line-height: 1.2
+    letter-spacing: rwd-px2vw(-1, m)
+    line-height: 1.19
     +fontello('\e803', 2.3rem)
-  .drop-menu
+    &::after
+      margin-left: px2per(25, 750)
+      vertical-align: middle
+  .main-menu
     display: none
     position: absolute
     top: 0
     left: 0
-    bottom: 20rem
     width: 100%
+    height: px2per(600, 799)
     background: #fff
     z-index: 99
     ul
-      margin-top: 15.4rem
+      margin-top: px2per(154, 799)
     li
-      margin-bottom: 7.7rem
+      margin-bottom: px2per(77, 799)
       text-align: center
     a
       font-family: 'Aileron Light'
       font-size: 2.8rem
       line-height: 1.29
       color: #18191a
+      &.on 
+        color: #43f3d0
     &.on
       display: block
-
-@media only screen and (min-width: 751px) and (max-width: 1024px)
+@media only screen and (min-width: 750px) and (max-width: 1024px)
   .header
     +rwd-bg('../images/bg-main-banner-t.jpg', 1024, 680)
+    .logo
+      top: px2per(26, 680)
+      left: px2per(44, 1024)
+    .btn-hambuger
+      display: none
+    .carousel
+      display: block
+      position: absolute
+      bottom: px2per(90, 680)
+      left: px2per(112, 1024)
+      width: px2per(800, 1024)
+      height: px2per(80, 680)
+      li
+        float: left
+        box-sizing: border-box
+        border-top: 2px solid #fff
+        width: 33.333334%
+        color: #fff
+        p
+          margin:
+            top: px2per(35, 266)
+            bottom: px2per(15, 266)
+          font-family: 'Aileron Bold'
+          font-size: 1.6rem
+        span  
+          font-family: 'Aileron Light'
+          font-size: 1.4rem
+        &.on
+          border-color: #43f3d0
+          color: #43f3d0
     .main-title
+      top: px2per(175, 680)
+      left: px2per(112, 1024)
+      margin-right: px2per(107, 1024)
       font-size: 6rem
-
+      letter-spacing: rwd-px2vw(-0.5, t)
+      &::after
+        margin-left: px2per(36, 1024)
+    .main-menu
+      position: absolute
+      top: px2per(35, 680)
+      left: px2per(526, 1024)
+      width: 100%
+      height: initial
+      background: transparent
+      display: block
+      ul
+        margin-top: initial
+      li
+        float: left
+        margin-right: px2per(56, 1024)
+        margin-bottom: initial
+        text-align: center
+      a
+        font-size: 1.8rem
+        color: #fff
 @media only screen and (min-width: 1025px)
   .header
     +rwd-bg('../images/bg-main-banner-d.jpg', 1920, 980)
+    .logo
+      top: px2per(36, 980)
+      left: px2per(68, 1920)
+    .btn-hambuger
+      display: none
     .main-title
+      top: px2per(255, 799)
+      left: px2per(88, 750)
       font-size: 8rem
+      letter-spacing: rwd-px2vw(-1, m)
