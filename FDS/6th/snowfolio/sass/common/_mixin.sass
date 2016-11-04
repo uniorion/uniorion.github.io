@@ -1,3 +1,8 @@
+=rwd-bg($url, $width, $height)
+  background: url($url) no-repeat center
+    size: cover
+  padding-bottom: ($height/$width*100) + %
+
 =fontello($code, $size: 1rem, $color: #fff)
   &::after
     content: $code
@@ -6,10 +11,10 @@
       family: 'fontello'
       size: $size
 
-=rwd-bg($url, $width, $height)
-  background: url($url) no-repeat center
-    size: cover
-  padding-bottom: ($height/$width*100) + %
+=font($family: 'Aileron Regular', $size: 1rem)
+  font:
+    family: $family
+    size: $size
 
 @function px2per($x, $y)
   @return ($x/$y) * 100 + %

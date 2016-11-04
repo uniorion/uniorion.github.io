@@ -22,8 +22,7 @@ html
   font-size: rwd-px2vw(10, m)
 
 body
-  font-size: 1em
-  font-family: 'Aileron Regular'
+  +font($size: 1em)
 
 ul
   padding: 0
@@ -34,8 +33,6 @@ button
   border: 0
   background: transparent
   cursor: pointer
-
-
 a
   text-decoration: none
   &:link,
@@ -51,10 +48,10 @@ a
   margin-left: auto
   min-width: 300px
 
-@media only screen and (min-width: 750px) and (max-width: 1024px)
+@media only screen and (min-width: $common-screen-max-width-m + 1) and (max-width: $common-screen-max-width-t)
   html
     font-size: rwd-px2vw(10, t)
 
-@media only screen and (min-width: 1025px)
+@media only screen and (min-width: $common-screen-max-width-t + 1)
   html
     font-size: rwd-px2vw(10, d)

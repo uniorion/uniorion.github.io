@@ -4,12 +4,14 @@
   +rwd-bg('../images/bg-main-banner-m.jpg', 750, 799)
   .logo
     position: absolute
-    top: px2per(27, 799)
+    top: px2per(20, 799)
     left: px2per(32, 750)
     +fontello('\e800', 3.4rem)
     &.menu-on
       +fontello('\e800', 3.4rem, #000)
       z-index: 999
+  .site
+    display: none
   .btn-hambuger
     position: absolute
     top: px2per(33, 799)
@@ -20,20 +22,26 @@
       z-index: 999
   .carousel
     display: none
+  .main-title-wrap
+    display: block
+    height: 100%
   .main-title
     position: absolute
-    top: px2per(255, 750)
+    top: px2per(255, 799)
     left: px2per(88, 750)
-    margin-top: 0
-    margin-right: px2per(88, 750)
+    margin:
+      top: 0
+      right: px2per(88, 750)
     color: #fff
     font-size: 6.8rem
     letter-spacing: rwd-px2vw(-1, m)
-    line-height: 1.19
-    +fontello('\e803', 2.3rem)
-    &::after
-      margin-left: px2per(25, 750)
-      vertical-align: middle
+    line-height: 1.2
+    p
+      margin: 0
+      +fontello('\e803', 2.3rem)
+      &::after
+        margin-left: px2per(25, 750)
+        vertical-align: middle
   .main-menu
     display: none
     position: absolute
@@ -49,15 +57,14 @@
       margin-bottom: px2per(77, 799)
       text-align: center
     a
-      font-family: 'Aileron Light'
-      font-size: 2.8rem
+      +font('Aileron Light', 2.8rem)
       line-height: 1.29
       color: #18191a
       &.on 
-        color: #43f3d0
+        color: $nav-active-color
     &.on
       display: block
-@media only screen and (min-width: 750px) and (max-width: 1024px)
+@media only screen and (min-width: $common-screen-max-width-m + 1) and (max-width: $common-screen-max-width-t)
   .header
     +rwd-bg('../images/bg-main-banner-t.jpg', 1024, 680)
     .logo
@@ -74,22 +81,20 @@
       height: px2per(80, 680)
       li
         float: left
-        box-sizing: border-box
         border-top: 2px solid #fff
         width: 33.333334%
         color: #fff
+        &.on
+          border-color: $nav-active-color
+          *
+            color: $nav-active-color
         p
           margin:
             top: px2per(35, 266)
             bottom: px2per(15, 266)
-          font-family: 'Aileron Bold'
-          font-size: 1.6rem
+          +font('Aileron Bold', 1.6rem)
         span  
-          font-family: 'Aileron Light'
-          font-size: 1.4rem
-        &.on
-          border-color: #43f3d0
-          color: #43f3d0
+          +font('Aileron Light', 1.4rem)
     .main-title
       top: px2per(175, 680)
       left: px2per(112, 1024)
@@ -97,7 +102,7 @@
       font-size: 6rem
       letter-spacing: rwd-px2vw(-0.5, t)
       &::after
-        margin-left: px2per(36, 1024)
+        margin-left: px2per(37, 1024)
     .main-menu
       position: absolute
       top: px2per(35, 680)
@@ -116,16 +121,65 @@
       a
         font-size: 1.8rem
         color: #fff
-@media only screen and (min-width: 1025px)
+@media only screen and (min-width: $common-screen-max-width-t + 1)
   .header
     +rwd-bg('../images/bg-main-banner-d.jpg', 1920, 980)
     .logo
       top: px2per(36, 980)
       left: px2per(68, 1920)
+    .site
+      display: block
+      position: absolute
+      top: px2per(48, 980)
+      left: px2per(160, 1920)
+      font-size: 1.8rem
     .btn-hambuger
       display: none
+    .carousel
+      display: block
+      position: absolute
+      bottom: px2per(125, 980)
+      left: px2per(160, 1920)
+      width: px2per(1600, 1920)
+      height: px2per(80, 980)
+      li
+        float: left
+        border-top: 2px solid #fff
+        width: 33.333334%
+        color: #fff
+        &.on
+          border-color: $nav-active-color
+          *
+            color: $nav-active-color
+        p
+          margin:
+            top: px2per(30, 528)
+            bottom: px2per(7, 528)
+          +font('Aileron Bold', 1.6rem)
+        span  
+          +font('Aileron Light', 1.4rem)
     .main-title
-      top: px2per(255, 799)
-      left: px2per(88, 750)
+      top: px2per(327, 980)
+      left: px2per(160, 1920)
       font-size: 8rem
-      letter-spacing: rwd-px2vw(-1, m)
+      letter-spacing: rwd-px2vw(-0.5, d)
+      p::after
+        margin-left: px2per(37, 1920)
+    .main-menu
+      position: absolute
+      top: px2per(47, 980)
+      left: px2per(1372, 1920)
+      width: 100%
+      height: initial
+      background: transparent
+      display: block
+      ul
+        margin-top: initial
+      li
+        float: left
+        margin-right: px2per(56, 1920)
+        margin-bottom: initial
+        text-align: center
+      a
+        font-size: 1.8rem
+        color: #fff
