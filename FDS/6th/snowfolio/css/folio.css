@@ -371,22 +371,25 @@ ol.grid {
 /* '\e802' : menu-open */
 /* '\e803' : arrow */
 .header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: url("../images/bg-main-banner-m.jpg") no-repeat center;
-    background-size: cover;
-  padding-bottom: 106.53333%; }
+  height: 106.53333vw;
+  z-index: 1; }
+  .header > *:not(nav) {
+    float: left; }
   .header .logo {
-    position: absolute;
-    top: 2.50313%;
-    left: 4.26667%; }
+    margin-top: 1.6%;
+    margin-left: 4.26667%; }
     .header .logo::after {
       content: "";
       color: #fff;
       font-family: 'fontello';
       font-size: 3.4rem; }
     .header .logo.menu-on {
-      z-index: 999; }
+      position: relative;
+      z-index: 99; }
       .header .logo.menu-on::after {
         content: "";
         color: #000;
@@ -395,196 +398,193 @@ ol.grid {
   .header .site {
     display: none; }
   .header .btn-hambuger {
-    position: absolute;
-    top: 4.13016%;
-    right: 3.86667%; }
+    margin-top: 4.4%;
+    margin-left: 84.66667%; }
     .header .btn-hambuger::after {
       content: "";
       color: #fff;
       font-family: 'fontello';
       font-size: 2.3rem; }
     .header .btn-hambuger.menu-on {
-      z-index: 999; }
+      position: relative;
+      z-index: 99; }
       .header .btn-hambuger.menu-on::after {
         content: "";
         color: #000;
         font-family: 'fontello';
         font-size: 3rem; }
-  .header .carousel {
-    display: none; }
-  .header .main-title-wrap {
-    display: block;
-    height: 100%; }
-  .header .main-title {
-    position: absolute;
-    top: 31.91489%;
-    left: 11.73333%;
-    margin-top: 0;
-    margin-right: 11.73333%;
-    color: #fff;
-    font-size: 6.8rem;
-    letter-spacing: -0.13333vw;
-    line-height: 1.2; }
-    .header .main-title p {
-      margin: 0; }
-      .header .main-title p::after {
-        content: "";
-        color: #fff;
-        font-family: 'fontello';
-        font-size: 2.3rem; }
-      .header .main-title p::after {
-        margin-left: 3.33333%;
-        vertical-align: middle; }
-  .header .main-menu {
+  .header nav {
     display: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 75.09387%;
-    background: #fff;
-    z-index: 99; }
-    .header .main-menu ul {
-      margin-top: 19.27409%; }
-    .header .main-menu li {
-      margin-bottom: 9.63705%;
+    background: #fff; }
+    .header nav ul {
+      margin-top: 19.06667%; }
+    .header nav li {
+      margin-bottom: 9.86667%;
       text-align: center; }
-    .header .main-menu a {
+    .header nav a {
       font-family: "Aileron Light";
       font-size: 2.8rem;
-      line-height: 1.29;
       color: #18191a; }
-      .header .main-menu a.on {
+      .header nav a.on {
         color: #43f3d0; }
-    .header .main-menu.on {
+    .header nav.on {
       display: block; }
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 106.53333vw; }
+  .carousel .slide img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom; }
+  .carousel .slide-title {
+    position: absolute;
+    top: 31.28911%;
+    left: 11.73333%;
+    z-index: 99;
+    margin-top: 0;
+    margin-right: 11.73333%;
+    color: #fff;
+    font-size: 6.8rem;
+    letter-spacing: -0.13333vw;
+    line-height: 1.2; }
+    .carousel .slide-title p {
+      margin: 0; }
+      .carousel .slide-title p::after {
+        content: "";
+        color: #fff;
+        font-family: 'fontello';
+        font-size: 2.3rem; }
+      .carousel .slide-title p::after {
+        margin-left: 3.33333%;
+        vertical-align: middle; }
+  .carousel ul {
+    display: none; }
 
 @media only screen and (min-width: 751px) and (max-width: 1024px) {
-  .header {
-    background: url("../images/bg-main-banner-t.jpg") no-repeat center;
-      background-size: cover;
-    padding-bottom: 66.40625%; }
-    .header .logo {
-      top: 3.82353%;
-      left: 4.29688%; }
-    .header .btn-hambuger {
-      display: none; }
-    .header .carousel {
-      display: block;
-      position: absolute;
-      bottom: 13.23529%;
-      left: 10.9375%;
-      width: 78.125%;
-      height: 11.76471%; }
-      .header .carousel li {
-        float: left;
-        border-top: 2px solid #fff;
-        width: 33.333334%;
-        color: #fff; }
-        .header .carousel li.on {
-          border-color: #43f3d0; }
-          .header .carousel li.on * {
-            color: #43f3d0; }
-        .header .carousel li p {
-          margin-top: 13.15789%;
-          margin-bottom: 5.6391%;
-          font-family: "Aileron Bold";
-          font-size: 1.6rem; }
-        .header .carousel li span {
-          font-family: "Aileron Light";
-          font-size: 1.4rem; }
-    .header .main-title {
-      top: 25.73529%;
-      left: 10.9375%;
-      margin-right: 10.44922%;
-      font-size: 6rem;
-      letter-spacing: -0.04883vw; }
-      .header .main-title::after {
-        margin-left: 3.61328%; }
-    .header .main-menu {
-      position: absolute;
-      top: 5.14706%;
-      left: 51.36719%;
-      width: 100%;
-      height: initial;
-      background: transparent;
-      display: block; }
-      .header .main-menu ul {
-        margin-top: initial; }
-      .header .main-menu li {
-        float: left;
-        margin-right: 5.46875%;
-        margin-bottom: initial;
-        text-align: center; }
-      .header .main-menu a {
-        font-size: 1.8rem;
-        color: #fff; } }
+  .header .logo {
+    top: 3.82353%;
+    left: 4.29688%; }
+  .header .btn-hambuger {
+    display: none; }
+  .header .carousel {
+    display: block;
+    position: absolute;
+    bottom: 13.23529%;
+    left: 10.9375%;
+    width: 78.125%;
+    height: 11.76471%; }
+    .header .carousel li {
+      float: left;
+      border-top: 2px solid #fff;
+      width: 33.333334%;
+      color: #fff; }
+      .header .carousel li.on {
+        border-color: #43f3d0; }
+        .header .carousel li.on * {
+          color: #43f3d0; }
+      .header .carousel li p {
+        margin-top: 13.15789%;
+        margin-bottom: 5.6391%;
+        font-family: "Aileron Bold";
+        font-size: 1.6rem; }
+      .header .carousel li span {
+        font-family: "Aileron Light";
+        font-size: 1.4rem; }
+  .header .slide-title {
+    top: 25.73529%;
+    left: 10.9375%;
+    margin-right: 10.44922%;
+    font-size: 6rem;
+    letter-spacing: -0.04883vw; }
+    .header .slide-title::after {
+      margin-left: 3.61328%; }
+  .header .gnb {
+    position: absolute;
+    top: 5.14706%;
+    left: 51.36719%;
+    width: 100%;
+    height: initial;
+    background: transparent;
+    display: block; }
+    .header .gnb ul {
+      margin-top: initial; }
+    .header .gnb li {
+      float: left;
+      margin-right: 5.46875%;
+      margin-bottom: initial;
+      text-align: center; }
+    .header .gnb a {
+      font-size: 1.8rem;
+      color: #fff; } }
 
 @media only screen and (min-width: 1025px) {
-  .header {
-    background: url("../images/bg-main-banner-d.jpg") no-repeat center;
-      background-size: cover;
-    padding-bottom: 51.04167%; }
-    .header .logo {
-      top: 3.67347%;
-      left: 3.54167%; }
-    .header .site {
-      display: block;
-      position: absolute;
-      top: 4.89796%;
-      left: 8.33333%;
-      font-size: 1.8rem; }
-    .header .btn-hambuger {
-      display: none; }
-    .header .carousel {
-      display: block;
-      position: absolute;
-      bottom: 12.7551%;
-      left: 8.33333%;
-      width: 83.33333%;
-      height: 8.16327%; }
-      .header .carousel li {
-        float: left;
-        border-top: 2px solid #fff;
-        width: 33.333334%;
-        color: #fff; }
-        .header .carousel li.on {
-          border-color: #43f3d0; }
-          .header .carousel li.on * {
-            color: #43f3d0; }
-        .header .carousel li p {
-          margin-top: 5.68182%;
-          margin-bottom: 1.32576%;
-          font-family: "Aileron Bold";
-          font-size: 1.6rem; }
-        .header .carousel li span {
-          font-family: "Aileron Light";
-          font-size: 1.4rem; }
-    .header .main-title {
-      top: 33.36735%;
-      left: 8.33333%;
-      font-size: 8rem;
-      letter-spacing: -0.02604vw; }
-      .header .main-title p::after {
-        margin-left: 1.92708%; }
-    .header .main-menu {
-      position: absolute;
-      top: 4.79592%;
-      left: 71.45833%;
-      width: 100%;
-      height: initial;
-      background: transparent;
-      display: block; }
-      .header .main-menu ul {
-        margin-top: initial; }
-      .header .main-menu li {
-        float: left;
-        margin-right: 2.91667%;
-        margin-bottom: initial;
-        text-align: center; }
-      .header .main-menu a {
-        font-size: 1.8rem;
-        color: #fff; } }
+  .header .logo {
+    top: 3.67347%;
+    left: 3.54167%; }
+  .header .site {
+    display: block;
+    position: absolute;
+    top: 4.89796%;
+    left: 8.33333%;
+    font-size: 1.8rem; }
+  .header .btn-hambuger {
+    display: none; }
+  .header .carousel {
+    display: block;
+    position: absolute;
+    bottom: 12.7551%;
+    left: 8.33333%;
+    width: 83.33333%;
+    height: 8.16327%; }
+    .header .carousel li {
+      float: left;
+      border-top: 2px solid #fff;
+      width: 33.333334%;
+      color: #fff; }
+      .header .carousel li.on {
+        border-color: #43f3d0; }
+        .header .carousel li.on * {
+          color: #43f3d0; }
+      .header .carousel li p {
+        margin-top: 5.68182%;
+        margin-bottom: 1.32576%;
+        font-family: "Aileron Bold";
+        font-size: 1.6rem; }
+      .header .carousel li span {
+        font-family: "Aileron Light";
+        font-size: 1.4rem; }
+  .header .slide-title {
+    top: 33.36735%;
+    left: 8.33333%;
+    font-size: 8rem;
+    letter-spacing: -0.02604vw; }
+    .header .slide-title p::after {
+      margin-left: 1.92708%; }
+  .header .gnb {
+    position: absolute;
+    top: 4.79592%;
+    left: 71.45833%;
+    width: 100%;
+    height: initial;
+    background: transparent;
+    display: block; }
+    .header .gnb ul {
+      margin-top: initial; }
+    .header .gnb li {
+      float: left;
+      margin-right: 2.91667%;
+      margin-bottom: initial;
+      text-align: center; }
+    .header .gnb a {
+      font-size: 1.8rem;
+      color: #fff; } }
 
 .works .grid-column {
   height: 200vw; }
@@ -762,6 +762,7 @@ a {
     out-line: 2px solid #1cc0fe; }
 
 .container {
+  position: relative;
   margin-right: auto;
   margin-left: auto;
   min-width: 300px; }
@@ -774,4 +775,4 @@ a {
   html {
     font-size: 0.52083vw; } }
 
-/*# sourceMappingURL=../map/folio.css.map */
+/*# sourceMappingURL=folio.css.map */

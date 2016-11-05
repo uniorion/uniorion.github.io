@@ -1,34 +1,66 @@
 .header
-  position: relative
+  position: absolute
+  top: 0
+  left: 0
   width: 100%
-  +rwd-bg('../images/bg-main-banner-m.jpg', 750, 799)
+  height: rwd-px2vw(799, m)
+  z-index: 1
+  &>*:not(nav)
+    float: left
   .logo
-    position: absolute
-    top: px2per(20, 799)
-    left: px2per(32, 750)
+    margin:
+      top: px2per(12, 750)
+      left: px2per(32, 750)
     +fontello('\e800', 3.4rem)
     &.menu-on
       +fontello('\e800', 3.4rem, #000)
-      z-index: 999
+      position: relative
+      z-index: 99
   .site
     display: none
   .btn-hambuger
-    position: absolute
-    top: px2per(33, 799)
-    right: px2per(29, 750)
+    margin:
+      top: px2per(33, 750)
+      left: px2per(635, 750)
     +fontello('\e801', 2.3rem)
     &.menu-on
       +fontello('\e802', 3rem, #000)
-      z-index: 999
-  .carousel
+      position: relative
+      z-index: 99
+  nav
     display: none
-  .main-title-wrap
-    display: block
-    height: 100%
-  .main-title
     position: absolute
-    top: px2per(255, 799)
+    top: 0
+    left: 0
+    width: 100%
+    height: px2per(600, 799)
+    background: #fff
+    ul
+      margin-top: px2per(143, 750)
+    li
+      margin-bottom: px2per(74, 750)
+      text-align: center
+    a
+      +font('Aileron Light', 2.8rem) 
+      color: #18191a
+      &.on 
+        color: $nav-active-color
+    &.on
+      display: block
+.carousel
+  position: relative
+  width: 100%
+  height: rwd-px2vw(799, m)
+  .slide
+    img
+      width: 100%
+      height: auto
+      vertical-align: bottom
+  .slide-title
+    position: absolute
+    top: px2per(250, 799)
     left: px2per(88, 750)
+    z-index: 99
     margin:
       top: 0
       right: px2per(88, 750)
@@ -42,31 +74,10 @@
       &::after
         margin-left: px2per(25, 750)
         vertical-align: middle
-  .main-menu
+  ul
     display: none
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: px2per(600, 799)
-    background: #fff
-    z-index: 99
-    ul
-      margin-top: px2per(154, 799)
-    li
-      margin-bottom: px2per(77, 799)
-      text-align: center
-    a
-      +font('Aileron Light', 2.8rem)
-      line-height: 1.29
-      color: #18191a
-      &.on 
-        color: $nav-active-color
-    &.on
-      display: block
 @media only screen and (min-width: $common-screen-max-width-m + 1) and (max-width: $common-screen-max-width-t)
   .header
-    +rwd-bg('../images/bg-main-banner-t.jpg', 1024, 680)
     .logo
       top: px2per(26, 680)
       left: px2per(44, 1024)
@@ -95,7 +106,7 @@
           +font('Aileron Bold', 1.6rem)
         span  
           +font('Aileron Light', 1.4rem)
-    .main-title
+    .slide-title
       top: px2per(175, 680)
       left: px2per(112, 1024)
       margin-right: px2per(107, 1024)
@@ -103,7 +114,7 @@
       letter-spacing: rwd-px2vw(-0.5, t)
       &::after
         margin-left: px2per(37, 1024)
-    .main-menu
+    .gnb
       position: absolute
       top: px2per(35, 680)
       left: px2per(526, 1024)
@@ -123,7 +134,6 @@
         color: #fff
 @media only screen and (min-width: $common-screen-max-width-t + 1)
   .header
-    +rwd-bg('../images/bg-main-banner-d.jpg', 1920, 980)
     .logo
       top: px2per(36, 980)
       left: px2per(68, 1920)
@@ -158,14 +168,14 @@
           +font('Aileron Bold', 1.6rem)
         span  
           +font('Aileron Light', 1.4rem)
-    .main-title
+    .slide-title
       top: px2per(327, 980)
       left: px2per(160, 1920)
       font-size: 8rem
       letter-spacing: rwd-px2vw(-0.5, d)
       p::after
         margin-left: px2per(37, 1920)
-    .main-menu
+    .gnb
       position: absolute
       top: px2per(47, 980)
       left: px2per(1372, 1920)

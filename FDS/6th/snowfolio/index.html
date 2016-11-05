@@ -15,7 +15,7 @@
       <a href="#" class="site">Showfol.io</a>
       <button type="button" class="btn-hambuger" aria-describedby="menu-state"></button>
       <span class="a11y-hide" id="menu-state">Menu was closed. When you click, menu is will open</span>
-      <nav class="main-menu">
+      <nav>
         <ul>
           <li><a href="#" class="on">Projects</a></li>
           <li><a href="#">About</a></li>
@@ -23,7 +23,20 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <ul class="carousel">
+    </header>
+    <div class="carousel">
+      <div class="slide">
+        <picture>
+          <source media="(max-width: 750px)" srcset="images/bg-main-banner-m.jpg">
+          <source media="(max-width: 1024px)" srcset="images/bg-main-banner-t.jpg">
+          <source media="(min-width: 1025px)" srcset="images/bg-main-banner-d.jpg">
+          <img src="images/bg-main-banner-d.jpg" alt="wally HOME Product">
+        </picture>
+        <a href="#" class="slide-title">
+          <p>We define and design purposeful brand experiences across channels.</p>
+        </a>
+      </div>
+      <ul>
         <li>
           <a href="#">
             <p>WallyHOME</p>
@@ -43,11 +56,7 @@
           </a>
         </li>
       </ul>
-      <a href="#" class="main-title">
-        <p>We define and design purposeful brand experiences across channels.</p>
-      </a>
-    </header>
-
+    </div>
 
     <div class="works">
           <div class="grid-column">
@@ -64,15 +73,15 @@
             </div>
 
             <div class="box3 cell cell-d-2-3 cell-t-1-2 cell-m-1-2 order-7">
-              <img class="rwd-img" src="images/photo-Vrstva-1-d.png" alt="세면도구"> 
+              <img class="rwd-img" src="images/photo-Vrstva-1-d.png" alt="세면도구">
             </div>
 
             <div class="box4 cell cell-d-2-3 cell-t-1-2 cell-m-1-2 order-3">
-              <img class="rwd-img" src="images/photo-Pic-2-d.png" alt="와인"> 
+              <img class="rwd-img" src="images/photo-Pic-2-d.png" alt="와인">
             </div>
 
             <div class="box5 cell cell-d-1-3 cell-t-1-4 cell-m-1-4 order-4">
-              <img class="rwd-img" src="images/photo-Vrstva-8-d.png" alt="요리사"> 
+              <img class="rwd-img" src="images/photo-Vrstva-8-d.png" alt="요리사">
             </div>
 
             <div class="box6 cell cell-d-1-3 cell-t-1-4 cell-m-1-4 order-8">
@@ -102,9 +111,21 @@
         </div>
       </div>
     </section>
-    <div class="twitter">
-r
-    </div>
+    <section class="twitter">
+      <h2>Twitter</h2>
+      <article>
+        <p>Material UI Kit: Navs by <a href="#">@showfol.oi</a> on <a href="">@dribbble</a> <a href="#">https://dribbble.com/shots/1759197-Material-UI-Kit-Navs...</a></p>
+        <p class="article-date">Friday, December 5, 2014</p>
+      </article>
+      <article>
+        <p>Amazing Pixel Art by Pixel, Huh | Abduzeedo Design Inspiration <a href="#">http://abduzeedo.com/amazing-pixel-art-pixel-huh...</a></p>
+        <p class="article-date">Saturday, December 6, 2014</p>
+      </article>
+      <article>
+        <p>We've been nominated for UI8 at Awwwards - please vote for us!<br><a href="#">http://www.awwwards.com/best-websites/ui8-1...</a></p>
+        <p class="article-date">Sunday, December 7, 2014</p>
+      </article>
+    </section>
     <div class="footer">
          <div class="footer-box grid">
            <div class="footer-content grid cell cell-d-1-3 cell-t-1-2 cell-m-full">
