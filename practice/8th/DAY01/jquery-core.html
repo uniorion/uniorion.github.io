@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 코어 - 팩토리 함수</title>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script>
+    jQuery(function($) {
+      // 함수 내부이기 때문에
+      // 안정적으로 $를 jQuery로 사용할 수 있다.
+      
+      var changeColor = function(e) {
+        // jQuery메소드 내부에 전달되는 함수 내부의 this는
+        // jQuery 객체가 아닌 벗겨진 DOM 객체를 가르킨다.
+        $('span', e.target).css('color', '#fe4940');
+        // 기존의 텍스트 설정 값을 가져와 대문자로 변환한 후
+      };
+
+      var changeSpanTextUpper = function(e) {
+        // 변수에 변환된 텍스트 값을 복사
+        var span_changed_text = e.child().text().toUpperCase();
+        // 복사된 값의 변수를 다시 $span jQuery {}의 메소드 .text()를 사용해
+        // 내용 값을 변경
+        e.child().text(span_changed_text);
+      };
+
+      $('a.foo').click(changeColor);
+      $('a.foo').click(changeSpanTextUpper);
+    });
+  </script>
+</head>
+<body>
+  
+  <a href="http://jquery.com/" class="foo" target="_blank">
+    <span>f</span>oo
+  </a>
+
+
+</body>
+</html>
