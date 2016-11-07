@@ -1,9 +1,9 @@
 @import module/_normalize.min
 @import module/_flex_grid
+@import common/_fonts
 @import common/_variable
 @import common/_mixin
 @import common/_placeholder
-@import common/_fonts
 @import _header
 @import _works
 @import _news
@@ -23,8 +23,10 @@ html
 
 body
   +font($size: 1em)
+  background-color: $grp-footer-background-color
 
 ul
+  margin: 0
   padding: 0
   list-style-type: none
 
@@ -56,3 +58,6 @@ a
 @media only screen and (min-width: $common-screen-max-width-t + 1)
   html
     font-size: rwd-px2vw(10, d)
+
+.article-date
+  @extend %article-date-font

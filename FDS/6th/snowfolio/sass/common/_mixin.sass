@@ -15,6 +15,16 @@
   font:
     family: $family
     size: $size
+    
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
 
 @function px2per($x, $y)
   @return ($x/$y) * 100 + %
@@ -27,14 +37,3 @@
     $base-width: 1920
   //@debug $type + ':' + ($px/$base-width) * 100 + vw
   @return ($px/$base-width) * 100 + vw
-
-=arrow-button()
-  cursor: pointer
-  .btn-view-detail
-    width: 52px
-    height: 32px
-    background: #0b0b0b url('../images/icon-Arrow.svg') no-repeat right center
-    border: 0
-  &:hover
-    .btn-view-detail
-      background: #0b0b0b url('../images/icon-Arrow-hover.svg') no-repeat right center

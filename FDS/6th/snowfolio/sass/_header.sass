@@ -3,7 +3,6 @@
   top: 0
   left: 0
   width: 100%
-  height: rwd-px2vw(799, m)
   z-index: 1
   &>*:not(nav)
     float: left
@@ -15,7 +14,7 @@
     &.menu-on
       +fontello('\e800', 3.4rem, #000)
       position: relative
-      z-index: 99
+      z-index: 999
   .site
     display: none
   .btn-hambuger
@@ -26,14 +25,20 @@
     &.menu-on
       +fontello('\e802', 3rem, #000)
       position: relative
-      z-index: 99
+      z-index: 999
   nav
     display: none
     position: absolute
     top: 0
     left: 0
     width: 100%
-    height: px2per(600, 799)
+    z-index: 99
+    animation: 0.1s show-top-menu
+    +keyframes(show-top-menu)
+      0%
+        height: 0
+      100%
+        height: rwd-px2vw(600, m)
     background: #fff
     ul
       margin-top: px2per(143, 750)
@@ -50,17 +55,14 @@
 .carousel
   position: relative
   width: 100%
-  height: rwd-px2vw(799, m)
-  .slide
-    img
-      width: 100%
-      height: auto
-      vertical-align: bottom
+  .slide img
+    width: 100%
+    height: auto
+    vertical-align: bottom
   .slide-title
     position: absolute
     top: px2per(250, 799)
     left: px2per(88, 750)
-    z-index: 99
     margin:
       top: 0
       right: px2per(88, 750)
@@ -76,120 +78,152 @@
         vertical-align: middle
   ul
     display: none
+    position: absolute
+    top: 0
+    left: 0
+    li
+      float: left
+      border-top: 2px solid #fff
+      width: 33.333334%
+      color: #fff
+      &.on
+        border-color: $nav-active-color
+        *
+          color: $nav-active-color
+      p  
+        +font('Aileron Bold', 1.6rem)
+      span  
+        +font('Aileron Light', 1.4rem)
+
 @media only screen and (min-width: $common-screen-max-width-m + 1) and (max-width: $common-screen-max-width-t)
   .header
+    height: rwd-px2vw(86, t)
     .logo
-      top: px2per(26, 680)
-      left: px2per(44, 1024)
+      margin:
+        top: px2per(18, 1024)
+        left: px2per(44, 1024)
     .btn-hambuger
       display: none
-    .carousel
+    nav
       display: block
-      position: absolute
-      bottom: px2per(90, 680)
-      left: px2per(112, 1024)
-      width: px2per(800, 1024)
-      height: px2per(80, 680)
-      li
-        float: left
-        border-top: 2px solid #fff
-        width: 33.333334%
-        color: #fff
-        &.on
-          border-color: $nav-active-color
-          *
-            color: $nav-active-color
-        p
-          margin:
-            top: px2per(35, 266)
-            bottom: px2per(15, 266)
-          +font('Aileron Bold', 1.6rem)
-        span  
-          +font('Aileron Light', 1.4rem)
-    .slide-title
-      top: px2per(175, 680)
-      left: px2per(112, 1024)
-      margin-right: px2per(107, 1024)
-      font-size: 6rem
-      letter-spacing: rwd-px2vw(-0.5, t)
-      &::after
-        margin-left: px2per(37, 1024)
-    .gnb
-      position: absolute
-      top: px2per(35, 680)
+      top: px2per(30, 86)
       left: px2per(526, 1024)
-      width: 100%
+      width: px2per(450, 1024)
       height: initial
       background: transparent
-      display: block
       ul
-        margin-top: initial
+        margin-top: 0
       li
         float: left
-        margin-right: px2per(56, 1024)
-        margin-bottom: initial
+        margin-right: px2per(58, 450)
+        margin-bottom: 0
         text-align: center
       a
-        font-size: 1.8rem
+        +font('Aileron Light', 1.8rem) 
         color: #fff
+  &.top-fix
+    background: #fff
+    position: fixed
+    top: 0
+    left: 0
+    animation: 0.2s show-top-menu
+    +keyframes(show-top-menu)
+      0%
+        height: 0
+      100%
+        height: rwd-px2vw(86, t)
+    .logo      
+      +fontello('\e800', 3.4rem, #000)
+    nav a
+      color: #000
+  .carousel
+    .slide-title
+      top: px2per(173, 680)
+      left: px2per(105, 1024)
+      margin:
+        right: px2per(88, 1024)
+      color: #fff
+      font-size: 6rem
+      letter-spacing: rwd-px2vw(0.2, t)
+      p::after
+        margin-left: px2per(32, 1024)
+    ul
+      display: block
+      top: px2per(500, 680)
+      left: px2per(112, 1024)
+      width: px2per(800, 1024)
+      li p
+        margin:
+          top: px2per(31, 266)
+          bottom: px2per(10, 266)
 @media only screen and (min-width: $common-screen-max-width-t + 1)
   .header
+    height: rwd-px2vw(86, d)
     .logo
-      top: px2per(36, 980)
-      left: px2per(68, 1920)
+      margin:
+        top: px2per(36, 1920)
+        left: px2per(68, 1920)
     .site
       display: block
-      position: absolute
-      top: px2per(48, 980)
-      left: px2per(160, 1920)
+      margin:
+        top: px2per(48, 1920)
+        left: px2per(68, 1920)
       font-size: 1.8rem
     .btn-hambuger
       display: none
-    .carousel
+    nav
       display: block
-      position: absolute
-      bottom: px2per(125, 980)
-      left: px2per(160, 1920)
-      width: px2per(1600, 1920)
-      height: px2per(80, 980)
-      li
-        float: left
-        border-top: 2px solid #fff
-        width: 33.333334%
-        color: #fff
-        &.on
-          border-color: $nav-active-color
-          *
-            color: $nav-active-color
-        p
-          margin:
-            top: px2per(30, 528)
-            bottom: px2per(7, 528)
-          +font('Aileron Bold', 1.6rem)
-        span  
-          +font('Aileron Light', 1.4rem)
-    .slide-title
-      top: px2per(327, 980)
-      left: px2per(160, 1920)
-      font-size: 8rem
-      letter-spacing: rwd-px2vw(-0.5, d)
-      p::after
-        margin-left: px2per(37, 1920)
-    .gnb
-      position: absolute
-      top: px2per(47, 980)
-      left: px2per(1372, 1920)
-      width: 100%
+      top: px2per(42, 86)
+      left: px2per(1370, 1920)
+      width: px2per(450, 1920)
       height: initial
       background: transparent
-      display: block
       ul
-        margin-top: initial
+        margin-top: 0
       li
         float: left
-        margin-right: px2per(56, 1920)
-        margin-bottom: initial
+        margin-right: px2per(56, 450)
+        margin-bottom: 0
         text-align: center
       a
-        font-size: 1.8rem
+        +font('Aileron Light', 1.8rem)
         color: #fff
+  &.top-fix
+    background: #fff
+    position: fixed
+    top: 0
+    left: 0
+    animation: 0.2s show-top-menu
+    +keyframes(show-top-menu)
+      0%
+        height: 0
+      100%
+        height: rwd-px2vw(86, d)
+    .logo
+      margin-top: px2per(18, 1920)  
+      +fontello('\e800', 3.4rem, #000)
+    .site, nav a
+      margin-top: px2per(30, 1920) 
+      color: #000
+    nav
+      top: px2per(30, 86) 
+  .carousel
+    .slide-title
+      top: px2per(325, 980)
+      left: px2per(167, 1920)
+      margin:
+        right: px2per(300, 1920)
+      color: #fff
+      font-size: 8rem
+      letter-spacing: rwd-px2vw(-0.6, d)
+      p::after
+        margin-left: px2per(32, 1920)
+    ul
+      display: block
+      top: px2per(766, 980)
+      left: px2per(160, 1920)
+      width: px2per(1600, 1920)
+      li p
+        margin:
+          top: px2per(25, 533)
+          bottom: px2per(10, 533)
