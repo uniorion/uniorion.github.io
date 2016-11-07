@@ -35,6 +35,7 @@
     - Octotree : github 트리뷰 제공
     - High Contrast : 브라우저 고대비모드 제공
     - Accesibility
+    - PageSpeed Insights
 
 #### # Firefox - Extensions
     - Firebug
@@ -44,13 +45,24 @@
 
 #### # Github - [https://www.github.com/](https://www.github.com/)
 
-#### # Sass ( node-sass )
+#### # Sass
 ~~~
 a. nvm - window 설치 [nvm-window](https://github.com/coreybutler/nvm-windows/releases)<br>
 b. nvm ls available > node.js 설치가능 버전 확인<br>
 c. nvm install {version} > 원하는 버전의 node.js 설치<br>
 d. npm install -global node-sass : 전역으로 설치
 d. npm install -global http-server : 전역으로 설치
+~~~
+* [node-sass](https://www.npmjs.com/package/node-sass)
+* [group-css-media-queries](https://www.npmjs.com/package/group-css-media-queries) : sass를 사용하면서 여기 저기에 생성된 미디어쿼리 구문을 그룹으로 묶어줌
+* [csso](https://www.npmjs.com/package/csso) : 생성된 CSS 파일을 압축(최적화)
+~~~
+// package.json 설정 예.
+"scripts": {
+    "sass": "node-sass -w sass -o css --output-style expanded",
+    "mq-group": "group-css-media-queries css/style.css css/style.css",
+    "css-opt": "csso css/style.css -o css/style.min.css",
+    "build": "npm run mq-group | npm run css-opt"
 ~~~
 
 #### # Source Tree - [https://www.sourcetreeapp.com/](https://www.sourcetreeapp.com/)
@@ -73,8 +85,6 @@ d. npm install -global http-server : 전역으로 설치
 
 - Zeplin [https://app.zeplin.io] - 이미지 협업 클라우드
 
-- 브런치 - 전민수 [https://brunch.co.kr/@ebprux]
-
 - 무료 한글 글꼴 [http://blog.naver.com/messinger00/220831856850]
  
 ---
@@ -82,6 +92,8 @@ d. npm install -global http-server : 전역으로 설치
 ### 서적
 
 _자바스크립트 + jQuery 완전정복 스터디 | 김춘경 저_
+
+_DOM을 깨우치다 | 코디 린들리 저_
 
 _모바일 우선주의  | 루크 로블르스키 저_
 
