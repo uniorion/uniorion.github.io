@@ -1,12 +1,17 @@
+/**
+ * --------------------------------
+ * Module A: Setting
+ */
 var fds = (function(global, jQuery){
   'use strict';
 
-  // jQuery 사용가능
+  // jQuery 사용 가능
   // 외부에서 접근이 불가능한 private jQuery
-  var $ = jQuery;
 
+  var $ = jQuery;
   var $target;
-  // 요소(타입) 셀렉터
+
+  // 요소(타입) 선택자
   $target = $('article');
 
   // 그룹핑
@@ -16,7 +21,7 @@ var fds = (function(global, jQuery){
   $target = $('[class^="post-"] ul');
 
   // 자식 선택자
-  $target = $('li', $target);
+  // $target = $('li', $target);
   $target = $('ol > li');
 
   // 클래스 선택자
@@ -52,47 +57,58 @@ var fds = (function(global, jQuery){
   // 속성 선택자 끝
   $target = $('[class$="hidden"]');
 
-  // 속성 선택자 공백 구분 (~)
-  $target = $('[title~=article]');
+  // 속성 선택자 공백 구분(~)
+  $target = $('[title~="article"]');
 
-  // 속성 선택자 대쉬 구분 (|)
-  $target = $('[lang|="en"]');
+  // 속성 선택자 (|)
+  $target = $('[lang^="en"]');
 
   // 속성 선택자 *
   $target = $('[src*="?"]');
 
   // 멀티 속성 선택자 [][]
-  $target = $('[id*="n"][class="brand"]');
+  $target = $('[id*="N"][class="brand"]');
 
-  // 가상 클래스 선택자 (상태)
-  $target = $(':root');
+  // :target
   $target = $(':target');
-  $target = $(':enabled');
-  $target = $(':disabled');
-  $target = $(':checked');
 
-  $('td:first')
-  $('td:eq(0)');
-  $('td').eq(0);
-  $('td').first();
-
-
-
+  // $target = $('article h2:first-child');
 
   // 선택된 집합(요소)에 클래스 속성 설정
   $target.addClass('selected');
 
+
+  ////////////////////
+  // jQuery Filters //
+  ////////////////////
+
+  // :first
+  // :last
+  // :eq(number)
+  // :lt(number)
+  // :gt(number)
+  // :header
+  // :contains(text)
+  // :not(selector)
+  // :has(selector)
+  // :parent
+  // :empty
+
+  // jQuery.fn === jQuery.prototype
   // jQuery 플러그인 제작
   $.fn.gt = function(n) {
-    // this 는 jQuery Instance
     return this.slice(n+1);
-  }
+  };
+
+  // :hidden
+  // :visible
+  // :animated
 
   return {
     $: jQuery // 비공개 멤버인 jQuery에 접근 가능한 유일한 방법: 특권 부여
-  }
-  
-})(this, this.jQuery.noConflict(true)); // 전역에 공개된 jQuery를 포기하고 반환된 jQuery 객체를 함수에 전달
+  };
+
+})(this, this.jQuery.noConflict(true));
 
 //////////////////////////////////////////
 // this.jQuery.noConflict(true) 처리 결과
@@ -102,11 +118,14 @@ var fds = (function(global, jQuery){
 // fds.$ === jQuery
 //////////////////////////////////////////
 
+/**
+ * --------------------------------
+ * Module B: using `fds`
+ */
 (function(fds){
   'use strict';
-
   var jQuery_version = fds.$().jquery;
 
-  console.log('jQuery_version: ', jQuery_version);
+  console.log('jQuery_version:', jQuery_version);
 
 })(this.fds);
