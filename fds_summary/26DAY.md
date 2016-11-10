@@ -39,9 +39,7 @@ console.log('사용자의 가용 가능한 스크린 해상도는 %c' + screen_a
 #### # window.navigator
  : 웹 브라우저의 정보를 가진 객체<br>
 
-
 #### # window.document
-
 
 ### DOM (문서 객체 모델)
 
