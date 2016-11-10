@@ -4,11 +4,11 @@
 
 | Folder | Description | 
 |:-------|:--------|
+| /_sample | 여러 기능을 구현한 샘플 코드 | 
 | /FDS | 주차별 과제수행 폴더 | 
-| /modules| css , js 모듈 | 
-| /practice| 수업 진행 , 기타 프로젝트 폴더 | 
 | /fds_summary| 강의내용 요약 폴더  | 
-|/tmp| 임시폴더 |
+| /lecture| 수업 진행 , 기타 프로젝트 폴더 | 
+| /modules| css , js 모듈 | 
 
 ---
 
