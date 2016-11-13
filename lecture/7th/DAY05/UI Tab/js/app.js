@@ -1,9 +1,8 @@
 (function(global, $){
   'use strict';
 
+  var c_tab = new $.Tab( '#component-tab' );
 
-  // $ === FDS
-  var c_el = document.querySelector('#component-tab');
-  var c_tab = new $.Tab();
+  global.c_tab = c_tab;
 
 })(this, this.FDS);
