@@ -1,0 +1,12 @@
+
+html {
+  overflow-y: visiable;
+  font-smoothing: antialiased;
+  font-size: 10px;
+}
+body {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+@import "./grid.css";
