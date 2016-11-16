@@ -17,10 +17,12 @@
 ```
 1. Package Control 설치
 2. Install Package (단축키: Ctrl-Shift-P, 메뉴: Tools > Command Pallet)  
-    - Emmet  
+    - Emmet
     - SideBarEnhancements  
     - ConvertToUTF8  
     - IMESupport(Windows Only)
+    - jQuery
+    - sass
     - AutoFileName
     - Bracket Highlighter
     - Theme Flatland
@@ -42,6 +44,10 @@
     - Web Developer tool
     - Headingsmap
     - Open wax
+
+#### # IE Debugging Tool
+    - [Super Preview ](https://www.microsoft.com/ko-kr/download/details.aspx?id=2020)
+    - [IE Tester](http://www.my-debugbar.com/wiki/IETester/HomePage)
 
 #### # Github - [https://www.github.com/](https://www.github.com/)
 
