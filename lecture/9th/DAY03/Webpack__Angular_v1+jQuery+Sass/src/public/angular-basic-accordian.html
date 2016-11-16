@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" dir="ltr" data-ng-app>
+<!--<![endif]-->
+<!--[if IE 9]> <html class="no-js lt-ie10 ie9" dir="ltr" lang="ko-KR"> <![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>Angular V1 아코디언 탭 컴포넌트</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/app.css">
+  <style>
+    body {
+      background: {{app_background_color}}
+    }
+  </style>
+</head>
+<body 
+  data-ng-init="
+  app_version = '1.0.1';
+  app_background_color = '#fff';
+  pressed_change_bg_button = false;
+  accordian_tab = {
+    'one': true,
+    'two': false,
+    'three': false
+  }
+">
+
+  <a href="/">back</a>
+
+  <h1>angular accordian tab menu</h1>
+  
+  <button type="button" data-ng-click="app_background_color='#feccce'; pressed_change_bg_button = !pressed_change_bg_button"    class="change-body-bg-color"
+      data-ng-class="{
+        'pressed': pressed_change_bg_button,
+        'un-pressed': !pressed_change_bg_button
+      }">
+    <span data-ng-show="pressed_change_bg_button">change body element background color.</span>
+    <span data-ng-hide="pressed_change_bg_button">change body element background color!</span>
+  </button>
+
+  <div class="ui-accordian">
+    <h3 class="ui-accordian-tab" data-ng-click="accordian_tab.one = !accordian_tab.one"><a href="">tab 1</a></h3>
+    <div class="ui-accordian-tabpanel" data-ng-show="accordian_tab.one">Molestiae debitis ab maxime voluptatum sit. Nesciunt laborum temporibus recusandae earum iste, tempora. Illo nam sed harum voluptatum rerum, incidunt sapiente iure, nostrum aliquid aliquam molestiae quaerat provident magnam maiores, non corporis facilis repellendus voluptas nisi est. Repudiandae, aliquid temporibus corporis nihil iusto eum, velit nisi cumque incidunt nam provident dicta illum minus dolorem, accusantium labore obcaecati.</div>
+    <h3 class="ui-accordian-tab" data-ng-click="accordian_tab.two = !accordian_tab.two"><a href="">tab 2</a></h3>
+    <div class="ui-accordian-tabpanel" data-ng-show="accordian_tab.two">ab maxime voluptatum sit. Nesciunt laborum temporibus recusandae earum iste, tempora. Illo nam sed harum voluptatum rerum, incidunt sapiente iure, nostrum aliquid aliquam molestiae quaerat provident magnam maiores, non corporis facilis repellendus voluptas nisi est. Repudiandae, aliquid temporibus corporis nihil iusto eum, velit nisi cumque incidunt nam provident dicta illum minus dolorem, accusantium labore obcaecati.</div>
+    <h3 class="ui-accordian-tab" data-ng-click="accordian_tab.three = !accordian_tab.three"><a href="">tab 3</a></h3>
+    <div class="ui-accordian-tabpanel" data-ng-show="accordian_tab.three">Illo nam sed harum voluptatum rerum, incidunt sapiente iure, nostrum aliquid aliquam molestiae quaerat provident magnam maiores, non corporis facilis repellendus voluptas nisi est. Repudiandae, aliquid temporibus corporis nihil iusto eum, velit nisi cumque incidunt nam provident dicta illum minus dolorem, accusantium labore obcaecati.</div>
+  </div>
+
+<script src="./assets/app.js"></script>
+</body>
+</html>
