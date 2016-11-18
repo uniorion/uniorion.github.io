@@ -1,0 +1,10 @@
+@import config/config
+
+body
+  margin: 0
+
+.container
+  +tablet
+    width: percentage($t-container-width/$bp-tablet)
+  +rem(width, 234px)
+  +font(family $aileronR size 20px)

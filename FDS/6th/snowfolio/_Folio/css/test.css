@@ -1,0 +1,37 @@
+@media (max-width: 1024px) {
+  .m-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1024px) {
+  .t-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .d-hidden {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 234px;
+  width: 14.625rem;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-family: aileronregular;
+}
+
+@media (min-width: 751px) and (max-width: 1024px) {
+  .container {
+    width: 78.125%;
+  }
+}
+
+/*# sourceMappingURL=../map/test.css.map */
