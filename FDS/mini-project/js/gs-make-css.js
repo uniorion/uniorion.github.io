@@ -61,11 +61,16 @@ function attachGuide() {
 	// static
  	if ( gs_type_val === "stt" ) {
 		column_gradient = "transparent " + margin_width_fix + unit;
+
 		for (var i = 1; columns >= i; ++i) {
 
 			col_start = margin_width_fix + (((i - 1) * column_width)  + ((i - 1) * gutter_width));
 			col_end 	= margin_width_fix + ((i * column_width)  + ((i - 1) * gutter_width));
-			gut_end		= margin_width_fix + ((i * column_width)  + (i * gutter_width));
+			if ( i === columns ) {
+				gut_end	= margin_width_fix + ((i * column_width)  + ((i - 1) * gutter_width) + margin_width_fix);
+			} else {
+				gut_end	= margin_width_fix + ((i * column_width)  + (i * gutter_width));
+			}
 
 			column_gradient = column_gradient 
 			 								+ ", " + GRID_COL_COLOR_START + " " + col_start + unit
@@ -73,8 +78,6 @@ function attachGuide() {
 											+ ", transparent " + col_end + unit
 											+ ", transparent " + gut_end + unit;
 		}
-		column_gradient = column_gradient
-										+ ", transparent " + (total_width - margin_width_fix) + unit;
 	} 
 	// fluid
 	else {	
@@ -83,7 +86,11 @@ function attachGuide() {
 
 			col_start = margin_width_fix + (((i - 1) * column_width)  + ((i - 1) * gutter_width));
 			col_end 	= margin_width_fix + ((i * column_width)  + ((i - 1) * gutter_width));
-			gut_end		= margin_width_fix + ((i * column_width)  + (i * gutter_width));
+			if ( i === columns ) {
+				gut_end	= margin_width_fix + ((i * column_width)  + ((i - 1) * gutter_width) + margin_width_fix);
+			} else {
+				gut_end	= margin_width_fix + ((i * column_width)  + (i * gutter_width));
+			}
 
 			col_start = percent(col_start, total_width);
 			col_end 	= percent(col_end, total_width);
@@ -95,8 +102,6 @@ function attachGuide() {
 											+ ", transparent " + col_end + unit
 											+ ", transparent " + gut_end + unit;
 		}
-		column_gradient = column_gradient
-										+ ", transparent " + (total_width - margin_width_fix) + unit;
 	}
 
 	// show-baseline
