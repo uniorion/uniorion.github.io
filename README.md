@@ -30,6 +30,8 @@
 3. 기본환경 설정 변경 (Preferences -> Settings-User)
 ```
 
+#### # Visual Studio Code
+
 #### # Google Chrome - Extensions
     - Web Developer Tool
     - Open WAX
