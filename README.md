@@ -85,6 +85,8 @@ d. npm install -global http-server : 전역으로 설치
 
 - 반응형 레이아웃 샘플 - [http://www.liquidapsive.com/]
 
+- [반응형 웹 디자인에서 글줄의 길이와 글자 크기 균형 잡기](http://webactually.com/2015/10/%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-%EB%94%94%EC%9E%90%EC%9D%B8%EC%97%90%EC%84%9C-%EA%B8%80%EC%A4%84%EC%9D%98-%EA%B8%B8%EC%9D%B4%EC%99%80-%EA%B8%80%EC%9E%90-%ED%81%AC%EA%B8%B0-%EA%B7%A0%ED%98%95/)
+
 - 구글 크롬 확장 프로그램 만들기 [http://hodol.kr/xe/note/17558]
 
 - 구글 Device metrics [https://design.google.com/devices/]
