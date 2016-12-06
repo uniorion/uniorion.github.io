@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goolgle Map Example</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <div id="map"></div>
+  <div id="content">
+    DIV Content!!
+  </div>
+<script>
+
+  //  정보창 내용
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+      'sandstone rock formation in the southern part of the '+
+      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+      'south west of the nearest large town, Alice Springs; 450&#160;km '+
+      '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+      'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+      'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+      'Aboriginal people of the area. It has many springs, waterholes, '+
+      'rock caves and ancient paintings. Uluru is listed as a World '+
+      'Heritage Site.</p>'+
+      '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+      'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+      '(last visited June 22, 2009).</p>'+
+      '</div>'+
+      '</div>';
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: {lat: -33.8666, lng: 151.1958},
+    });
+
+    var marker = new google.maps.Marker({
+      position: {lat: -33.8666, lng: 151.1958},
+      map: map,
+      title: 'I\'m Here!!'
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+      // content: document.getElementById('content'), 
+      content: contentString, 
+      maxWidth: 200
+    });
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+      
+      // info 창 내용을 설정.
+      infowindow.setContent('test');
+
+      // info 창 위치를 설정.
+      // infowindow.setPosition();
+    });
+
+    map.addListener('click', function() {
+      // info 창 닫기
+      infowindow.close();
+    });
+  }
+
+</script>
+<script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyA0Lp9rCZhGbiX4gEykrs4ORdMxp0t6dgo&signed_in=true&callback=initMap">
+</script>
+<script scr='js/map.js'></script>
+</body>
+</html>

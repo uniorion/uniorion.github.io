@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goolgle Map Example</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <div id="map"></div>
+  
+<script>
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: {lat: -33.8666, lng: 151.1958},
+      
+      // 기본 UI 설정
+      scaleControl:       true,   // 축척
+      rotateControl:      true,   // 회전 컨트롤
+
+      mapTypeControl:     true,   // 지도, 위성 토글 버튼
+      mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+          position: google.maps.ControlPosition.TOP_CENTER,
+          mapTypeIds: [
+            google.maps.MapTypeId.ROADMAP,
+            google.maps.MapTypeId.TERRAIN
+          ]
+      },
+      zoomControl:        true,   // 확대,축소 버튼
+      zoomControlOptions: {
+          position: google.maps.ControlPosition.LEFT_CENTER
+      },
+      streetViewControl:  true,   // 거리뷰 버튼
+      streetViewControlOptions: {
+          position: google.maps.ControlPosition.LEFT_TOP
+      }
+    });
+
+    // --------- 사용자 정의 UI 컨트롤 ---------
+    var controlDiv = document.createElement('div');
+
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = '#fff';
+    controlUI.style.border = '2px solid #fff';
+    controlUI.style.borderRadius = '3px';
+    controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.marginBottom = '22px';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Click to recenter the map';
+    controlDiv.appendChild(controlUI);
+
+    var controlText = document.createElement('div');
+    controlText.style.color = 'rgb(25,25,25)';
+    controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+    controlText.style.fontSize = '16px';
+    controlText.style.lineHeight = '38px';
+    controlText.style.paddingLeft = '5px';
+    controlText.style.paddingRight = '5px';
+    controlText.innerHTML = 'Center Map';
+    controlUI.appendChild(controlText);
+    
+    controlDiv.index = 1;
+
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(controlDiv);
+    // --------- 사용자 정의 UI 컨트롤 ---------
+  }
+
+</script>
+<script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyA0Lp9rCZhGbiX4gEykrs4ORdMxp0t6dgo&signed_in=true&callback=initMap">
+</script>
+<script scr='js/map.js'></script>
+</body>
+</html>

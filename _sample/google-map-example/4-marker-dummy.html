@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goolgle Map Example</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <div id="map"></div>
+  
+<script>
+
+  var marker_dummy = [
+    {lat: 52.511, lng: 13.447},
+    {lat: 52.549, lng: 13.422},
+    {lat: 52.457, lng: 13.396},
+    {lat: 52.327, lng: 13.316},
+    {lat: 52.487, lng: 13.396},
+    {lat: 52.797, lng: 13.366},
+    {lat: 52.497, lng: 13.396},
+    {lat: 52.597, lng: 13.496},
+    {lat: 52.517, lng: 13.394}
+  ];
+
+  var markers = [];
+  var map;
+
+  // - issue: 문자가 1개밖에 표시 안된다.
+  var labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  var label_idx = 0;
+
+  // Set center: LatLngBounds object
+  var bounds = null;
+
+  function initMap() {
+    bounds = new google.maps.LatLngBounds();
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: {lat: 52.520, lng: 13.410}
+    });
+
+    // 맵 클릭 시 drop() 실행
+    map.addListener('click', drop);
+  }
+
+  function drop() {
+    clearMarkers();
+    for (var i = 0; i < marker_dummy.length; i++) {
+      addMarkerWithTimeout(marker_dummy[i], i * 200);
+      bounds.extend(new google.maps.LatLng(marker_dummy[i]));
+    }
+
+    //  Fit these bounds to the map
+    map.fitBounds(bounds);
+  }
+
+  // 0.2 간격으로 marker 생성하여 지도에 붙임
+  function addMarkerWithTimeout(position, timeout) {
+    window.setTimeout(function() {
+       var marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        animation: google.maps.Animation.DROP,
+
+        // 라벨 붙이기
+        label: labels[label_idx++ % labels.length],
+        
+        // 마커 이미지 설정
+        // https://developers.google.com/maps/documentation/javascript/markers?hl=ko#complex_icons
+        icon: 'images/marker.png'
+      });
+      markers.push(marker);
+    }, timeout);
+  }
+
+  // 지도의 모든 마커를 제거
+  function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+    markers = [];
+    label_idx = 0;
+  }
+
+</script>
+<script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyA0Lp9rCZhGbiX4gEykrs4ORdMxp0t6dgo&signed_in=true&callback=initMap">
+</script>
+<script scr='js/map.js'></script>
+</body>
+</html>

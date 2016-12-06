@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goolgle Map Example</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script
+      src="https://maps.googleapis.com/maps/api/js?v=3.21&signed_in=true&key=AIzaSyA0Lp9rCZhGbiX4gEykrs4ORdMxp0t6dgo">
+  </script>
+</head>
+<body>
+  
+  <div id="map"></div>
+  
+<script>
+
+  function initMap() {
+    var myLatlng = {lat: -33.8666, lng: 151.1958};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: myLatlng
+    });
+
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+
+      // Google 지도에 저장을 활성화
+      place: {
+        location: myLatlng,
+        query: 'Google, Sydney, Australia'
+      }
+    });
+
+    // Construct a new InfoWindow.
+    var infoWindow = new google.maps.InfoWindow({
+      content: 'Google Sydney'
+    });
+
+    // 마커 클릭 이벤트 감지, Info 창 오픈
+    // https://developers.google.com/maps/documentation/javascript/reference?hl=ko#Marker
+    marker.addListener('click', function() {
+      infoWindow.open(map, marker);
+    });
+
+    // 맵 클릭 이벤트 감지, 위치에 마커 추가
+    map.addListener('click', function(e) {
+      console.log('this: ', this.getZoom());
+      // event 객체 전달.
+      placeMarkerAndPanTo(e.latLng, map);
+    });
+    
+    // 맵 센터 변경 감지, 2초 후 제 위치로 되돌림.
+    var listener1 = map.addListener('center_changed', function() {
+      window.setTimeout(function() {
+        map.panTo(marker.getPosition());
+      }, 2000);    
+    });
+    
+  }
+
+  /* 
+   *  이벤트 리스너 제거 방법
+   */
+  function clearEvent() {
+    // 1. 특정 이벤트를 제거 : listener1 이벤트 리스너 제거
+    google.maps.event.removeListener(listener1);
+
+    var listener1 = google.maps.event.addListener(marker, 'click', aFunction);
+    var listener2 = google.maps.event.addListener(marker, 'mouseover', bFunction);
+ 
+    // 2. 특정 인스턴스의 모든 리스너를 제거 : marker에 정의된 리스너 모두 제거
+    google.maps.event.clearInstanceListeners(marker);
+    
+    // 3. 특정 인스턴스의 특정 이벤트 유형만 제거: marker에 정의된 'click' 리스너 모두 제거
+    google.maps.event.clearListeners(marker, 'click');
+  }
+  
+  // DOM 이벤트 수신
+  // https://developers.google.com/maps/documentation/javascript/examples/event-domListener?hl=ko
+  google.maps.event.addDomListener(window, 'load', initMap);
+  
+  function placeMarkerAndPanTo(latLng, map) {
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+    map.panTo(latLng);
+  }
+</script>
+<script scr='js/map.js'></script>
+</body>
+</html>
