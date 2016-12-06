@@ -1,0 +1,222 @@
+@import "func";
+
+$bp-mobile:   750px !default;
+$bp-desktop: 1024px !default;
+
+// 반응형 구현을 위한 media-query.
+@mixin mobile {
+  @media (max-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+@mixin desktop{
+  @media (min-width: #{$bp-desktop + 1}) {
+    @content;
+  }
+}
+
+// 숨김 설정.
+@include mobile {
+  .m-hidden {
+    display: none;
+  }
+}
+@include desktop {
+  .d-hidden{
+    display: none;
+  }  
+}
+
+/* ------------------------------------------------------------------
+ *                Flexbox Grid System
+ *
+ * 1. 설정값에 따라 grid system 과 guide를 제공한다.
+ * ------------------------------------------------------------------
+ * 
+ * ======= Grid System 관련 변수
+ * $is-static             : 레이아웃 타입을 선택(true: static, false: fluid)
+ * $container-name        : grid system을 포함하는 컨테이너 요소의 class 명
+ * $grid-setting-values   : grid 설정 값. list
+ * $grid-wrap-width       : 컨테이너의 넓이
+ * $grid-wrap-max-width   : 컨테이너의 최대넓이
+ * $columns               : 컬럼 수
+ * $column-width          : 컬럼 하나의 넓이
+ * $lr-margin             : 컨테이너 안쪽으로의 좌우 여백
+ * $gutter                : 거터 넓이(양쪽)
+ *
+ * ======= Guide 관련 변수
+ * $is-use-guide          : guide 사용 여부
+ * $guide-class-name      : guide의 class 명 (컨테이너 요소에 포함)
+ * $guide-columns-color   : 컬럼 guide의 색상. alpha값이 있어야 바닥이 보임.
+ * $guide-baseline-height : baseline guide의 줄간격
+ * $guide-baseline-color  : baseline guide의 색상
+ */
+
+$is-static            : false;
+$container-name       : 'grid-wrap';
+
+$is-use-guide          : true;
+$guide-class-name      : 'show-guide';
+$guide-columns-color   : rgba(45, 205, 160, 0.2);
+$guide-baseline-height : 10px;
+$guide-baseline-color  : #7400ff;
+
+// =============================================================
+//                    공통스타일
+// =============================================================
+
+// flex box 아이템의 정렬
+//    - issue : 거터가 있는 그리드에서는 between과 한 컬럼에 대한 left, right만 정상 동작함.
+.row[class*="grid-left"]    { justify-content: flex-start;    }
+.row[class*="grid-center"]  { justify-content: center;        }
+.row[class*="grid-right"]   { justify-content: flex-end;      }
+.row[class*="grid-between"] { justify-content: space-between; }
+.row[class*="grid-around"]  { justify-content: space-around;  }
+
+// flex item의 순서
+[class*="cell-"].o-1  { order: 1  };
+[class*="cell-"].o-2  { order: 2  };
+[class*="cell-"].o-3  { order: 3  };
+[class*="cell-"].o-4  { order: 4  };
+[class*="cell-"].o-5  { order: 5  };
+[class*="cell-"].o-6  { order: 6  };
+[class*="cell-"].o-7  { order: 7  };
+[class*="cell-"].o-8  { order: 8  };
+[class*="cell-"].o-9  { order: 9  };
+[class*="cell-"].o-10 { order: 10 };
+[class*="cell-"].o-11 { order: 11 };
+[class*="cell-"].o-12 { order: 12 };
+// =============================================================
+
+
+// ========================== Mobile Layout Setting ==========================
+$grid-wrap-width      : 320px;
+$grid-wrap-max-width  : 1024px;
+$columns              : 6;
+$column-width         : 32px;
+$lr-margin            : 14px;
+$gutter               : 20px;
+
+.#{$container-name} {
+  width: if($is-static, $grid-wrap-width, 100%);
+  max-width: $grid-wrap-max-width;
+}
+
+// Guide rendering
+@if $is-use-guide {
+  .#{$container-name}[class~=#{$guide-class-name}] {
+    position: relative;
+  }
+  .#{$container-name}[class~=#{$guide-class-name}]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 100000;
+    min-height: 100%;
+    width: 100%;
+  }    
+  .#{$container-name}[class~=#{$guide-class-name}]::before {
+    background: #{makeBaseline()}, #{makeColumnGradient()}; 
+    background-size: 1px #{$guide-baseline-height}, if($is-static, $grid-wrap-width, 100%) 1px;
+  }    
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; // default
+  flex-wrap: wrap;
+  margin: 0px #{percentage($lr-margin/$grid-wrap-width)};
+}
+
+[class*="cell-"] {
+  box-sizing: border-box;
+  flex: 1;
+}
+
+// 총 컬럼수의 약수 > 정의할 cell 모듈
+// 6 => 1, 2, 3, 6
+$divisors: divisor($columns);
+
+// 양쪽 마진을 제외한 콘텐츠의 넓이
+$content-width: $grid-wrap-width - ($lr-margin * 2);
+
+@each $key in $divisors { 
+  @for $i from 1 through $key {
+    // 컬럼 하나의 넓이
+    $one-col-width: ( ($column-width * ($columns / $key)) + ($gutter * ($columns / $key  - 1)) );
+    
+    // 선택한 총 넓이
+    $total-col-width: (($one-col-width *$i) + ($gutter * ($i - 1)));
+    
+    .cell-m-#{$i}-#{$key} {
+      flex: 0 0 #{percentage(($total-col-width) / $content-width)};
+    }
+  }
+}
+
+// ========================== Desktop Layout Setting ==========================
+$grid-wrap-width      : 1126px;
+$grid-wrap-max-width  : 1126px;
+$columns              : 12;
+$column-width         : 70px;
+$lr-margin            : 0px;
+$gutter               : 26px;
+
+@include desktop {
+
+  .#{$container-name} {
+    width: if($is-static, $grid-wrap-width, 100%);
+    max-width: $grid-wrap-max-width;
+  }
+
+  // Guide rendering
+  @if $is-use-guide {
+    .#{$container-name}[class~=#{$guide-class-name}] {
+      position: relative;
+    }
+    .#{$container-name}[class~=#{$guide-class-name}]::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      z-index: 100000;
+      width: 100%;
+      min-height: 100%;
+    }    
+    .#{$container-name}[class~=#{$guide-class-name}]::before {
+      background: #{makeBaseline()}, #{makeColumnGradient()};
+      background-size: 1px #{$guide-baseline-height}, if($is-static, $grid-wrap-width, 100%) 1px;
+    }
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px #{percentage($lr-margin/$grid-wrap-width)};
+  }
+  [class*="cell-"] {
+    box-sizing: border-box;
+    flex: 1;
+  }
+
+  // 총 컬럼수의 약수 > 정의할 cell 모듈
+  // 12 => 1, 2, 3, 4, 6, 12
+  $divisors: divisor($columns);
+
+  // 양쪽 마진을 제외한 콘텐츠의 넓이
+  $content-width: $grid-wrap-width - ($lr-margin * 2);
+
+  @each $key in $divisors { 
+    @for $i from 1 through $key {
+      // 컬럼 하나의 넓이
+      $one-col-width: ( ($column-width * ($columns / $key)) + ($gutter * ($columns / $key  - 1)) );
+      
+      // 선택한 총 넓이
+      $total-col-width: (($one-col-width *$i) + ($gutter * ($i - 1)));
+      
+      .cell-d-#{$i}-#{$key} {
+        flex: 0 0 #{percentage(($total-col-width) / $content-width)};
+      }
+    }
+  }
+}

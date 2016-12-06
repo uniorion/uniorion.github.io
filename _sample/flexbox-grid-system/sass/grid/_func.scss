@@ -1,0 +1,75 @@
+/* makeBaseline()
+ * Guide 중, baseline 의 linear-gradient 생성하여 리턴
+ */
+@function makeBaseline() {
+  $baseline-gradient: null;
+  $baseline-gradient: 'linear-gradient(transparent #{$guide-baseline-height - 1}, #{$guide-baseline-color} #{$guide-baseline-height - 1})';
+  @return $baseline-gradient;
+}
+
+/* makeColumnGradient()
+ * Guide 중, column 의 linear-gradient 생성하여 리턴
+ */
+@function makeColumnGradient() {
+  $column-gradient: null;
+  $offset-start   : 0;
+  $offset-end     : 0;
+  $gutter-end     : 0;
+  
+  // Static Guide
+  @if $is-static {
+    $column-gradient: 'transparent #{$lr-margin}';
+
+    @for $i from 1 through $columns {
+      $offset-start:  $lr-margin + ((($i - 1) * $column-width) + (($i - 1) * $gutter));
+      $offset-end:    $lr-margin + (($i * $column-width) + (($i - 1) * $gutter));
+      
+      @if $i == $columns {
+        $gutter-end:    $lr-margin + (($i * $column-width) + (($i - 1) * $gutter) + $lr-margin);
+      } @else {
+        $gutter-end:    $lr-margin + (($i * $column-width) + ($i * $gutter));
+      }
+
+      $column-gradient: '#{$column-gradient}, #{$guide-columns-color} #{$offset-start}, #{$guide-columns-color} #{$offset-end}, transparent #{$offset-end}, transparent #{$gutter-end}';
+    }
+  }
+  // Fluide Guide
+  @else {
+    $column-gradient: 'transparent #{percentage($lr-margin / $grid-wrap-width)}';
+
+    @for $i from 1 through $columns {
+      $offset-start:  $lr-margin + ((($i - 1) * $column-width) + (($i - 1) * $gutter));
+      $offset-end:    $lr-margin + (($i * $column-width) + (($i - 1) * $gutter));
+      
+      @if $i == $columns {
+        $gutter-end:    $lr-margin + (($i * $column-width) + (($i - 1) * $gutter) + $lr-margin);
+      } @else {
+        $gutter-end:    $lr-margin + (($i * $column-width) + ($i * $gutter));
+      }
+
+      $offset-start:  percentage($offset-start / $grid-wrap-width);
+      $offset-end:    percentage($offset-end / $grid-wrap-width);
+      $gutter-end:    percentage($gutter-end / $grid-wrap-width);
+
+      $column-gradient: '#{$column-gradient}, #{$guide-columns-color} #{$offset-start}, #{$guide-columns-color} #{$offset-end}, transparent #{$offset-end}, transparent #{$gutter-end}';
+    }
+  }
+
+  $column-gradient: 'linear-gradient(90deg, #{$column-gradient})';
+
+  @return $column-gradient;
+}
+
+/* divisor(num)
+ * 나누어 떨어지는 수를 리스트로 반환
+ */ 
+@function divisor($num) {
+  $list: 1;
+
+  @for $i from 2 through $num {
+    @if ($num % $i) == 0 {
+      $list:  append($list, $i, comma);
+    } 
+  } 
+  @return $list;
+}

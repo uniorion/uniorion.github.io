@@ -1,0 +1,12 @@
+{
+  "name": "sass-test",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w -r --output-style expanded ./sass -o ./css --source-map ./map"
+  },
+  "keywords": [],
+  "author": "uniorion",
+  "license": "ISC"
+}
